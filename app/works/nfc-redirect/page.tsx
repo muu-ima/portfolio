@@ -3,42 +3,49 @@ import Link from "next/link";
 
 const principles = [
   {
-    title: "code は不変ID",
+    title: "code は変えない番号",
     description:
-      "NFC / QR に焼き込む永久IDとして扱い、Supabase の主キーにも使う。カード発行後にURL表現が変わっても、識別軸はぶれません。",
+      "NFC / QR に入れるカードごとの番号として扱い、発行後も変えない軸にします。公開URLの見せ方が変わっても、カードの紐づけは保てます。",
   },
   {
-    title: "slug は表示用URL",
+    title: "slug は見せるURL",
     description:
-      "人が読みやすいURLとして公開ページへ使う一方、データ識別には使わない設計。SEOや見た目の都合で後から変更できます。",
+      "人が読みやすいURLとして公開ページに使います。プロフィール名や見せ方に合わせて、後から変更できるようにしています。",
   },
   {
-    title: "WordPress は台帳",
+    title: "WordPress 側で発行を管理",
     description:
-      "pastel-wp の nfc-redirect プラグインでカード発行、リダイレクト状態、URL再発行を管理。プロフィール本文は Supabase 側を正とします。",
+      "pastel-wp の nfc-redirect プラグインで、カード発行、公開・停止、URL再発行を扱います。発行済みカードの管理場所として使います。",
   },
   {
-    title: "Next.js が境界レイヤー",
+    title: "Next.js がつなぎ役",
     description:
-      "WordPress からの同期API、公開プロフィール、編集画面、トークン検証を担当。外部システムとDBの間を受け止めます。",
+      "WordPress からの同期、公開プロフィール、編集画面を担当します。カード管理とプロフィールDBの間をつなぐ役割です。",
   },
 ];
 
 const pluginFeatures = [
-  "nfc_redirect CPT でカードごとの code と status を管理",
-  "/n/{code} の rewrite を追加し、active なら target URL または /p/{code} へ 302 リダイレクト",
-  "disabled のカードは 410 を返し、停止中テンプレートを表示",
-  "公開時に Next.js の create API を呼び、Public URL と Edit URL を保存",
-  "管理画面でコード自動生成、URLコピー、URL再発行、同期トークン設定を扱う",
+  "カードごとの code と公開状態を WordPress 側で管理",
+  "/n/{code} にアクセスすると、公開中のプロフィールへリダイレクト",
+  "停止中のカードは専用ページを表示し、使えない状態を明確にする",
+  "公開時に Next.js と同期し、公開URLと編集URLを保存",
+  "管理画面からコード生成、URLコピー、URL再発行まで扱えるようにする",
 ];
 
 const flows = [
-  "WordPress プラグインで nfc_redirect を発行",
-  "公開保存時に Next.js の /api/profile/create を呼び、Supabase に profile を作成",
-  "Next.js が public_url と edit_url を返し、WordPress の投稿メタに保存",
-  "NFC / QR から WordPress の /n/{code} にアクセス",
-  "active なら Next.js 側の公開プロフィールへリダイレクト、disabled なら停止ページを表示",
-  "編集URLからプロフィールを更新し、公開ページへ反映",
+  "WordPress 側でカードを発行する",
+  "公開保存時に Next.js と同期し、プロフィールデータを作成",
+  "公開URLと編集URLを WordPress 側にも保存",
+  "NFC / QR から /n/{code} にアクセス",
+  "公開中ならプロフィールへ進み、停止中なら停止ページを表示",
+  "編集URLからプロフィールを更新し、公開ページに反映",
+];
+
+const productFlow = [
+  "CardCraft で名刺デザインと入稿データを作成",
+  "名刺に NFC / QR を組み込み、code を不変IDとして発行",
+  "nfc-redirect でリンク先プロフィールと公開状態を管理",
+  "配布後もプロフィールや導線を差し替えられる運用にする",
 ];
 
 const stack = ["Next.js 16", "React 19", "TypeScript", "Supabase", "WordPress", "REST API"];
@@ -74,7 +81,7 @@ export default function NfcRedirectPage() {
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-700">
                 NFCカードやQRコードに焼き込む不変IDを軸に、WordPress の発行台帳、
                 Next.js の同期API、Supabase のプロフィールDBを分離したシステムです。
-                発行後もプロフィールを編集でき、公開URLの見た目も柔軟に扱えます。
+                CardCraft と組み合わせて、名刺制作から配布後のリンク先変更まで扱える形を目指しました。
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
@@ -98,13 +105,13 @@ export default function NfcRedirectPage() {
             <div className="border border-zinc-200 bg-zinc-50 p-5">
               <div className="border-b border-zinc-200 pb-4">
                 <p className="text-sm font-semibold text-zinc-500">System Boundary</p>
-                <p className="mt-2 text-2xl font-semibold">3つの責務に分ける</p>
+                <p className="mt-2 text-2xl font-semibold">役割を3つに分ける</p>
               </div>
               <div className="mt-5 grid gap-3">
                 {[
-                  ["WordPress", "nfc-redirect プラグイン / 発行台帳 / 停止制御", "bg-amber-400"],
-                  ["Next.js", "同期API / 公開ページ / 編集画面", "bg-zinc-950"],
-                  ["Supabase", "プロフィールの Source of Truth", "bg-teal-500"],
+                  ["WordPress", "カード発行 / 公開・停止 / URL再発行", "bg-amber-400"],
+                  ["Next.js", "同期処理 / 公開ページ / 編集画面", "bg-zinc-950"],
+                  ["Supabase", "プロフィール情報の保存先", "bg-teal-500"],
                 ].map(([label, text, color]) => (
                   <div key={label} className="grid grid-cols-[9rem_1fr] border border-zinc-200 bg-white">
                     <div className={`${color} px-4 py-4 text-sm font-semibold text-white`}>
@@ -119,14 +126,50 @@ export default function NfcRedirectPage() {
         </div>
       </section>
 
+      <section className="bg-zinc-950 px-5 py-20 text-white sm:px-8">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-normal text-amber-300">
+              Product Concept
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+              CardCraft とセットで、配った後も育てられる名刺にする。
+            </h2>
+            <p className="mt-6 text-base leading-7 text-zinc-300">
+              名刺デザインを作るだけで終わらせず、NFC / QR に紐づくプロフィールやリンク先を後から変更できる構成を想定しました。印刷して配ったあとでも、案内先を変えられるのがこの仕組みの中心です。
+            </p>
+            <div className="mt-8">
+              <a
+                href="https://muu-cardcraft.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-12 items-center justify-center bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
+              >
+                CardCraftを見る
+              </a>
+            </div>
+          </div>
+          <div className="grid gap-3">
+            {productFlow.map((item, index) => (
+              <div key={item} className="flex gap-4 border-b border-white/15 pb-4">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center bg-amber-400 text-sm font-semibold text-zinc-950">
+                  {index + 1}
+                </span>
+                <p className="pt-1 text-lg leading-7 text-zinc-100">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-normal text-amber-700">
-              WordPress Plugin
+              WordPress Side
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              pastel-wp 側のプラグインで発行と停止を制御。
+              WordPress 側で、発行と停止を管理する。
             </h2>
           </div>
           <div className="grid gap-3">
@@ -149,7 +192,7 @@ export default function NfcRedirectPage() {
               Design Rules
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              変更できるものと、変えてはいけないものを分ける。
+              変えられるものと、変えないものを分ける。
             </h2>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
@@ -170,7 +213,7 @@ export default function NfcRedirectPage() {
               Flow
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal">
-              発行から公開、編集までの流れ
+              発行して、公開して、あとから直せる流れ
             </h2>
           </div>
           <div className="grid gap-3">
