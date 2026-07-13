@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import ScreenshotSlider from "./ScreenshotSlider";
 
 const workspaces = [
   {
@@ -39,27 +39,27 @@ const screenshots = [
   {
     title: "古物台帳一覧",
     description: "WordPress 管理画面側で、登録済みの仕入れ・販売データを一覧確認できます。",
-    src: "/screenshots/kobutsu-ledger-system/ledger-system-1.png",
+    src: "/screenshots/kobutsu-ledger-system/ledger-list-redacted.png",
   },
   {
     title: "古物台帳編集",
     description: "SKU、商品名、状態、仕入日、販売日、Order no. などを入力する編集画面です。",
-    src: "/screenshots/kobutsu-ledger-system/ledger-system-2.png",
+    src: "/screenshots/kobutsu-ledger-system/ledger-edit-redacted.png",
   },
   {
     title: "EC販売",
     description: "販売額、Payout、受取金額、最終損益、利益率を行単位で確認・更新できます。",
-    src: "/screenshots/kobutsu-ledger-system/ec-sales.png",
+    src: "/screenshots/kobutsu-ledger-system/ec-sales-redacted.png",
   },
   {
     title: "為替レート",
     description: "ExchangeRate-API の取得状況、手動補完、保存済みレートを管理します。",
-    src: "/screenshots/kobutsu-ledger-system/exchange-rates.png",
+    src: "/screenshots/kobutsu-ledger-system/exchange-rates-redacted.png",
   },
   {
     title: "Shopeeオーダー",
     description: "Shopee orders CSV を取り込み、後続のEC販売・ペイメント照合に使える原票として保存します。",
-    src: "/screenshots/kobutsu-ledger-system/shopee.png",
+    src: "/screenshots/kobutsu-ledger-system/shopee-orders-redacted.png",
   },
 ];
 
@@ -151,27 +151,7 @@ export default function KobutsuLedgerSystemPage() {
             </p>
           </div>
 
-          <div className="mt-10 grid gap-6">
-            {screenshots.map((screenshot) => (
-              <article key={screenshot.src} className="border border-white/15 bg-white/5 p-4">
-                <div className="relative aspect-[1920/946] overflow-hidden border border-white/10 bg-white">
-                  <Image
-                    src={screenshot.src}
-                    alt={`${screenshot.title}のスクリーンショット`}
-                    fill
-                    sizes="(min-width: 1152px) 1152px, 100vw"
-                    className="object-contain"
-                  />
-                </div>
-                <div className="mt-5 flex flex-col justify-between gap-3 sm:flex-row sm:items-start">
-                  <h3 className="text-2xl font-semibold tracking-normal">{screenshot.title}</h3>
-                  <p className="max-w-2xl text-base leading-7 text-zinc-300">
-                    {screenshot.description}
-                  </p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <ScreenshotSlider screenshots={screenshots} />
         </div>
       </section>
 
