@@ -72,22 +72,21 @@ export default function NfcRedirectPage() {
 
           <div className="grid gap-10 pb-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-end">
             <div>
-              <p className="mb-5 inline-flex border border-amber-500/30 bg-amber-50 px-3 py-1 text-sm font-semibold text-amber-700">
-                NFC Profile / Redirect System
+              <p className="mb-5 inline-flex rounded-md border border-amber-500/30 bg-amber-50 px-3 py-1 text-sm font-semibold text-amber-700">
+                Digital card operation
               </p>
               <h1 className="text-5xl font-semibold leading-[1.05] tracking-normal sm:text-7xl">
                 nfc-redirect
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-700">
-                NFCカードやQRコードに焼き込む不変IDを軸に、WordPress の発行台帳、
-                Next.js の同期API、Supabase のプロフィールDBを分離したシステムです。
-                CardCraft と組み合わせて、名刺制作から配布後のリンク先変更まで扱える形を目指しました。
+                CardCraft で作った名刺に NFC / QR を組み込み、配ったあとでもプロフィールや案内先を変えられるようにする仕組みです。
+                WordPress、Next.js、Supabase の役割を分けて、発行から編集までを扱える形にしました。
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="/downloads/nfc-redirect-overview.pptx"
                   download
-                  className="inline-flex h-12 items-center justify-center bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
+                  className="inline-flex h-12 items-center justify-center rounded-md bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
                 >
                   PPTX資料をダウンロード
                 </a>
@@ -95,14 +94,14 @@ export default function NfcRedirectPage() {
                   href="https://github.com/muu-ima/nfc-profile"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center border border-zinc-950/20 bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-50"
+                  className="inline-flex h-12 items-center justify-center rounded-md border border-zinc-950/20 bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-50"
                 >
                   GitHubを見る
                 </a>
               </div>
             </div>
 
-            <div className="border border-zinc-200 bg-zinc-50 p-5">
+            <div className="rounded-md border border-zinc-200 bg-zinc-50 p-5">
               <div className="border-b border-zinc-200 pb-4">
                 <p className="text-sm font-semibold text-zinc-500">System Boundary</p>
                 <p className="mt-2 text-2xl font-semibold">役割を3つに分ける</p>
@@ -113,7 +112,7 @@ export default function NfcRedirectPage() {
                   ["Next.js", "同期処理 / 公開ページ / 編集画面", "bg-zinc-950"],
                   ["Supabase", "プロフィール情報の保存先", "bg-teal-500"],
                 ].map(([label, text, color]) => (
-                  <div key={label} className="grid grid-cols-[9rem_1fr] border border-zinc-200 bg-white">
+                  <div key={label} className="grid grid-cols-[9rem_1fr] overflow-hidden rounded-md border border-zinc-200 bg-white">
                     <div className={`${color} px-4 py-4 text-sm font-semibold text-white`}>
                       {label}
                     </div>
@@ -126,16 +125,16 @@ export default function NfcRedirectPage() {
         </div>
       </section>
 
-      <section className="bg-zinc-950 px-5 py-20 text-white sm:px-8">
+      <section className="bg-[#f7f4ee] px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-normal text-amber-300">
+            <p className="text-sm font-semibold uppercase tracking-normal text-amber-700">
               Product Concept
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="mt-3 text-3xl font-semibold tracking-normal text-zinc-950 sm:text-5xl">
               CardCraft とセットで、配った後も育てられる名刺にする。
             </h2>
-            <p className="mt-6 text-base leading-7 text-zinc-300">
+            <p className="mt-6 text-base leading-7 text-zinc-600">
               名刺デザインを作るだけで終わらせず、NFC / QR に紐づくプロフィールやリンク先を後から変更できる構成を想定しました。印刷して配ったあとでも、案内先を変えられるのがこの仕組みの中心です。
             </p>
             <div className="mt-8">
@@ -143,19 +142,19 @@ export default function NfcRedirectPage() {
                 href="https://muu-cardcraft.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
+                className="inline-flex h-12 items-center justify-center rounded-md bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
               >
                 CardCraftを見る
               </a>
             </div>
           </div>
-          <div className="grid gap-3">
+          <div className="grid gap-4 sm:grid-cols-2">
             {productFlow.map((item, index) => (
-              <div key={item} className="flex gap-4 border-b border-white/15 pb-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center bg-amber-400 text-sm font-semibold text-zinc-950">
+              <div key={item} className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-amber-400 text-sm font-semibold text-zinc-950">
                   {index + 1}
                 </span>
-                <p className="pt-1 text-lg leading-7 text-zinc-100">{item}</p>
+                <p className="mt-5 text-lg leading-7 text-zinc-800">{item}</p>
               </div>
             ))}
           </div>
@@ -174,8 +173,8 @@ export default function NfcRedirectPage() {
           </div>
           <div className="grid gap-3">
             {pluginFeatures.map((feature, index) => (
-              <div key={feature} className="flex gap-4 border-b border-zinc-200 pb-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center bg-amber-400 text-sm font-semibold text-zinc-950">
+              <div key={feature} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-4">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-amber-400 text-sm font-semibold text-zinc-950">
                   {index + 1}
                 </span>
                 <p className="pt-1 text-lg leading-7 text-zinc-800">{feature}</p>
@@ -197,7 +196,7 @@ export default function NfcRedirectPage() {
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             {principles.map((item) => (
-              <article key={item.title} className="border border-zinc-200 bg-white p-5">
+              <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
                 <h3 className="text-2xl font-semibold tracking-normal">{item.title}</h3>
                 <p className="mt-4 text-base leading-7 text-zinc-600">{item.description}</p>
               </article>
@@ -218,8 +217,8 @@ export default function NfcRedirectPage() {
           </div>
           <div className="grid gap-3">
             {flows.map((flow, index) => (
-              <div key={flow} className="flex gap-4 border-b border-zinc-200 pb-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center bg-zinc-950 text-sm font-semibold text-white">
+              <div key={flow} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-4">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-zinc-950 text-sm font-semibold text-white">
                   {index + 1}
                 </span>
                 <p className="pt-1 text-lg leading-7 text-zinc-800">{flow}</p>
@@ -241,7 +240,7 @@ export default function NfcRedirectPage() {
             <a
               href="/downloads/nfc-redirect-overview.pptx"
               download
-              className="inline-flex h-12 shrink-0 items-center justify-center bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
+              className="inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
             >
               資料をダウンロード
             </a>
@@ -264,7 +263,7 @@ export default function NfcRedirectPage() {
           <p className="text-2xl font-semibold">nfc-redirect</p>
           <Link
             href="/#works"
-            className="inline-flex h-12 items-center justify-center bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
+            className="inline-flex h-12 items-center justify-center rounded-md bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
           >
             一覧に戻る
           </Link>

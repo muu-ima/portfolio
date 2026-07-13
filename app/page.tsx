@@ -6,7 +6,7 @@ const works = [
     title: "tools-hub",
     category: "Business Tools",
     description:
-      "海外販売向けの利益計算、送料シミュレーション、為替表示をまとめた業務支援ハブ。UK / US の販売条件や手数料を整理し、日々の判断を速くするためのツール群です。",
+      "海外販売向けの利益計算、送料シミュレーション、為替表示、発送情報管理をまとめた業務支援ハブ。日々の価格判断と発送作業を軽くするためのツール群です。",
     tags: ["Next.js", "Profit Calc", "Shipping"],
     accent: "bg-teal-500",
     href: "/works/tools-hub",
@@ -24,7 +24,7 @@ const works = [
     title: "nfc-redirect",
     category: "NFC Profile",
     description:
-      "NFC / QR に焼き込む不変IDを軸に、WordPress の発行台帳、Next.js API、Supabase のプロフィールDBを分離したリダイレクト・編集システムです。",
+      "CardCraft と組み合わせて使う、NFC / QR 名刺のリンク管理システム。配った後でもプロフィールや案内先を差し替えられます。",
     tags: ["Next.js API", "WordPress", "Supabase"],
     accent: "bg-amber-400",
     href: "/works/nfc-redirect",
@@ -68,20 +68,20 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-6xl items-center px-5 pb-24 pt-28 sm:px-8">
           <div className="max-w-2xl">
-            <p className="mb-5 inline-flex border border-zinc-950/15 bg-white/70 px-3 py-1 text-sm font-medium text-zinc-700 backdrop-blur">
-              Apps / Systems / Websites
+            <p className="mb-5 inline-flex rounded-md border border-zinc-950/15 bg-white/75 px-3 py-1 text-sm font-medium text-zinc-700 backdrop-blur">
+              Apps, systems, and small products
             </p>
             <h1 className="text-5xl font-semibold leading-[1.05] tracking-normal text-zinc-950 sm:text-7xl">
-              作ってきたアプリとシステムを、わかりやすく紹介する場所。
+              作ってきたものを、使い道ごとに見える形へ。
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-zinc-700">
               利益計算ツール、名刺デザインエディタ、NFCプロフィール連携、古物台帳システムまで。
-              実務で使うために作ってきたプロダクトを整理したポートフォリオです。
+              実務で使うために作ってきたプロダクトを、背景と役割が伝わるように整理しています。
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#works"
-                className="inline-flex h-12 items-center justify-center bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
+                className="inline-flex h-12 items-center justify-center rounded-md bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
               >
                 実績を見る
               </a>
@@ -143,7 +143,7 @@ export default function Home() {
                 return (
                   <article
                     key={work.title}
-                    className="group border border-zinc-200 bg-zinc-50 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:bg-white hover:shadow-xl hover:shadow-zinc-950/5"
+                    className="group rounded-md border border-zinc-200 bg-zinc-50 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:bg-white hover:shadow-xl hover:shadow-zinc-950/5"
                   >
                     {cardContent}
                   </article>
@@ -156,7 +156,7 @@ export default function Home() {
                   href={work.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group border border-zinc-200 bg-zinc-50 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:bg-white hover:shadow-xl hover:shadow-zinc-950/5"
+                  className="group rounded-md border border-zinc-200 bg-zinc-50 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:bg-white hover:shadow-xl hover:shadow-zinc-950/5"
                 >
                   {cardContent}
                 </a>
@@ -164,7 +164,7 @@ export default function Home() {
                 <Link
                   key={work.title}
                   href={work.href}
-                  className="group border border-zinc-200 bg-zinc-50 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:bg-white hover:shadow-xl hover:shadow-zinc-950/5"
+                  className="group rounded-md border border-zinc-200 bg-zinc-50 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:bg-white hover:shadow-xl hover:shadow-zinc-950/5"
                 >
                   {cardContent}
                 </Link>
@@ -174,17 +174,17 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-zinc-950 px-5 py-16 text-white sm:px-8">
+      <footer className="bg-zinc-950 px-5 py-14 text-white sm:px-8">
         <div className="mx-auto flex max-w-6xl flex-col justify-between gap-8 sm:flex-row sm:items-center">
           <div>
             <p className="text-sm font-semibold text-teal-300">Portfolio</p>
             <p className="mt-3 text-3xl font-semibold tracking-normal">
-              制作してきたアプリとシステムの記録。
+              実務から生まれた小さなプロダクト集。
             </p>
           </div>
           <a
             href="#works"
-            className="inline-flex h-12 shrink-0 items-center justify-center bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
+            className="inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
           >
             Works
           </a>

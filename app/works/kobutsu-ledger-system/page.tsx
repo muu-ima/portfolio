@@ -85,22 +85,22 @@ export default function KobutsuLedgerSystemPage() {
 
           <div className="grid gap-10 pb-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-end">
             <div>
-              <p className="mb-5 inline-flex border border-slate-300 bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-800">
+              <p className="mb-5 inline-flex rounded-md border border-slate-300 bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-800">
                 Ledger System / Operations Workspace
               </p>
               <h1 className="text-5xl font-semibold leading-[1.05] tracking-normal sm:text-7xl">
                 kobutsu-ledger-system
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-700">
-                古物台帳、仕入れ管理、EC販売、為替、ペイメントをひとつの業務画面で扱うためのシステムです。
-                既存のスプレッドシート運用を尊重しながら、WordPress をバックエンド、Next.js を入力用ワークスペースとして分けています。
+                古物台帳、仕入れ管理、EC販売、為替、ペイメントをひとつの業務画面で扱うための開発中システムです。
+                既存のスプレッドシート運用を残しながら、入力・確認・更新を少しずつWeb上に移しています。
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="https://muu-ledger-system.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
+                  className="inline-flex h-12 items-center justify-center rounded-md bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
                 >
                   アプリを開く
                 </a>
@@ -108,14 +108,14 @@ export default function KobutsuLedgerSystemPage() {
                   href="https://github.com/muu-ima/muu-ledger-system"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center border border-zinc-950/20 bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-50"
+                  className="inline-flex h-12 items-center justify-center rounded-md border border-zinc-950/20 bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-50"
                 >
                   GitHubを見る
                 </a>
               </div>
             </div>
 
-            <div className="border border-zinc-200 bg-zinc-50 p-5">
+            <div className="rounded-md border border-zinc-200 bg-zinc-50 p-5 shadow-sm shadow-zinc-950/5">
               <div className="border-b border-zinc-200 pb-4">
                 <p className="text-sm font-semibold text-zinc-500">Workspace</p>
                 <p className="mt-2 text-2xl font-semibold">業務別の画面構成</p>
@@ -123,7 +123,7 @@ export default function KobutsuLedgerSystemPage() {
               <div className="mt-5 grid gap-3">
                 {["古物台帳", "仕入れ管理", "EC販売", "為替レート", "ペイメント", "Shopeeオーダー"].map(
                   (item, index) => (
-                    <div key={item} className="flex items-center justify-between border border-zinc-200 bg-white p-4">
+                    <div key={item} className="flex items-center justify-between rounded-md border border-zinc-200 bg-white p-4">
                       <span className="text-sm font-semibold text-zinc-700">{item}</span>
                       <span className="text-xs font-medium text-zinc-400">0{index + 1}</span>
                     </div>
@@ -135,7 +135,7 @@ export default function KobutsuLedgerSystemPage() {
         </div>
       </section>
 
-      <section className="bg-zinc-950 px-5 py-20 text-white sm:px-8">
+      <section className="bg-zinc-900 px-5 py-20 text-white sm:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col justify-between gap-6 border-b border-white/15 pb-8 sm:flex-row sm:items-end">
             <div>
@@ -143,11 +143,11 @@ export default function KobutsuLedgerSystemPage() {
                 Screenshots
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-                実際の管理画面
+                触れるところまで作った管理画面
               </h2>
             </div>
             <p className="max-w-md text-base leading-7 text-zinc-300">
-              WordPress 管理画面をベースに、古物台帳、EC販売、為替、CSV取込を同じ業務導線で扱います。
+              WordPress 管理画面をベースに、古物台帳、EC販売、為替、CSV取込を同じ業務導線で扱えるところまで整理しています。
             </p>
           </div>
 
@@ -162,12 +162,12 @@ export default function KobutsuLedgerSystemPage() {
               What It Handles
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              台帳とEC販売のつながりを、業務画面に整理する。
+              台帳とEC販売のつながりを、画面の中で追えるようにする。
             </h2>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             {workspaces.map((item) => (
-              <article key={item.title} className="border border-zinc-200 bg-white p-5">
+              <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
                 <h3 className="text-2xl font-semibold tracking-normal">{item.title}</h3>
                 <p className="mt-4 text-base leading-7 text-zinc-600">{item.description}</p>
               </article>
@@ -183,13 +183,13 @@ export default function KobutsuLedgerSystemPage() {
               Architecture
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              WordPress を業務バックエンドとして使う。
+              WordPress を、業務データの置き場として使う。
             </h2>
           </div>
           <div className="grid gap-3">
             {architecture.map((item, index) => (
-              <div key={item} className="flex gap-4 border-b border-zinc-200 pb-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center bg-zinc-950 text-sm font-semibold text-white">
+              <div key={item} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-4">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-zinc-950 text-sm font-semibold text-white">
                   {index + 1}
                 </span>
                 <p className="pt-1 text-lg leading-7 text-zinc-800">{item}</p>
@@ -225,7 +225,7 @@ export default function KobutsuLedgerSystemPage() {
           <p className="text-2xl font-semibold">kobutsu-ledger-system</p>
           <Link
             href="/#works"
-            className="inline-flex h-12 items-center justify-center bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
+            className="inline-flex h-12 items-center justify-center rounded-md bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
           >
             一覧に戻る
           </Link>

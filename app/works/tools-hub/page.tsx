@@ -61,7 +61,7 @@ export default function ToolsHubPage() {
 
           <div className="grid gap-10 pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <div>
-              <p className="mb-5 inline-flex border border-teal-700/20 bg-teal-50 px-3 py-1 text-sm font-semibold text-teal-800">
+              <p className="mb-5 inline-flex rounded-md border border-teal-700/20 bg-teal-50 px-3 py-1 text-sm font-semibold text-teal-800">
                 Business Tools
               </p>
               <h1 className="text-5xl font-semibold leading-[1.05] tracking-normal sm:text-7xl">
@@ -69,14 +69,14 @@ export default function ToolsHubPage() {
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-700">
                 海外販売向けの利益計算、送料シミュレーション、為替表示、発送情報管理をまとめた業務支援ハブです。
-                UK / US の販売条件や手数料、商品ごとの重量・サイズ・実送料を整理し、毎日の価格判断と発送管理を速くするために作りました。
+                UK / US の販売条件や商品ごとの送料を整理し、毎日の判断を少し軽くするために作りました。
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="https://muu-tools-hub.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center bg-teal-700 px-6 text-sm font-semibold text-white transition hover:bg-teal-800"
+                  className="inline-flex h-12 items-center justify-center rounded-md bg-teal-700 px-6 text-sm font-semibold text-white transition hover:bg-teal-800"
                 >
                   アプリを開く
                 </a>
@@ -84,14 +84,14 @@ export default function ToolsHubPage() {
                   href="https://github.com/muu-ima/muu-tools-hub"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center border border-zinc-950/20 bg-white/80 px-6 text-sm font-semibold text-zinc-950 transition hover:bg-white"
+                  className="inline-flex h-12 items-center justify-center rounded-md border border-zinc-950/20 bg-white/80 px-6 text-sm font-semibold text-zinc-950 transition hover:bg-white"
                 >
                   GitHubを見る
                 </a>
               </div>
             </div>
 
-            <div className="border border-zinc-200 bg-white/88 p-5 shadow-2xl shadow-zinc-950/10 backdrop-blur">
+            <div className="rounded-md border border-zinc-200 bg-white/88 p-5 shadow-2xl shadow-zinc-950/10 backdrop-blur">
               <div className="border-b border-zinc-200 pb-4">
                 <p className="text-sm font-semibold text-zinc-500">Dashboard Preview</p>
                 <p className="mt-2 text-2xl font-semibold">Profit Calculator</p>
@@ -103,7 +103,7 @@ export default function ToolsHubPage() {
                   ["Shipping", "EMS / FedEx", "text-amber-600"],
                   ["Product Meta", "WP Sync", "text-indigo-700"],
                 ].map(([label, value, color]) => (
-                  <div key={label} className="flex items-center justify-between bg-zinc-50 p-4">
+                  <div key={label} className="flex items-center justify-between rounded-md bg-zinc-50 p-4">
                     <span className="text-sm font-medium text-zinc-500">{label}</span>
                     <span className={`text-xl font-semibold ${color}`}>{value}</span>
                   </div>
@@ -126,12 +126,12 @@ export default function ToolsHubPage() {
               Overview
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              複雑な販売計算と発送管理を、毎日使える形にする。
+              面倒な計算と発送管理を、日々の作業に馴染ませる。
             </h2>
           </div>
           <div className="grid gap-5">
             {features.map((feature) => (
-              <article key={feature.title} className="border border-zinc-200 bg-white p-5">
+              <article key={feature.title} className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
                 <h3 className="text-2xl font-semibold tracking-normal">{feature.title}</h3>
                 <p className="mt-4 text-base leading-7 text-zinc-600">{feature.description}</p>
               </article>
@@ -155,14 +155,14 @@ export default function ToolsHubPage() {
               UK版、US版、発送管理を上部ナビから移動しつつ、計算画面では通常計算、逆算ロジック、最安値モードを切り替えられるようにしています。
             </p>
           </div>
-          <figure className="mt-10 border border-zinc-200 bg-zinc-50 p-3">
+          <figure className="mt-10 rounded-md border border-zinc-200 bg-zinc-50 p-3 shadow-sm shadow-zinc-950/5">
             <Image
               src="/screenshots/tools-hub/mode-switcher.png"
               alt="tools-hub のモードチェンジャー画面"
               width={1920}
               height={951}
               sizes="(max-width: 768px) 100vw, 1152px"
-              className="h-auto w-full border border-zinc-200 object-cover"
+              className="h-auto w-full rounded-md border border-zinc-200 object-cover"
             />
             <figcaption className="mt-4 text-sm leading-6 text-zinc-500">
               利益計算の通常・逆算・最安値モードと、発送管理への切り替えを同じハブ上で扱います。
@@ -171,14 +171,14 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="bg-zinc-950 px-5 py-20 text-white sm:px-8">
+      <section className="bg-zinc-900 px-5 py-20 text-white sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-normal text-teal-300">
               Shipping Manager
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              発送情報を商品データとして管理する。
+              発送情報を、商品データとして扱えるようにする。
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -188,7 +188,7 @@ export default function ToolsHubPage() {
               "実重量と容積重量を比較し、送料計算に使う重量を整理",
               "商品一覧、編集フォーム、認証付き入力フォームを Next.js 側で実装",
             ].map((item) => (
-              <div key={item} className="border border-white/15 bg-white/5 p-5">
+              <div key={item} className="rounded-md border border-white/15 bg-white/5 p-5">
                 <p className="text-base leading-7 text-zinc-100">{item}</p>
               </div>
             ))}
@@ -204,7 +204,7 @@ export default function ToolsHubPage() {
                 Entry Form
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-                外部入力用の登録導線も用意。
+                必要な人だけが入力できる導線も用意。
               </h2>
             </div>
             <p className="text-base leading-7 text-zinc-600">
@@ -226,14 +226,14 @@ export default function ToolsHubPage() {
                 alt: "tools-hub の発送情報入力フォーム画面",
               },
             ].map((screenshot) => (
-              <figure key={screenshot.title} className="border border-zinc-200 bg-white p-3">
+              <figure key={screenshot.title} className="rounded-md border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5">
                 <Image
                   src={screenshot.src}
                   alt={screenshot.alt}
                   width={1920}
                   height={946}
                   sizes="(max-width: 1024px) 100vw, 560px"
-                  className="h-auto w-full border border-zinc-200 object-cover"
+                  className="h-auto w-full rounded-md border border-zinc-200 object-cover"
                 />
                 <figcaption className="mt-4">
                   <p className="text-xl font-semibold tracking-normal">{screenshot.title}</p>
@@ -275,7 +275,7 @@ export default function ToolsHubPage() {
           <p className="text-2xl font-semibold">tools-hub</p>
           <Link
             href="/#works"
-            className="inline-flex h-12 items-center justify-center bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
+            className="inline-flex h-12 items-center justify-center rounded-md bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
           >
             一覧に戻る
           </Link>
