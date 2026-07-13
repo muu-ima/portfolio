@@ -45,7 +45,7 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
 
         <div className="mt-5 flex flex-col justify-between gap-5 lg:flex-row lg:items-start">
           <div>
-            <p className="text-sm font-semibold text-teal-300">
+            <p className="text-sm font-semibold text-cyan-200">
               {activeIndex + 1} / {screenshots.length}
             </p>
             <h3 className="mt-2 text-2xl font-semibold tracking-normal">
@@ -90,7 +90,7 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
                 aria-pressed={selected}
                 className={`rounded-md border px-3 py-2 text-left text-sm font-semibold transition ${
                   selected
-                    ? "border-teal-300 bg-teal-300 text-zinc-950"
+                    ? "border-cyan-200 bg-cyan-200 text-zinc-950"
                     : "border-white/20 bg-white/5 text-zinc-300 hover:bg-white/10"
                 }`}
               >

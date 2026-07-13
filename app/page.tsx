@@ -1,5 +1,82 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { ReactNode } from "react";
+
+type WorkIconName = "tools" | "card" | "nfc" | "ledger";
+
+const workIcons: Record<WorkIconName, ReactNode> = {
+  tools: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7">
+      <path
+        d="M4 18h16M6 15l4-4 3 3 5-7"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+      <path
+        d="M18 7h-4m4 0v4"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+    </svg>
+  ),
+  card: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7">
+      <rect
+        x="4"
+        y="6"
+        width="16"
+        height="12"
+        rx="2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M8 10h5M8 14h8"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="2"
+      />
+    </svg>
+  ),
+  nfc: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7">
+      <path
+        d="M7 8a7 7 0 0 1 0 8M11 6a10 10 0 0 1 0 12M15 4a13 13 0 0 1 0 16"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="2"
+      />
+      <circle cx="5" cy="12" r="1.5" fill="currentColor" />
+    </svg>
+  ),
+  ledger: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7">
+      <path
+        d="M6 4h11a1 1 0 0 1 1 1v15H7a2 2 0 0 1-2-2V5a1 1 0 0 1 1-1Z"
+        fill="none"
+        stroke="currentColor"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+      <path
+        d="M8 8h7M8 12h7M8 16h4"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="2"
+      />
+    </svg>
+  ),
+};
 
 const works = [
   {
@@ -8,7 +85,8 @@ const works = [
     description:
       "海外販売向けの利益計算、送料シミュレーション、為替表示、発送情報管理をまとめた業務支援ハブ。日々の価格判断と発送作業を軽くするためのツール群です。",
     tags: ["Next.js", "Profit Calc", "Shipping"],
-    accent: "bg-teal-500",
+    accent: "bg-cyan-500",
+    icon: "tools" as WorkIconName,
     href: "/works/tools-hub",
   },
   {
@@ -17,7 +95,8 @@ const works = [
     description:
       "名刺デザインをブラウザ上で編集できる入稿前プレビュー付きエディタ。テンプレート選択、テキスト・画像編集、レイヤー調整、保存、PNG / JPEG 書き出しまで扱えます。",
     tags: ["Next.js 16", "Editor", "Supabase"],
-    accent: "bg-rose-500",
+    accent: "bg-sky-400",
+    icon: "card" as WorkIconName,
     href: "https://muu-cardcraft.vercel.app/",
   },
   {
@@ -26,7 +105,8 @@ const works = [
     description:
       "CardCraft と組み合わせて使う、NFC / QR 名刺のリンク管理システム。配った後でもプロフィールや案内先を差し替えられます。",
     tags: ["Next.js API", "WordPress", "Supabase"],
-    accent: "bg-amber-400",
+    accent: "bg-blue-500",
+    icon: "nfc" as WorkIconName,
     href: "/works/nfc-redirect",
   },
   {
@@ -35,14 +115,15 @@ const works = [
     description:
       "Next.js と WordPress を組み合わせた古物台帳・EC販売管理システム。仕入れ、販売、支払い、為替、取引先管理をひとつの業務画面にまとめています。",
     tags: ["Next.js", "WordPress", "Docker"],
-    accent: "bg-slate-800",
+    accent: "bg-cyan-900",
+    icon: "ledger" as WorkIconName,
     href: "/works/kobutsu-ledger-system",
   },
 ];
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f7f4ee] text-zinc-950">
+    <main className="min-h-screen bg-[#f3f8fc] text-zinc-950">
       <section className="relative min-h-[92vh] overflow-hidden">
         <Image
           src="/portfolio-hero.png"
@@ -52,8 +133,8 @@ export default function Home() {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(247,244,238,0.96)_0%,rgba(247,244,238,0.84)_36%,rgba(247,244,238,0.28)_68%,rgba(247,244,238,0)_100%)]" />
-        <div className="absolute inset-x-0 top-0 z-10 border-b border-black/10 bg-[#f7f4ee]/72 backdrop-blur">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(243,248,252,0.97)_0%,rgba(243,248,252,0.84)_36%,rgba(243,248,252,0.28)_68%,rgba(243,248,252,0)_100%)]" />
+        <div className="absolute inset-x-0 top-0 z-10 border-b border-sky-950/10 bg-[#f3f8fc]/76 backdrop-blur">
           <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 text-sm font-medium sm:px-8">
             <a href="#" className="text-base font-semibold">
               Portfolio
@@ -81,7 +162,7 @@ export default function Home() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#works"
-                className="inline-flex h-12 items-center justify-center rounded-md bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
+                className="inline-flex h-12 items-center justify-center rounded-md bg-[#082f49] px-6 text-sm font-semibold text-white transition hover:bg-[#0c4a6e]"
               >
                 実績を見る
               </a>
@@ -94,7 +175,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col justify-between gap-6 border-b border-zinc-200 pb-8 sm:flex-row sm:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-teal-700">
+              <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
                 Selected Works
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
@@ -118,7 +199,12 @@ export default function Home() {
                         {work.title}
                       </h3>
                     </div>
-                    <span className={`h-10 w-10 ${work.accent}`} aria-hidden="true" />
+                    <span
+                      className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full ${work.accent} text-white shadow-lg shadow-sky-950/10 ring-8 ring-sky-50 transition group-hover:scale-105`}
+                      aria-hidden="true"
+                    >
+                      {workIcons[work.icon]}
+                    </span>
                   </div>
                   <p className="mt-5 text-base leading-7 text-zinc-600">{work.description}</p>
                   <div className="mt-7 flex flex-wrap gap-2">
@@ -132,7 +218,7 @@ export default function Home() {
                     ))}
                   </div>
                   {work.href ? (
-                    <p className="mt-7 text-sm font-semibold text-teal-700">
+                    <p className="mt-7 text-sm font-semibold text-sky-700">
                       {isExternal ? "サイトを見る" : "詳細を見る"}
                     </p>
                   ) : null}
@@ -174,10 +260,10 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-zinc-950 px-5 py-14 text-white sm:px-8">
+      <footer className="bg-[#082f49] px-5 py-14 text-white sm:px-8">
         <div className="mx-auto flex max-w-6xl flex-col justify-between gap-8 sm:flex-row sm:items-center">
           <div>
-            <p className="text-sm font-semibold text-teal-300">Portfolio</p>
+            <p className="text-sm font-semibold text-cyan-200">Portfolio</p>
             <p className="mt-3 text-3xl font-semibold tracking-normal">
               実務から生まれた小さなプロダクト集。
             </p>

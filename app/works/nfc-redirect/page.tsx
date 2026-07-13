@@ -58,11 +58,11 @@ export const metadata: Metadata = {
 
 export default function NfcRedirectPage() {
   return (
-    <main className="min-h-screen bg-[#f7f4ee] text-zinc-950">
+    <main className="min-h-screen bg-[#f3f8fc] text-zinc-950">
       <section className="border-b border-zinc-200 bg-white px-5 py-8 sm:px-8">
         <div className="mx-auto max-w-6xl">
           <nav className="mb-20 flex items-center justify-between text-sm font-medium">
-            <Link href="/" className="transition hover:text-amber-700">
+            <Link href="/" className="transition hover:text-sky-700">
               Portfolio
             </Link>
             <Link href="/#works" className="text-zinc-600 transition hover:text-zinc-950">
@@ -72,7 +72,7 @@ export default function NfcRedirectPage() {
 
           <div className="grid gap-10 pb-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-end">
             <div>
-              <p className="mb-5 inline-flex rounded-md border border-amber-500/30 bg-amber-50 px-3 py-1 text-sm font-semibold text-amber-700">
+              <p className="mb-5 inline-flex rounded-md border border-sky-500/30 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">
                 Digital card operation
               </p>
               <h1 className="text-5xl font-semibold leading-[1.05] tracking-normal sm:text-7xl">
@@ -86,7 +86,7 @@ export default function NfcRedirectPage() {
                 <a
                   href="/downloads/nfc-redirect-overview.pptx"
                   download
-                  className="inline-flex h-12 items-center justify-center rounded-md bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
+                  className="inline-flex h-12 items-center justify-center rounded-md bg-[#082f49] px-6 text-sm font-semibold text-white transition hover:bg-[#0c4a6e]"
                 >
                   PPTX資料をダウンロード
                 </a>
@@ -108,9 +108,9 @@ export default function NfcRedirectPage() {
               </div>
               <div className="mt-5 grid gap-3">
                 {[
-                  ["WordPress", "カード発行 / 公開・停止 / URL再発行", "bg-amber-400"],
-                  ["Next.js", "同期処理 / 公開ページ / 編集画面", "bg-zinc-950"],
-                  ["Supabase", "プロフィール情報の保存先", "bg-teal-500"],
+                  ["WordPress", "カード発行 / 公開・停止 / URL再発行", "bg-sky-500"],
+                  ["Next.js", "同期処理 / 公開ページ / 編集画面", "bg-cyan-950"],
+                  ["Supabase", "プロフィール情報の保存先", "bg-cyan-500"],
                 ].map(([label, text, color]) => (
                   <div key={label} className="grid grid-cols-[9rem_1fr] overflow-hidden rounded-md border border-zinc-200 bg-white">
                     <div className={`${color} px-4 py-4 text-sm font-semibold text-white`}>
@@ -125,10 +125,10 @@ export default function NfcRedirectPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f4ee] px-5 py-20 sm:px-8">
+      <section className="bg-[#f3f8fc] px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-normal text-amber-700">
+            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Product Concept
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal text-zinc-950 sm:text-5xl">
@@ -142,7 +142,7 @@ export default function NfcRedirectPage() {
                 href="https://muu-cardcraft.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-md bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
+                className="inline-flex h-12 items-center justify-center rounded-md bg-[#082f49] px-6 text-sm font-semibold text-white transition hover:bg-[#0c4a6e]"
               >
                 CardCraftを見る
               </a>
@@ -151,7 +151,7 @@ export default function NfcRedirectPage() {
           <div className="grid gap-4 sm:grid-cols-2">
             {productFlow.map((item, index) => (
               <div key={item} className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-amber-400 text-sm font-semibold text-zinc-950">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-sky-400 text-sm font-semibold text-zinc-950">
                   {index + 1}
                 </span>
                 <p className="mt-5 text-lg leading-7 text-zinc-800">{item}</p>
@@ -164,7 +164,7 @@ export default function NfcRedirectPage() {
       <section className="bg-white px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-normal text-amber-700">
+            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               WordPress Side
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
@@ -174,7 +174,7 @@ export default function NfcRedirectPage() {
           <div className="grid gap-3">
             {pluginFeatures.map((feature, index) => (
               <div key={feature} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-amber-400 text-sm font-semibold text-zinc-950">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-sky-400 text-sm font-semibold text-zinc-950">
                   {index + 1}
                 </span>
                 <p className="pt-1 text-lg leading-7 text-zinc-800">{feature}</p>
@@ -187,7 +187,7 @@ export default function NfcRedirectPage() {
       <section className="px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-normal text-amber-700">
+            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Design Rules
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
@@ -208,7 +208,7 @@ export default function NfcRedirectPage() {
       <section className="bg-white px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-normal text-teal-700">
+            <p className="text-sm font-semibold uppercase tracking-normal text-cyan-700">
               Flow
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal">
@@ -218,7 +218,7 @@ export default function NfcRedirectPage() {
           <div className="grid gap-3">
             {flows.map((flow, index) => (
               <div key={flow} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-zinc-950 text-sm font-semibold text-white">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#082f49] text-sm font-semibold text-white">
                   {index + 1}
                 </span>
                 <p className="pt-1 text-lg leading-7 text-zinc-800">{flow}</p>
@@ -232,7 +232,7 @@ export default function NfcRedirectPage() {
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-300 pb-8 sm:flex-row sm:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-rose-700">
+            <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
                 Stack
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術</h2>
@@ -240,7 +240,7 @@ export default function NfcRedirectPage() {
             <a
               href="/downloads/nfc-redirect-overview.pptx"
               download
-              className="inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
+              className="inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-[#082f49] px-6 text-sm font-semibold text-white transition hover:bg-[#0c4a6e]"
             >
               資料をダウンロード
             </a>
@@ -258,7 +258,7 @@ export default function NfcRedirectPage() {
         </div>
       </section>
 
-      <footer className="bg-zinc-950 px-5 py-12 text-white sm:px-8">
+      <footer className="bg-[#082f49] px-5 py-12 text-white sm:px-8">
         <div className="mx-auto flex max-w-6xl flex-col justify-between gap-6 sm:flex-row sm:items-center">
           <p className="text-2xl font-semibold">nfc-redirect</p>
           <Link

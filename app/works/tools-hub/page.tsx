@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 
 export default function ToolsHubPage() {
   return (
-    <main className="min-h-screen bg-[#f7f4ee] text-zinc-950">
+    <main className="min-h-screen bg-[#f3f8fc] text-zinc-950">
       <section className="relative overflow-hidden border-b border-zinc-200 bg-white">
         <div className="absolute inset-0 opacity-35">
           <Image
@@ -51,7 +51,7 @@ export default function ToolsHubPage() {
 
         <div className="relative mx-auto max-w-6xl px-5 py-8 sm:px-8">
           <nav className="mb-20 flex items-center justify-between text-sm font-medium">
-            <Link href="/" className="transition hover:text-teal-700">
+            <Link href="/" className="transition hover:text-sky-700">
               Portfolio
             </Link>
             <Link href="/#works" className="text-zinc-600 transition hover:text-zinc-950">
@@ -61,7 +61,7 @@ export default function ToolsHubPage() {
 
           <div className="grid gap-10 pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <div>
-              <p className="mb-5 inline-flex rounded-md border border-teal-700/20 bg-teal-50 px-3 py-1 text-sm font-semibold text-teal-800">
+              <p className="mb-5 inline-flex rounded-md border border-sky-700/20 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-800">
                 Business Tools
               </p>
               <h1 className="text-5xl font-semibold leading-[1.05] tracking-normal sm:text-7xl">
@@ -76,7 +76,7 @@ export default function ToolsHubPage() {
                   href="https://muu-tools-hub.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center rounded-md bg-teal-700 px-6 text-sm font-semibold text-white transition hover:bg-teal-800"
+                  className="inline-flex h-12 items-center justify-center rounded-md bg-sky-700 px-6 text-sm font-semibold text-white transition hover:bg-sky-800"
                 >
                   アプリを開く
                 </a>
@@ -98,9 +98,9 @@ export default function ToolsHubPage() {
               </div>
               <div className="grid gap-4 py-5">
                 {[
-                  ["Final Profit", "JPY 18,420", "text-teal-700"],
-                  ["VAT / Tax", "Auto", "text-rose-600"],
-                  ["Shipping", "EMS / FedEx", "text-amber-600"],
+                  ["Final Profit", "JPY 18,420", "text-cyan-700"],
+                  ["VAT / Tax", "Auto", "text-blue-600"],
+                  ["Shipping", "EMS / FedEx", "text-sky-600"],
                   ["Product Meta", "WP Sync", "text-indigo-700"],
                 ].map(([label, value, color]) => (
                   <div key={label} className="flex items-center justify-between rounded-md bg-zinc-50 p-4">
@@ -110,9 +110,9 @@ export default function ToolsHubPage() {
                 ))}
               </div>
               <div className="grid grid-cols-3 gap-2">
-                <div className="h-16 bg-teal-500" />
-                <div className="h-16 bg-rose-500" />
-                <div className="h-16 bg-amber-400" />
+                <div className="h-16 bg-cyan-500" />
+                <div className="h-16 bg-sky-400" />
+                <div className="h-16 bg-blue-500" />
               </div>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function ToolsHubPage() {
       <section className="px-5 py-20 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-normal text-teal-700">
+            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Overview
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
@@ -144,7 +144,7 @@ export default function ToolsHubPage() {
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-8 border-b border-zinc-200 pb-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-rose-700">
+              <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
                 Mode Switcher
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
@@ -171,10 +171,10 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="bg-zinc-900 px-5 py-20 text-white sm:px-8">
+      <section className="bg-[#083344] px-5 py-20 text-white sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-normal text-teal-300">
+            <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
               Shipping Manager
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
@@ -196,11 +196,11 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f4ee] px-5 py-20 sm:px-8">
+      <section className="bg-[#f3f8fc] px-5 py-20 sm:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="grid gap-8 border-b border-zinc-200 pb-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-teal-700">
+              <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
                 Entry Form
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
@@ -251,7 +251,7 @@ export default function ToolsHubPage() {
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-200 pb-8 sm:flex-row sm:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-rose-700">
+              <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
                 Stack
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術</h2>
@@ -270,7 +270,7 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <footer className="bg-zinc-950 px-5 py-12 text-white sm:px-8">
+      <footer className="bg-[#082f49] px-5 py-12 text-white sm:px-8">
         <div className="mx-auto flex max-w-6xl flex-col justify-between gap-6 sm:flex-row sm:items-center">
           <p className="text-2xl font-semibold">tools-hub</p>
           <Link
