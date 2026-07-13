@@ -84,7 +84,7 @@ const works = [
     title: "tools-hub",
     category: "Business Tools",
     description:
-      "海外販売向けの利益計算、送料シミュレーション、為替表示、発送情報管理をまとめた業務支援ハブ。日々の価格判断と発送作業を軽くするためのツール群です。",
+      "海外販売向けの利益計算、送料、為替、発送情報管理をまとめた業務支援ハブです。",
     tags: ["Next.js", "Profit Calc", "Shipping"],
     accent: "bg-cyan-500",
     icon: "tools" as WorkIconName,
@@ -94,7 +94,7 @@ const works = [
     title: "cardcraft",
     category: "Design Editor",
     description:
-      "名刺デザインをブラウザ上で編集できる入稿前プレビュー付きエディタ。テンプレート選択、テキスト・画像編集、レイヤー調整、保存、PNG / JPEG 書き出しまで扱えます。",
+      "名刺デザインをブラウザ上で編集し、保存やPNG / JPEG書き出しまで行えるエディタです。",
     tags: ["Next.js 16", "Editor", "Supabase"],
     accent: "bg-sky-400",
     icon: "card" as WorkIconName,
@@ -104,7 +104,7 @@ const works = [
     title: "nfc-redirect",
     category: "NFC Profile",
     description:
-      "CardCraft と組み合わせて使う、NFC / QR 名刺のリンク管理システム。配った後でもプロフィールや案内先を差し替えられます。",
+      "CardCraft と組み合わせて使う、NFC / QR 名刺のリンク管理システムです。",
     tags: ["Next.js API", "WordPress", "Supabase"],
     accent: "bg-blue-500",
     icon: "nfc" as WorkIconName,
@@ -114,7 +114,7 @@ const works = [
     title: "kobutsu-ledger-system",
     category: "Ledger System",
     description:
-      "Next.js と WordPress を組み合わせた古物台帳・EC販売管理システム。仕入れ、販売、支払い、為替、取引先管理をひとつの業務画面にまとめています。",
+      "古物台帳、仕入れ、EC販売、為替をひとつの業務画面で扱う管理システムです。",
     tags: ["Next.js", "WordPress", "Docker"],
     accent: "bg-cyan-900",
     icon: "ledger" as WorkIconName,
@@ -154,7 +154,7 @@ export default function Home() {
               Apps, systems, and small products
             </p>
             <h1 className="text-5xl font-semibold leading-[1.05] tracking-normal text-zinc-950 sm:text-7xl">
-              作ってきたものを、使い道ごとに見える形へ。
+              作ってきたものを、使い道ごとに見える形で紹介します。
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-8 text-zinc-700">
               利益計算ツール、名刺デザインエディタ、NFCプロフィール連携、古物台帳システムまで。
@@ -180,7 +180,7 @@ export default function Home() {
                 Selected Works
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-                紹介するアプリ
+                紹介しているアプリたちです
               </h2>
             </div>
             <p className="max-w-md text-base leading-7 text-zinc-600">

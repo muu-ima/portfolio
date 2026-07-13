@@ -127,7 +127,7 @@ export default function ToolsHubPage() {
               Overview
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              面倒な計算と発送管理を、日々の作業に馴染ませる。
+              面倒な計算と発送管理を、日々の作業に馴染ませています。
             </h2>
           </div>
           <div className="grid gap-5">
@@ -149,7 +149,7 @@ export default function ToolsHubPage() {
                 Mode Switcher
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-                計算モードを切り替えて使う。
+                計算モードを切り替えて使えるようにしています。
               </h2>
             </div>
             <p className="text-base leading-7 text-zinc-600">
@@ -179,7 +179,7 @@ export default function ToolsHubPage() {
               Shipping Manager
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              発送情報を、商品データとして扱えるようにする。
+              発送情報を、商品データとして扱えるようにしています。
             </h2>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -205,7 +205,7 @@ export default function ToolsHubPage() {
                 Entry Form
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-                必要な人だけが入力できる導線も用意。
+                必要な人だけが入力できる導線も用意しています。
               </h2>
             </div>
             <p className="text-base leading-7 text-zinc-600">
@@ -255,7 +255,7 @@ export default function ToolsHubPage() {
               <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
                 Stack
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術</h2>
+              <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術です</h2>
             </div>
           </div>
           <div className="mt-8 flex flex-wrap gap-2">

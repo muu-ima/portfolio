@@ -144,7 +144,7 @@ export default function KobutsuLedgerSystemPage() {
                 Screenshots
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-                触れるところまで作った管理画面
+                触れるところまで作った管理画面です
               </h2>
             </div>
             <p className="max-w-md text-base leading-7 text-zinc-300">
@@ -163,7 +163,7 @@ export default function KobutsuLedgerSystemPage() {
               What It Handles
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              台帳とEC販売のつながりを、画面の中で追えるようにする。
+              台帳とEC販売のつながりを、画面の中で追えるようにしています。
             </h2>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
@@ -184,7 +184,7 @@ export default function KobutsuLedgerSystemPage() {
               Architecture
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              WordPress を、業務データの置き場として使う。
+              WordPress を、業務データの置き場として使っています。
             </h2>
           </div>
           <div className="grid gap-3">
@@ -206,7 +206,7 @@ export default function KobutsuLedgerSystemPage() {
             <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
               Stack
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術</h2>
+            <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術です</h2>
           </div>
           <div className="mt-8 flex flex-wrap gap-2">
             {stack.map((item) => (

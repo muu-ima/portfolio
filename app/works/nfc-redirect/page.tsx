@@ -133,7 +133,7 @@ export default function NfcRedirectPage() {
               Product Concept
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal text-zinc-950 sm:text-5xl">
-              CardCraft とセットで、配った後も育てられる名刺にする。
+              CardCraft とセットで、配った後も育てられる名刺にしています。
             </h2>
             <p className="mt-6 text-base leading-7 text-zinc-600">
               名刺デザインを作るだけで終わらせず、NFC / QR に紐づくプロフィールやリンク先を後から変更できる構成を想定しました。印刷して配ったあとでも、案内先を変えられるのがこの仕組みの中心です。
@@ -169,7 +169,7 @@ export default function NfcRedirectPage() {
               WordPress Side
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              WordPress 側で、発行と停止を管理する。
+              WordPress 側で、発行と停止を管理しています。
             </h2>
           </div>
           <div className="grid gap-3">
@@ -192,7 +192,7 @@ export default function NfcRedirectPage() {
               Design Rules
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              変えられるものと、変えないものを分ける。
+              変えられるものと、変えないものを分けています。
             </h2>
           </div>
           <div className="grid gap-5 md:grid-cols-2">
@@ -213,7 +213,7 @@ export default function NfcRedirectPage() {
               Flow
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal">
-              発行して、公開して、あとから直せる流れ
+              発行して、公開して、あとから直せる流れにしています
             </h2>
           </div>
           <div className="grid gap-3">
@@ -236,7 +236,7 @@ export default function NfcRedirectPage() {
             <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
                 Stack
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術</h2>
+              <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術です</h2>
             </div>
             <a
               href="/downloads/nfc-redirect-overview.pptx"
