@@ -14,9 +14,14 @@ const features = [
       "目標利益率から必要な売値を逆算。通常計算と同じロジックを使い、売上ベースや最終利益ベースの判断を揃えています。",
   },
   {
-    title: "送料・商品管理の拡張",
+    title: "送料シミュレーション",
     description:
-      "海外発送商品の重量、サイズ、配送方法、実送料を管理する Shipping Manager を同居。WordPress 連携を見据えた構成です。",
+      "実重量と容積重量を比較し、小型包装、FedEx、EMS の送料候補を算出。利益計算と同じ判断材料として使えるようにしています。",
+  },
+  {
+    title: "発送情報管理システム",
+    description:
+      "WordPress Products と連携し、SKU、カテゴリ、重量、サイズ、実送料を検索・編集できる Shipping Manager を実装。商品データ管理、重量計算、配送料ロジックを分離した構成です。",
   },
 ];
 
@@ -63,8 +68,8 @@ export default function ToolsHubPage() {
                 tools-hub
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-700">
-                海外販売向けの利益計算、送料シミュレーション、為替表示をまとめた業務支援ハブです。
-                UK / US の販売条件や手数料を整理し、毎日の価格判断を速くするために作りました。
+                海外販売向けの利益計算、送料シミュレーション、為替表示、発送情報管理をまとめた業務支援ハブです。
+                UK / US の販売条件や手数料、商品ごとの重量・サイズ・実送料を整理し、毎日の価格判断と発送管理を速くするために作りました。
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
@@ -95,7 +100,8 @@ export default function ToolsHubPage() {
                 {[
                   ["Final Profit", "JPY 18,420", "text-teal-700"],
                   ["VAT / Tax", "Auto", "text-rose-600"],
-                  ["Shipping", "EMS / DHL", "text-amber-600"],
+                  ["Shipping", "EMS / FedEx", "text-amber-600"],
+                  ["Product Meta", "WP Sync", "text-indigo-700"],
                 ].map(([label, value, color]) => (
                   <div key={label} className="flex items-center justify-between bg-zinc-50 p-4">
                     <span className="text-sm font-medium text-zinc-500">{label}</span>
@@ -120,7 +126,7 @@ export default function ToolsHubPage() {
               Overview
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              複雑な販売計算を、毎日使える形にする。
+              複雑な販売計算と発送管理を、毎日使える形にする。
             </h2>
           </div>
           <div className="grid gap-5">
@@ -129,6 +135,62 @@ export default function ToolsHubPage() {
                 <h3 className="text-2xl font-semibold tracking-normal">{feature.title}</h3>
                 <p className="mt-4 text-base leading-7 text-zinc-600">{feature.description}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-5 py-20 sm:px-8">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-8 border-b border-zinc-200 pb-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-normal text-rose-700">
+                Mode Switcher
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+                計算モードを切り替えて使う。
+              </h2>
+            </div>
+            <p className="text-base leading-7 text-zinc-600">
+              UK版、US版、発送管理を上部ナビから移動しつつ、計算画面では通常計算、逆算ロジック、最安値モードを切り替えられるようにしています。
+            </p>
+          </div>
+          <figure className="mt-10 border border-zinc-200 bg-zinc-50 p-3">
+            <Image
+              src="/screenshots/tools-hub/mode-switcher.png"
+              alt="tools-hub のモードチェンジャー画面"
+              width={1920}
+              height={951}
+              sizes="(max-width: 768px) 100vw, 1152px"
+              className="h-auto w-full border border-zinc-200 object-cover"
+            />
+            <figcaption className="mt-4 text-sm leading-6 text-zinc-500">
+              利益計算の通常・逆算・最安値モードと、発送管理への切り替えを同じハブ上で扱います。
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section className="bg-zinc-950 px-5 py-20 text-white sm:px-8">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-normal text-teal-300">
+              Shipping Manager
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+              発送情報を商品データとして管理する。
+            </h2>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              "WordPress Products CPT と REST API で商品メタを同期",
+              "SKU、カテゴリ、実送料、実重量、適用重量で検索・絞り込み",
+              "実重量と容積重量を比較し、送料計算に使う重量を整理",
+              "商品一覧、編集フォーム、認証付き入力フォームを Next.js 側で実装",
+            ].map((item) => (
+              <div key={item} className="border border-white/15 bg-white/5 p-5">
+                <p className="text-base leading-7 text-zinc-100">{item}</p>
+              </div>
             ))}
           </div>
         </div>
