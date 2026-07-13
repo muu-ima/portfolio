@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import SiteFooter from "./components/SiteFooter";
 
 type WorkIconName = "tools" | "card" | "nfc" | "ledger";
 
@@ -260,22 +261,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-[#082f49] px-5 py-14 text-white sm:px-8">
-        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-8 sm:flex-row sm:items-center">
-          <div>
-            <p className="text-sm font-semibold text-cyan-200">Portfolio</p>
-            <p className="mt-3 text-3xl font-semibold tracking-normal">
-              実務から生まれた小さなプロダクト集。
-            </p>
-          </div>
-          <a
-            href="#works"
-            className="inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
-          >
-            Works
-          </a>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SiteFooter from "../../components/SiteFooter";
 import ScreenshotSlider from "./ScreenshotSlider";
 
 const workspaces = [
@@ -220,17 +221,7 @@ export default function KobutsuLedgerSystemPage() {
         </div>
       </section>
 
-      <footer className="bg-[#082f49] px-5 py-12 text-white sm:px-8">
-        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-6 sm:flex-row sm:items-center">
-          <p className="text-2xl font-semibold">kobutsu-ledger-system</p>
-          <Link
-            href="/#works"
-            className="inline-flex h-12 items-center justify-center rounded-md bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-200"
-          >
-            一覧に戻る
-          </Link>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }
