@@ -47,7 +47,7 @@ const socialLinks = [
 export default function SiteFooter() {
   return (
     <footer className="bg-[#76a7f4] px-5 py-8 text-white sm:px-8">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 text-center">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-5 text-center">
         <div className="flex items-center justify-center gap-8">
           {socialLinks.map((link) => (
             <a

@@ -74,7 +74,7 @@ export default function KobutsuLedgerSystemPage() {
   return (
     <main className="min-h-screen bg-[#f3f8fc] text-zinc-950">
       <section className="border-b border-zinc-200 bg-white px-5 py-8 sm:px-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <nav className="mb-20 flex items-center justify-between text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
@@ -137,7 +137,7 @@ export default function KobutsuLedgerSystemPage() {
       </section>
 
       <section className="bg-[#083344] px-5 py-20 text-white sm:px-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-6 border-b border-white/15 pb-8 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
@@ -157,7 +157,7 @@ export default function KobutsuLedgerSystemPage() {
       </section>
 
       <section className="px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               What It Handles
@@ -178,7 +178,7 @@ export default function KobutsuLedgerSystemPage() {
       </section>
 
       <section className="bg-white px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-700">
               Architecture
@@ -201,7 +201,7 @@ export default function KobutsuLedgerSystemPage() {
       </section>
 
       <section className="px-5 py-16 sm:px-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <div className="border-b border-zinc-300 pb-8">
             <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
               Stack

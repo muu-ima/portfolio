@@ -61,7 +61,7 @@ export default function NfcRedirectPage() {
   return (
     <main className="min-h-screen bg-[#f3f8fc] text-zinc-950">
       <section className="border-b border-zinc-200 bg-white px-5 py-8 sm:px-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <nav className="mb-20 flex items-center justify-between text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
@@ -127,7 +127,7 @@ export default function NfcRedirectPage() {
       </section>
 
       <section className="bg-[#f3f8fc] px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Product Concept
@@ -163,7 +163,7 @@ export default function NfcRedirectPage() {
       </section>
 
       <section className="bg-white px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               WordPress Side
@@ -186,7 +186,7 @@ export default function NfcRedirectPage() {
       </section>
 
       <section className="px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Design Rules
@@ -207,7 +207,7 @@ export default function NfcRedirectPage() {
       </section>
 
       <section className="bg-white px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1fr]">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1fr]">
           <div>
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-700">
               Flow
@@ -230,7 +230,7 @@ export default function NfcRedirectPage() {
       </section>
 
       <section className="px-5 py-16 sm:px-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-300 pb-8 sm:flex-row sm:items-end">
             <div>
             <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">

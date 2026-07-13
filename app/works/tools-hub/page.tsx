@@ -50,7 +50,7 @@ export default function ToolsHubPage() {
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_48%,rgba(255,255,255,0.62)_100%)]" />
 
-        <div className="relative mx-auto max-w-6xl px-5 py-8 sm:px-8">
+        <div className="relative mx-auto max-w-7xl px-5 py-8 sm:px-8">
           <nav className="mb-20 flex items-center justify-between text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
@@ -121,20 +121,23 @@ export default function ToolsHubPage() {
       </section>
 
       <section className="px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+        <div className="mx-auto max-w-7xl">
           <div>
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Overview
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-normal sm:text-5xl">
               面倒な計算と発送管理を、日々の作業に馴染ませています。
             </h2>
           </div>
-          <div className="grid gap-5">
+          <div className="mt-10 grid gap-3">
             {features.map((feature) => (
-              <article key={feature.title} className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
-                <h3 className="text-2xl font-semibold tracking-normal">{feature.title}</h3>
-                <p className="mt-4 text-base leading-7 text-zinc-600">{feature.description}</p>
+              <article
+                key={feature.title}
+                className="rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5"
+              >
+                <h3 className="text-xl font-semibold tracking-normal">{feature.title}</h3>
+                <p className="mt-3 text-base leading-7 text-zinc-600">{feature.description}</p>
               </article>
             ))}
           </div>
@@ -142,17 +145,17 @@ export default function ToolsHubPage() {
       </section>
 
       <section className="bg-white px-5 py-20 sm:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-8 border-b border-zinc-200 pb-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl border-b border-zinc-200 pb-8">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
                 Mode Switcher
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-                計算モードを切り替えて使えるようにしています。
+                計算モードを切り替えられます。
               </h2>
             </div>
-            <p className="text-base leading-7 text-zinc-600">
+            <p className="mt-6 text-base leading-7 text-zinc-600">
               UK版、US版、発送管理を上部ナビから移動しつつ、計算画面では通常計算、逆算ロジック、最安値モードを切り替えられるようにしています。
             </p>
           </div>
@@ -162,7 +165,7 @@ export default function ToolsHubPage() {
               alt="tools-hub のモードチェンジャー画面"
               width={1920}
               height={951}
-              sizes="(max-width: 768px) 100vw, 1152px"
+              sizes="(max-width: 768px) 100vw, 1280px"
               className="h-auto w-full rounded-md border border-zinc-200 object-cover"
             />
             <figcaption className="mt-4 text-sm leading-6 text-zinc-500">
@@ -173,23 +176,23 @@ export default function ToolsHubPage() {
       </section>
 
       <section className="bg-[#083344] px-5 py-20 text-white sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-          <div>
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-4xl border-b border-white/10 pb-8">
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
               Shipping Manager
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              発送情報を、商品データとして扱えるようにしています。
+              発送情報を商品データとして扱えます。
             </h2>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="mt-10 grid gap-3">
             {[
               "WordPress Products CPT と REST API で商品メタを同期",
               "SKU、カテゴリ、実送料、実重量、適用重量で検索・絞り込み",
               "実重量と容積重量を比較し、送料計算に使う重量を整理",
               "商品一覧、編集フォーム、認証付き入力フォームを Next.js 側で実装",
             ].map((item) => (
-              <div key={item} className="rounded-md border border-white/15 bg-white/5 p-5">
+              <div key={item} className="rounded-md border border-white/15 bg-white/5 p-4 sm:p-5">
                 <p className="text-base leading-7 text-zinc-100">{item}</p>
               </div>
             ))}
@@ -198,17 +201,17 @@ export default function ToolsHubPage() {
       </section>
 
       <section className="bg-[#f3f8fc] px-5 py-20 sm:px-8">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid gap-8 border-b border-zinc-200 pb-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-4xl border-b border-zinc-200 pb-8">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
                 Entry Form
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-                必要な人だけが入力できる導線も用意しています。
+                必要な人だけが入力できる導線です。
               </h2>
             </div>
-            <p className="text-base leading-7 text-zinc-600">
+            <p className="mt-6 text-base leading-7 text-zinc-600">
               発送情報を追加するための認証画面と、新規登録フォームを分けて実装。管理画面に直接入らず、必要な商品メタだけを登録できる流れにしています。
             </p>
           </div>
@@ -249,7 +252,7 @@ export default function ToolsHubPage() {
       </section>
 
       <section className="bg-white px-5 py-16 sm:px-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-200 pb-8 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">

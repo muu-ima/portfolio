@@ -136,7 +136,7 @@ export default function Home() {
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(243,248,252,0.97)_0%,rgba(243,248,252,0.84)_36%,rgba(243,248,252,0.28)_68%,rgba(243,248,252,0)_100%)]" />
         <div className="absolute inset-x-0 top-0 z-10 border-b border-sky-950/10 bg-[#f3f8fc]/76 backdrop-blur">
-          <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 text-sm font-medium sm:px-8">
+          <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 text-sm font-medium sm:px-8">
             <a href="#" className="text-base font-semibold">
               Portfolio
             </a>
@@ -148,7 +148,7 @@ export default function Home() {
           </nav>
         </div>
 
-        <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-6xl items-center px-5 pb-24 pt-28 sm:px-8">
+        <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-7xl items-center px-5 pb-24 pt-28 sm:px-8">
           <div className="max-w-2xl">
             <p className="mb-5 inline-flex rounded-md border border-zinc-950/15 bg-white/75 px-3 py-1 text-sm font-medium text-zinc-700 backdrop-blur">
               Apps, systems, and small products
@@ -173,7 +173,7 @@ export default function Home() {
       </section>
 
       <section id="works" className="bg-white px-5 py-20 sm:px-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-6 border-b border-zinc-200 pb-8 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
