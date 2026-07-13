@@ -31,8 +31,8 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
 
   return (
     <div className="mt-10">
-      <article className="border border-white/15 bg-white/5 p-4">
-        <div className="relative aspect-[1920/946] overflow-hidden border border-white/10 bg-white">
+      <article className="rounded-md border border-white/15 bg-white/5 p-4">
+        <div className="relative aspect-[1920/946] overflow-hidden rounded-md border border-white/10 bg-white">
           <Image
             src={active.src}
             alt={`${active.title}のスクリーンショット`}
@@ -45,7 +45,7 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
 
         <div className="mt-5 flex flex-col justify-between gap-5 lg:flex-row lg:items-start">
           <div>
-            <p className="text-sm font-semibold text-teal-300">
+            <p className="text-sm font-semibold text-cyan-200">
               {activeIndex + 1} / {screenshots.length}
             </p>
             <h3 className="mt-2 text-2xl font-semibold tracking-normal">
@@ -64,7 +64,7 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
             type="button"
             onClick={goToPrevious}
             aria-label="前のスクリーンショット"
-            className="flex h-11 w-11 items-center justify-center border border-white/20 bg-white/10 text-xl font-semibold text-white transition hover:bg-white hover:text-zinc-950"
+            className="flex h-11 w-11 items-center justify-center rounded-md border border-white/20 bg-white/10 text-xl font-semibold text-white transition hover:bg-white hover:text-zinc-950"
           >
             ←
           </button>
@@ -72,7 +72,7 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
             type="button"
             onClick={goToNext}
             aria-label="次のスクリーンショット"
-            className="flex h-11 w-11 items-center justify-center border border-white/20 bg-white/10 text-xl font-semibold text-white transition hover:bg-white hover:text-zinc-950"
+            className="flex h-11 w-11 items-center justify-center rounded-md border border-white/20 bg-white/10 text-xl font-semibold text-white transition hover:bg-white hover:text-zinc-950"
           >
             →
           </button>
@@ -88,9 +88,9 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
                 type="button"
                 onClick={() => setActiveIndex(index)}
                 aria-pressed={selected}
-                className={`border px-3 py-2 text-left text-sm font-semibold transition ${
+                className={`rounded-md border px-3 py-2 text-left text-sm font-semibold transition ${
                   selected
-                    ? "border-teal-300 bg-teal-300 text-zinc-950"
+                    ? "border-cyan-200 bg-cyan-200 text-zinc-950"
                     : "border-white/20 bg-white/5 text-zinc-300 hover:bg-white/10"
                 }`}
               >
