@@ -68,11 +68,12 @@ export default function ToolsHubPage() {
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href="/downloads/tools-hub-overview.pptx"
-                  download
-                  className="inline-flex h-12 items-center justify-center bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
+                  href="https://muu-tools-hub.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 items-center justify-center bg-teal-700 px-6 text-sm font-semibold text-white transition hover:bg-teal-800"
                 >
-                  PPTX資料をダウンロード
+                  アプリを開く
                 </a>
                 <a
                   href="https://github.com/muu-ima/muu-tools-hub"
@@ -142,13 +143,6 @@ export default function ToolsHubPage() {
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術</h2>
             </div>
-            <a
-              href="/downloads/tools-hub-overview.pptx"
-              download
-              className="inline-flex h-12 shrink-0 items-center justify-center bg-zinc-950 px-6 text-sm font-semibold text-white transition hover:bg-zinc-800"
-            >
-              資料をダウンロード
-            </a>
           </div>
           <div className="mt-8 flex flex-wrap gap-2">
             {stack.map((item) => (

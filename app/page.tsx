@@ -18,6 +18,7 @@ const works = [
       "名刺デザインをブラウザ上で編集できる入稿前プレビュー付きエディタ。テンプレート選択、テキスト・画像編集、レイヤー調整、保存、PNG / JPEG 書き出しまで扱えます。",
     tags: ["Next.js 16", "Editor", "Supabase"],
     accent: "bg-rose-500",
+    href: "https://muu-cardcraft.vercel.app/",
   },
   {
     title: "nfc-redirect",
@@ -105,6 +106,7 @@ export default function Home() {
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {works.map((work) => {
+              const isExternal = work.href?.startsWith("http");
               const cardContent = (
                 <>
                   <div className="flex items-start justify-between gap-4">
@@ -128,12 +130,35 @@ export default function Home() {
                     ))}
                   </div>
                   {work.href ? (
-                    <p className="mt-7 text-sm font-semibold text-teal-700">詳細を見る</p>
+                    <p className="mt-7 text-sm font-semibold text-teal-700">
+                      {isExternal ? "サイトを見る" : "詳細を見る"}
+                    </p>
                   ) : null}
                 </>
               );
 
-              return work.href ? (
+              if (!work.href) {
+                return (
+                  <article
+                    key={work.title}
+                    className="group border border-zinc-200 bg-zinc-50 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:bg-white hover:shadow-xl hover:shadow-zinc-950/5"
+                  >
+                    {cardContent}
+                  </article>
+                );
+              }
+
+              return isExternal ? (
+                <a
+                  key={work.title}
+                  href={work.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group border border-zinc-200 bg-zinc-50 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:bg-white hover:shadow-xl hover:shadow-zinc-950/5"
+                >
+                  {cardContent}
+                </a>
+              ) : (
                 <Link
                   key={work.title}
                   href={work.href}
@@ -141,13 +166,6 @@ export default function Home() {
                 >
                   {cardContent}
                 </Link>
-              ) : (
-                <article
-                  key={work.title}
-                  className="group border border-zinc-200 bg-zinc-50 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:bg-white hover:shadow-xl hover:shadow-zinc-950/5"
-                >
-                  {cardContent}
-                </article>
               );
             })}
           </div>
