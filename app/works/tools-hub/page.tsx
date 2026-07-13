@@ -196,6 +196,57 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
+      <section className="bg-[#f7f4ee] px-5 py-20 sm:px-8">
+        <div className="mx-auto max-w-6xl">
+          <div className="grid gap-8 border-b border-zinc-200 pb-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-normal text-teal-700">
+                Entry Form
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+                外部入力用の登録導線も用意。
+              </h2>
+            </div>
+            <p className="text-base leading-7 text-zinc-600">
+              発送情報を追加するための認証画面と、新規登録フォームを分けて実装。管理画面に直接入らず、必要な商品メタだけを登録できる流れにしています。
+            </p>
+          </div>
+          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            {[
+              {
+                title: "発送情報フォーム認証",
+                description: "登録フォームへ入る前に、共有用の認証画面を挟みます。",
+                src: "/screenshots/tools-hub/tools-hub-entry.png",
+                alt: "tools-hub の発送情報フォーム認証画面",
+              },
+              {
+                title: "発送情報入力フォーム",
+                description: "SKU、重量、サイズ、実送料など、発送管理に必要な情報を登録します。",
+                src: "/screenshots/tools-hub/tools-hub-new.png",
+                alt: "tools-hub の発送情報入力フォーム画面",
+              },
+            ].map((screenshot) => (
+              <figure key={screenshot.title} className="border border-zinc-200 bg-white p-3">
+                <Image
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  width={1920}
+                  height={946}
+                  sizes="(max-width: 1024px) 100vw, 560px"
+                  className="h-auto w-full border border-zinc-200 object-cover"
+                />
+                <figcaption className="mt-4">
+                  <p className="text-xl font-semibold tracking-normal">{screenshot.title}</p>
+                  <p className="mt-2 text-sm leading-6 text-zinc-500">
+                    {screenshot.description}
+                  </p>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white px-5 py-16 sm:px-8">
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-200 pb-8 sm:flex-row sm:items-end">
