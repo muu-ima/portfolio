@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
 @import "tailwindcss";
 
 :root {
   --background: #f3f8fc;
   --foreground: #171717;
-  --font-heading: "Hiragino Maru Gothic ProN", "Hiragino Sans",
+  --font-heading: "Marcellus", "Hiragino Maru Gothic ProN", "Hiragino Sans",
     "Yu Gothic", "Meiryo", var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 

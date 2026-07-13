@@ -180,7 +180,7 @@ export default function Home() {
                 Selected Works
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-                紹介しているアプリたちです
+                紹介しているアプリです
               </h2>
             </div>
             <p className="max-w-md text-base leading-7 text-zinc-600">
