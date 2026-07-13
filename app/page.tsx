@@ -27,6 +27,7 @@ const works = [
       "NFC / QR に焼き込む不変IDを軸に、WordPress の発行台帳、Next.js API、Supabase のプロフィールDBを分離したリダイレクト・編集システムです。",
     tags: ["Next.js API", "WordPress", "Supabase"],
     accent: "bg-amber-400",
+    href: "/works/nfc-redirect",
   },
   {
     title: "kobutsu-ledger-system",
