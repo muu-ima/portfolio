@@ -33,9 +33,10 @@ const works = [
     title: "kobutsu-ledger-system",
     category: "Ledger System",
     description:
-      "Next.js、WordPress、Docker で構成した古物台帳システムの雛形。商品台帳API、管理画面、EC販売や仕入れ管理へ拡張しやすい業務基盤です。",
+      "Next.js と WordPress を組み合わせた古物台帳・EC販売管理システム。仕入れ、販売、支払い、為替、取引先管理をひとつの業務画面にまとめています。",
     tags: ["Next.js", "WordPress", "Docker"],
     accent: "bg-slate-800",
+    href: "/works/kobutsu-ledger-system",
   },
 ];
 
