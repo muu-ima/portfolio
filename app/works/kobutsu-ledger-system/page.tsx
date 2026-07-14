@@ -143,12 +143,12 @@ export default function KobutsuLedgerSystemPage() {
               <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
                 Screenshots
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-                触れるところまで作った管理画面です
-              </h2>
+              <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+                管理画面について
+                           </h2>
             </div>
             <p className="max-w-md text-base leading-7 text-zinc-300">
-              WordPress 管理画面をベースに、古物台帳、EC販売、為替、CSV取込を同じ業務導線で扱えるところまで整理しています。
+              古物台帳、EC販売、為替、CSV取込を同じ導線で扱えるように整理しています。
             </p>
           </div>
 
@@ -162,8 +162,8 @@ export default function KobutsuLedgerSystemPage() {
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               What It Handles
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              台帳とEC販売のつながりを、画面の中で追えるようにしています。
+            <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+              台帳とEC販売をつなげています。
             </h2>
           </div>
           <div className="grid gap-3">
@@ -183,8 +183,8 @@ export default function KobutsuLedgerSystemPage() {
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-700">
               Architecture
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              WordPress を、業務データの置き場として使っています。
+            <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+              WordPressをデータの置き場として活用。
             </h2>
           </div>
           <div className="grid gap-3">
