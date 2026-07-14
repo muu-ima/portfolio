@@ -120,7 +120,7 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-8">
+      <section className="px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div>
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
@@ -130,7 +130,7 @@ export default function ToolsHubPage() {
               面倒な計算と発送管理を、日々の作業に馴染ませています。
             </h2>
           </div>
-          <div className="mt-10 grid gap-3">
+          <div className="mt-8 grid gap-3">
             {features.map((feature) => (
               <article
                 key={feature.title}
@@ -144,9 +144,9 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-20 sm:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl border-b border-zinc-200 pb-8">
+      <section className="bg-white px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
                 Mode Switcher
@@ -159,13 +159,13 @@ export default function ToolsHubPage() {
               UK版、US版、発送管理を上部ナビから移動しつつ、計算画面では通常計算、逆算ロジック、最安値モードを切り替えられるようにしています。
             </p>
           </div>
-          <figure className="mt-10 rounded-md border border-zinc-200 bg-zinc-50 p-3 shadow-sm shadow-zinc-950/5">
+          <figure className="rounded-md border border-zinc-200 bg-zinc-50 p-3 shadow-sm shadow-zinc-950/5">
             <Image
               src="/screenshots/tools-hub/mode-switcher.png"
               alt="tools-hub のモードチェンジャー画面"
               width={1920}
               height={951}
-              sizes="(max-width: 768px) 100vw, 1280px"
+              sizes="(max-width: 1024px) 100vw, 800px"
               className="h-auto w-full rounded-md border border-zinc-200 object-cover"
             />
             <figcaption className="mt-4 text-sm leading-6 text-zinc-500">
@@ -175,9 +175,9 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="bg-[#083344] px-5 py-20 text-white sm:px-8">
+      <section className="bg-[#083344] px-5 py-14 text-white sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-4xl border-b border-white/10 pb-8">
+          <div className="max-w-4xl border-b border-white/10 pb-6">
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
               Shipping Manager
             </p>
@@ -185,7 +185,7 @@ export default function ToolsHubPage() {
               発送情報を商品データとして扱えます。
             </h2>
           </div>
-          <div className="mt-10 grid gap-3">
+          <div className="mt-8 grid gap-3 md:grid-cols-2">
             {[
               "WordPress Products CPT と REST API で商品メタを同期",
               "SKU、カテゴリ、実送料、実重量、適用重量で検索・絞り込み",
@@ -200,9 +200,9 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="bg-[#f3f8fc] px-5 py-20 sm:px-8">
+      <section className="bg-[#f3f8fc] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-4xl border-b border-zinc-200 pb-8">
+          <div className="max-w-4xl border-b border-zinc-200 pb-6">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
                 Entry Form
@@ -215,7 +215,7 @@ export default function ToolsHubPage() {
               発送情報を追加するための認証画面と、新規登録フォームを分けて実装。管理画面に直接入らず、必要な商品メタだけを登録できる流れにしています。
             </p>
           </div>
-          <div className="mt-10 grid gap-6 lg:grid-cols-2">
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {[
               {
                 title: "発送情報フォーム認証",
@@ -251,9 +251,9 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-16 sm:px-8">
+      <section className="bg-white px-5 py-12 sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-8 border-b border-zinc-200 pb-8 sm:flex-row sm:items-end">
+          <div className="flex flex-col justify-between gap-8 border-b border-zinc-200 pb-6 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
                 Stack
@@ -261,7 +261,7 @@ export default function ToolsHubPage() {
               <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術です</h2>
             </div>
           </div>
-          <div className="mt-8 flex flex-wrap gap-2">
+          <div className="mt-6 flex flex-wrap gap-2">
             {stack.map((item) => (
               <span
                 key={item}

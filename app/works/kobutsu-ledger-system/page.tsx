@@ -156,9 +156,9 @@ export default function KobutsuLedgerSystemPage() {
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+      <section className="px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               What It Handles
             </p>
@@ -166,20 +166,20 @@ export default function KobutsuLedgerSystemPage() {
               台帳とEC販売のつながりを、画面の中で追えるようにしています。
             </h2>
           </div>
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-3">
             {workspaces.map((item) => (
-              <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
-                <h3 className="text-2xl font-semibold tracking-normal">{item.title}</h3>
-                <p className="mt-4 text-base leading-7 text-zinc-600">{item.description}</p>
+              <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5">
+                <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
+                <p className="mt-3 text-base leading-7 text-zinc-600">{item.description}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+      <section className="bg-white px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-700">
               Architecture
             </p>
@@ -189,18 +189,18 @@ export default function KobutsuLedgerSystemPage() {
           </div>
           <div className="grid gap-3">
             {architecture.map((item, index) => (
-              <div key={item} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-4">
+              <div key={item} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-3 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#082f49] text-sm font-semibold text-white">
                   {index + 1}
                 </span>
-                <p className="pt-1 text-lg leading-7 text-zinc-800">{item}</p>
+                <p className="pt-1 text-base leading-7 text-zinc-800">{item}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8">
+      <section className="px-5 py-12 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="border-b border-zinc-300 pb-8">
             <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">

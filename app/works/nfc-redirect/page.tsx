@@ -126,9 +126,9 @@ export default function NfcRedirectPage() {
         </div>
       </section>
 
-      <section className="bg-[#f3f8fc] px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+      <section className="bg-[#f3f8fc] px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Product Concept
             </p>
@@ -149,22 +149,22 @@ export default function NfcRedirectPage() {
               </a>
             </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-3">
             {productFlow.map((item, index) => (
-              <div key={item} className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
+              <div key={item} className="flex gap-4 rounded-md border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-sky-400 text-sm font-semibold text-zinc-950">
                   {index + 1}
                 </span>
-                <p className="mt-5 text-lg leading-7 text-zinc-800">{item}</p>
+                <p className="pt-1 text-base leading-7 text-zinc-800">{item}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+      <section className="bg-white px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               WordPress Side
             </p>
@@ -174,20 +174,20 @@ export default function NfcRedirectPage() {
           </div>
           <div className="grid gap-3">
             {pluginFeatures.map((feature, index) => (
-              <div key={feature} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-4">
+              <div key={feature} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-3 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-sky-400 text-sm font-semibold text-zinc-950">
                   {index + 1}
                 </span>
-                <p className="pt-1 text-lg leading-7 text-zinc-800">{feature}</p>
+                <p className="pt-1 text-base leading-7 text-zinc-800">{feature}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+      <section className="px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Design Rules
             </p>
@@ -195,41 +195,41 @@ export default function NfcRedirectPage() {
               変えられるものと、変えないものを分けています。
             </h2>
           </div>
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-3">
             {principles.map((item) => (
-              <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
-                <h3 className="text-2xl font-semibold tracking-normal">{item.title}</h3>
-                <p className="mt-4 text-base leading-7 text-zinc-600">{item.description}</p>
+              <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
+                <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
+                <p className="mt-3 text-base leading-7 text-zinc-600">{item.description}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_1fr]">
-          <div>
+      <section className="bg-white px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-700">
               Flow
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal">
-              発行して、公開して、あとから直せる流れにしています
+            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+              発行して、公開して、あとから直せる流れです。
             </h2>
           </div>
           <div className="grid gap-3">
             {flows.map((flow, index) => (
-              <div key={flow} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-4">
+              <div key={flow} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-3 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#082f49] text-sm font-semibold text-white">
                   {index + 1}
                 </span>
-                <p className="pt-1 text-lg leading-7 text-zinc-800">{flow}</p>
+                <p className="pt-1 text-base leading-7 text-zinc-800">{flow}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8">
+      <section className="px-5 py-12 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-300 pb-8 sm:flex-row sm:items-end">
             <div>
