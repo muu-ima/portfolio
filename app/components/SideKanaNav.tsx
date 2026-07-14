@@ -40,7 +40,7 @@ export default function SideKanaNav() {
           aria-label="作品ナビゲーション"
           className="mx-auto flex min-h-screen max-w-7xl items-center justify-end px-10 py-20"
         >
-          <div className="flex items-start gap-8">
+          <div className="flex flex-row-reverse items-start gap-8">
             {navItems.map((item) => (
               <Link
                 key={item.href}
