@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
 
 const principles = [
@@ -60,6 +61,7 @@ export const metadata: Metadata = {
 export default function NfcRedirectPage() {
   return (
     <main className="min-h-screen bg-[#e6e0d6] text-zinc-950">
+      <SideKanaNav />
       <section className="border-b border-zinc-200 bg-[#e6e0d6] px-5 py-8 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <nav className="mb-20 flex items-center justify-between text-sm font-medium">

@@ -36,3 +36,8 @@ h2[class] {
 html {
   scroll-behavior: smooth;
 }
+
+.vertical-rl {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}

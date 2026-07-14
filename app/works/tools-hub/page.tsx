@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
 
 const features = [
@@ -37,6 +38,7 @@ export const metadata: Metadata = {
 export default function ToolsHubPage() {
   return (
     <main className="min-h-screen bg-[#e6e0d6] text-zinc-950">
+      <SideKanaNav />
       <section className="relative overflow-hidden border-b border-zinc-200 bg-[#e6e0d6]">
         <div className="absolute inset-0 opacity-35">
           <Image
