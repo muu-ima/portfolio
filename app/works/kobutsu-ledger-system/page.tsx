@@ -165,6 +165,19 @@ export default function KobutsuLedgerSystemPage() {
             <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
               台帳とEC販売をつなげています。
             </h2>
+            <div className="mt-8 grid max-w-sm gap-2">
+              {[
+                ["台帳", "受入れ・払出し"],
+                ["仕入れ", "原票と梱包"],
+                ["販売", "売上と損益"],
+                ["為替", "レートと支払い"],
+              ].map(([label, text]) => (
+                <div key={label} className="flex items-center justify-between border border-zinc-200 bg-white px-4 py-3 text-sm shadow-sm shadow-zinc-950/5">
+                  <span className="font-semibold text-zinc-900">{label}</span>
+                  <span className="text-zinc-500">{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
           <div className="grid gap-3">
             {workspaces.map((item) => (
@@ -186,6 +199,29 @@ export default function KobutsuLedgerSystemPage() {
             <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
               WordPressをデータの置き場として活用。
             </h2>
+            <div className="mt-8 max-w-sm border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
+              <div className="border border-zinc-200 bg-[#f3f8fc] px-3 py-3 text-center text-sm font-semibold text-zinc-800">
+                WordPress
+              </div>
+              <div className="my-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-sm font-semibold text-zinc-700">
+                <span className="border border-zinc-200 bg-white px-3 py-3 text-center">
+                  Plugin
+                </span>
+                <span className="text-cyan-700">+</span>
+                <span className="border border-zinc-200 bg-white px-3 py-3 text-center">
+                  Table
+                </span>
+              </div>
+              <div className="flex items-center gap-3 text-sm font-semibold text-zinc-700">
+                <span className="flex-1 border border-zinc-200 bg-zinc-50 px-3 py-3 text-center">
+                  REST API
+                </span>
+                <span className="text-cyan-700">→</span>
+                <span className="flex-1 border border-zinc-200 bg-zinc-50 px-3 py-3 text-center">
+                  Next.js
+                </span>
+              </div>
+            </div>
           </div>
           <div className="grid gap-3">
             {architecture.map((item, index) => (

@@ -171,6 +171,20 @@ export default function NfcRedirectPage() {
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
               WordPress 側で、発行と停止を管理しています。
             </h2>
+            <div className="mt-8 max-w-sm border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
+              <div className="border-b border-zinc-200 pb-3">
+                <p className="text-sm font-semibold text-zinc-500">WP Admin</p>
+                <p className="mt-1 text-lg font-semibold text-zinc-900">NFC Redirect</p>
+              </div>
+              <div className="mt-4 grid gap-2">
+                {["発行", "公開", "停止", "URL再発行"].map((item) => (
+                  <div key={item} className="flex items-center justify-between border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm font-semibold text-zinc-700">
+                    <span>{item}</span>
+                    <span className="h-2 w-2 rounded-full bg-sky-400" />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="grid gap-3">
             {pluginFeatures.map((feature, index) => (
@@ -194,6 +208,29 @@ export default function NfcRedirectPage() {
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
               変えられるものと、変えないものを分けています。
             </h2>
+            <div className="mt-8 max-w-sm border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
+              <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-sm font-semibold text-zinc-700">
+                <span className="border border-zinc-200 bg-[#f3f8fc] px-3 py-3 text-center">
+                  code
+                </span>
+                <span className="text-sky-700">→</span>
+                <span className="border border-zinc-200 bg-[#f3f8fc] px-3 py-3 text-center">
+                  profile
+                </span>
+              </div>
+              <div className="mt-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-sm font-semibold text-zinc-700">
+                <span className="border border-zinc-200 bg-white px-3 py-3 text-center">
+                  WordPress
+                </span>
+                <span className="text-sky-700">↔</span>
+                <span className="border border-zinc-200 bg-white px-3 py-3 text-center">
+                  Next.js
+                </span>
+              </div>
+              <p className="mt-4 text-sm leading-6 text-zinc-500">
+                変えない番号を軸に、見せるURLやプロフィールだけを差し替えます。
+              </p>
+            </div>
           </div>
           <div className="grid gap-3">
             {principles.map((item) => (
@@ -213,8 +250,26 @@ export default function NfcRedirectPage() {
               Flow
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              発行して、公開して、あとから直せる流れです。
+              配ったあとも直せます。
             </h2>
+            <div className="mt-8 max-w-sm border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
+              <div className="flex items-center gap-3 text-sm font-semibold text-zinc-700">
+                <span className="flex-1 border border-zinc-200 bg-zinc-50 px-3 py-3 text-center">
+                  NFC / QR
+                </span>
+                <span className="text-cyan-700">→</span>
+                <span className="flex-1 border border-zinc-200 bg-zinc-50 px-3 py-3 text-center">
+                  /n/code
+                </span>
+              </div>
+              <div className="my-3 flex justify-center text-cyan-700">↓</div>
+              <div className="border border-zinc-200 bg-[#f3f8fc] px-3 py-3 text-center text-sm font-semibold text-zinc-700">
+                公開プロフィールへ進む
+              </div>
+              <p className="mt-4 text-sm leading-6 text-zinc-500">
+                停止中は止め、公開中はプロフィールへつなぎます。
+              </p>
+            </div>
           </div>
           <div className="grid gap-3">
             {flows.map((flow, index) => (
