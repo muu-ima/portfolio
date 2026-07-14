@@ -59,8 +59,8 @@ export const metadata: Metadata = {
 
 export default function NfcRedirectPage() {
   return (
-    <main className="min-h-screen bg-[#f3f8fc] text-zinc-950">
-      <section className="border-b border-zinc-200 bg-white px-5 py-8 sm:px-8">
+    <main className="min-h-screen bg-[#e6e0d6] text-zinc-950">
+      <section className="border-b border-zinc-200 bg-[#e6e0d6] px-5 py-8 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <nav className="mb-20 flex items-center justify-between text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
@@ -126,7 +126,7 @@ export default function NfcRedirectPage() {
         </div>
       </section>
 
-      <section className="bg-[#f3f8fc] px-5 py-14 sm:px-8">
+      <section className="bg-[#e6e0d6] px-5 py-14 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
@@ -162,7 +162,7 @@ export default function NfcRedirectPage() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-14 sm:px-8">
+      <section className="bg-[#e6e0d6] px-5 py-14 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
@@ -210,11 +210,11 @@ export default function NfcRedirectPage() {
             </h2>
             <div className="mt-8 max-w-sm border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
               <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-sm font-semibold text-zinc-700">
-                <span className="border border-zinc-200 bg-[#f3f8fc] px-3 py-3 text-center">
+                <span className="border border-zinc-200 bg-[#e6e0d6] px-3 py-3 text-center">
                   code
                 </span>
                 <span className="text-sky-700">→</span>
-                <span className="border border-zinc-200 bg-[#f3f8fc] px-3 py-3 text-center">
+                <span className="border border-zinc-200 bg-[#e6e0d6] px-3 py-3 text-center">
                   profile
                 </span>
               </div>
@@ -243,7 +243,7 @@ export default function NfcRedirectPage() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-14 sm:px-8">
+      <section className="bg-[#e6e0d6] px-5 py-14 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-700">
@@ -263,7 +263,7 @@ export default function NfcRedirectPage() {
                 </span>
               </div>
               <div className="my-3 flex justify-center text-cyan-700">↓</div>
-              <div className="border border-zinc-200 bg-[#f3f8fc] px-3 py-3 text-center text-sm font-semibold text-zinc-700">
+              <div className="border border-zinc-200 bg-[#e6e0d6] px-3 py-3 text-center text-sm font-semibold text-zinc-700">
                 公開プロフィールへ進む
               </div>
               <p className="mt-4 text-sm leading-6 text-zinc-500">
