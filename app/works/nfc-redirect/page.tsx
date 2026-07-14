@@ -61,7 +61,7 @@ export default function NfcRedirectPage() {
   return (
     <main className="min-h-screen bg-[#f3f8fc] text-zinc-950">
       <section className="border-b border-zinc-200 bg-white px-5 py-8 sm:px-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <nav className="mb-20 flex items-center justify-between text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
@@ -126,14 +126,14 @@ export default function NfcRedirectPage() {
         </div>
       </section>
 
-      <section className="bg-[#f3f8fc] px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+      <section className="bg-[#f3f8fc] px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Product Concept
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal text-zinc-950 sm:text-5xl">
-              CardCraft とセットで、配った後も育てられる名刺にする。
+              CardCraft とセットで、配った後も育てられる名刺にしています。
             </h2>
             <p className="mt-6 text-base leading-7 text-zinc-600">
               名刺デザインを作るだけで終わらせず、NFC / QR に紐づくプロフィールやリンク先を後から変更できる構成を想定しました。印刷して配ったあとでも、案内先を変えられるのがこの仕組みの中心です。
@@ -149,94 +149,149 @@ export default function NfcRedirectPage() {
               </a>
             </div>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
+          <div className="grid gap-3">
             {productFlow.map((item, index) => (
-              <div key={item} className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
+              <div key={item} className="flex gap-4 rounded-md border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-sky-400 text-sm font-semibold text-zinc-950">
                   {index + 1}
                 </span>
-                <p className="mt-5 text-lg leading-7 text-zinc-800">{item}</p>
+                <p className="pt-1 text-base leading-7 text-zinc-800">{item}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+      <section className="bg-white px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               WordPress Side
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              WordPress 側で、発行と停止を管理する。
+              WordPress 側で、発行と停止を管理しています。
             </h2>
+            <div className="mt-8 max-w-sm border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
+              <div className="border-b border-zinc-200 pb-3">
+                <p className="text-sm font-semibold text-zinc-500">WP Admin</p>
+                <p className="mt-1 text-lg font-semibold text-zinc-900">NFC Redirect</p>
+              </div>
+              <div className="mt-4 grid gap-2">
+                {["発行", "公開", "停止", "URL再発行"].map((item) => (
+                  <div key={item} className="flex items-center justify-between border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm font-semibold text-zinc-700">
+                    <span>{item}</span>
+                    <span className="h-2 w-2 rounded-full bg-sky-400" />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="grid gap-3">
             {pluginFeatures.map((feature, index) => (
-              <div key={feature} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-4">
+              <div key={feature} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-3 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-sky-400 text-sm font-semibold text-zinc-950">
                   {index + 1}
                 </span>
-                <p className="pt-1 text-lg leading-7 text-zinc-800">{feature}</p>
+                <p className="pt-1 text-base leading-7 text-zinc-800">{feature}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+      <section className="px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Design Rules
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              変えられるものと、変えないものを分ける。
+              変えられるものと、変えないものを分けています。
             </h2>
+            <div className="mt-8 max-w-sm border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
+              <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-sm font-semibold text-zinc-700">
+                <span className="border border-zinc-200 bg-[#f3f8fc] px-3 py-3 text-center">
+                  code
+                </span>
+                <span className="text-sky-700">→</span>
+                <span className="border border-zinc-200 bg-[#f3f8fc] px-3 py-3 text-center">
+                  profile
+                </span>
+              </div>
+              <div className="mt-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-sm font-semibold text-zinc-700">
+                <span className="border border-zinc-200 bg-white px-3 py-3 text-center">
+                  WordPress
+                </span>
+                <span className="text-sky-700">↔</span>
+                <span className="border border-zinc-200 bg-white px-3 py-3 text-center">
+                  Next.js
+                </span>
+              </div>
+              <p className="mt-4 text-sm leading-6 text-zinc-500">
+                変えない番号を軸に、見せるURLやプロフィールだけを差し替えます。
+              </p>
+            </div>
           </div>
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-3">
             {principles.map((item) => (
-              <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
-                <h3 className="text-2xl font-semibold tracking-normal">{item.title}</h3>
-                <p className="mt-4 text-base leading-7 text-zinc-600">{item.description}</p>
+              <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
+                <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
+                <p className="mt-3 text-base leading-7 text-zinc-600">{item.description}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1fr]">
-          <div>
+      <section className="bg-white px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-700">
               Flow
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal">
-              発行して、公開して、あとから直せる流れ
+            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+              配ったあとも直せます。
             </h2>
+            <div className="mt-8 max-w-sm border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
+              <div className="flex items-center gap-3 text-sm font-semibold text-zinc-700">
+                <span className="flex-1 border border-zinc-200 bg-zinc-50 px-3 py-3 text-center">
+                  NFC / QR
+                </span>
+                <span className="text-cyan-700">→</span>
+                <span className="flex-1 border border-zinc-200 bg-zinc-50 px-3 py-3 text-center">
+                  /n/code
+                </span>
+              </div>
+              <div className="my-3 flex justify-center text-cyan-700">↓</div>
+              <div className="border border-zinc-200 bg-[#f3f8fc] px-3 py-3 text-center text-sm font-semibold text-zinc-700">
+                公開プロフィールへ進む
+              </div>
+              <p className="mt-4 text-sm leading-6 text-zinc-500">
+                停止中は止め、公開中はプロフィールへつなぎます。
+              </p>
+            </div>
           </div>
           <div className="grid gap-3">
             {flows.map((flow, index) => (
-              <div key={flow} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-4">
+              <div key={flow} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-3 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#082f49] text-sm font-semibold text-white">
                   {index + 1}
                 </span>
-                <p className="pt-1 text-lg leading-7 text-zinc-800">{flow}</p>
+                <p className="pt-1 text-base leading-7 text-zinc-800">{flow}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8">
-        <div className="mx-auto max-w-6xl">
+      <section className="px-5 py-12 sm:px-8">
+        <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-300 pb-8 sm:flex-row sm:items-end">
             <div>
             <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
                 Stack
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術</h2>
+              <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術です</h2>
             </div>
             <a
               href="/downloads/nfc-redirect-overview.pptx"

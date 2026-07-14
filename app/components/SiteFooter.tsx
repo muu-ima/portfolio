@@ -46,21 +46,27 @@ const socialLinks = [
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-[#76a7f4] px-5 py-8 text-white sm:px-8">
-      <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 text-center">
+    <footer className="border-t border-zinc-200 bg-white px-5 py-10 text-zinc-950 sm:px-8">
+      <div className="mx-auto flex max-w-7xl flex-col items-center gap-7 text-center">
+        <div>
+          <p className="text-xl font-semibold tracking-[0.18em] text-zinc-500">muu-ima</p>
+          <p className="mt-2 text-xs font-medium uppercase tracking-[0.24em] text-zinc-400">
+            Apps and systems
+          </p>
+        </div>
         <div className="flex items-center justify-center gap-8">
           {socialLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               aria-label={link.label}
-              className="text-white transition hover:-translate-y-0.5 hover:text-sky-950"
+              className="text-zinc-950 transition hover:-translate-y-0.5 hover:text-cyan-700"
             >
               {link.icon}
             </a>
           ))}
         </div>
-        <p className="text-sm font-medium text-white/95">
+        <p className="text-sm font-medium text-zinc-500">
           © 2026 muu-ima. All rights reserved.
         </p>
       </div>

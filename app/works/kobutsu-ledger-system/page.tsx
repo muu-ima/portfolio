@@ -74,7 +74,7 @@ export default function KobutsuLedgerSystemPage() {
   return (
     <main className="min-h-screen bg-[#f3f8fc] text-zinc-950">
       <section className="border-b border-zinc-200 bg-white px-5 py-8 sm:px-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <nav className="mb-20 flex items-center justify-between text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
@@ -137,18 +137,18 @@ export default function KobutsuLedgerSystemPage() {
       </section>
 
       <section className="bg-[#083344] px-5 py-20 text-white sm:px-8">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-6 border-b border-white/15 pb-8 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
                 Screenshots
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-                触れるところまで作った管理画面
-              </h2>
+              <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+                管理画面について
+                           </h2>
             </div>
             <p className="max-w-md text-base leading-7 text-zinc-300">
-              WordPress 管理画面をベースに、古物台帳、EC販売、為替、CSV取込を同じ業務導線で扱えるところまで整理しています。
+              古物台帳、EC販売、為替、CSV取込を同じ導線で扱えるように整理しています。
             </p>
           </div>
 
@@ -156,57 +156,93 @@ export default function KobutsuLedgerSystemPage() {
         </div>
       </section>
 
-      <section className="px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+      <section className="px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               What It Handles
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              台帳とEC販売のつながりを、画面の中で追えるようにする。
+            <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+              台帳とEC販売をつなげています。
             </h2>
+            <div className="mt-8 grid max-w-sm gap-2">
+              {[
+                ["台帳", "受入れ・払出し"],
+                ["仕入れ", "原票と梱包"],
+                ["販売", "売上と損益"],
+                ["為替", "レートと支払い"],
+              ].map(([label, text]) => (
+                <div key={label} className="flex items-center justify-between border border-zinc-200 bg-white px-4 py-3 text-sm shadow-sm shadow-zinc-950/5">
+                  <span className="font-semibold text-zinc-900">{label}</span>
+                  <span className="text-zinc-500">{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="grid gap-5 md:grid-cols-2">
+          <div className="grid gap-3">
             {workspaces.map((item) => (
-              <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
-                <h3 className="text-2xl font-semibold tracking-normal">{item.title}</h3>
-                <p className="mt-4 text-base leading-7 text-zinc-600">{item.description}</p>
+              <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5">
+                <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
+                <p className="mt-3 text-base leading-7 text-zinc-600">{item.description}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white px-5 py-20 sm:px-8">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.85fr_1.15fr]">
-          <div>
+      <section className="bg-white px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-700">
               Architecture
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-              WordPress を、業務データの置き場として使う。
+            <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+              WordPressをデータの置き場として活用。
             </h2>
+            <div className="mt-8 max-w-sm border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
+              <div className="border border-zinc-200 bg-[#f3f8fc] px-3 py-3 text-center text-sm font-semibold text-zinc-800">
+                WordPress
+              </div>
+              <div className="my-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-sm font-semibold text-zinc-700">
+                <span className="border border-zinc-200 bg-white px-3 py-3 text-center">
+                  Plugin
+                </span>
+                <span className="text-cyan-700">+</span>
+                <span className="border border-zinc-200 bg-white px-3 py-3 text-center">
+                  Table
+                </span>
+              </div>
+              <div className="flex items-center gap-3 text-sm font-semibold text-zinc-700">
+                <span className="flex-1 border border-zinc-200 bg-zinc-50 px-3 py-3 text-center">
+                  REST API
+                </span>
+                <span className="text-cyan-700">→</span>
+                <span className="flex-1 border border-zinc-200 bg-zinc-50 px-3 py-3 text-center">
+                  Next.js
+                </span>
+              </div>
+            </div>
           </div>
           <div className="grid gap-3">
             {architecture.map((item, index) => (
-              <div key={item} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-4">
+              <div key={item} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-3 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#082f49] text-sm font-semibold text-white">
                   {index + 1}
                 </span>
-                <p className="pt-1 text-lg leading-7 text-zinc-800">{item}</p>
+                <p className="pt-1 text-base leading-7 text-zinc-800">{item}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="px-5 py-16 sm:px-8">
-        <div className="mx-auto max-w-6xl">
+      <section className="px-5 py-12 sm:px-8">
+        <div className="mx-auto max-w-7xl">
           <div className="border-b border-zinc-300 pb-8">
             <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
               Stack
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術</h2>
+            <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術です</h2>
           </div>
           <div className="mt-8 flex flex-wrap gap-2">
             {stack.map((item) => (

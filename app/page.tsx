@@ -84,7 +84,7 @@ const works = [
     title: "tools-hub",
     category: "Business Tools",
     description:
-      "海外販売向けの利益計算、送料シミュレーション、為替表示、発送情報管理をまとめた業務支援ハブ。日々の価格判断と発送作業を軽くするためのツール群です。",
+      "海外販売向けの利益計算、送料、為替、発送情報管理をまとめた業務支援ハブです。",
     tags: ["Next.js", "Profit Calc", "Shipping"],
     accent: "bg-cyan-500",
     icon: "tools" as WorkIconName,
@@ -94,7 +94,7 @@ const works = [
     title: "cardcraft",
     category: "Design Editor",
     description:
-      "名刺デザインをブラウザ上で編集できる入稿前プレビュー付きエディタ。テンプレート選択、テキスト・画像編集、レイヤー調整、保存、PNG / JPEG 書き出しまで扱えます。",
+      "名刺デザインをブラウザ上で編集し、保存やPNG / JPEG書き出しまで行えるエディタです。",
     tags: ["Next.js 16", "Editor", "Supabase"],
     accent: "bg-sky-400",
     icon: "card" as WorkIconName,
@@ -104,7 +104,7 @@ const works = [
     title: "nfc-redirect",
     category: "NFC Profile",
     description:
-      "CardCraft と組み合わせて使う、NFC / QR 名刺のリンク管理システム。配った後でもプロフィールや案内先を差し替えられます。",
+      "CardCraft と組み合わせて使う、NFC / QR 名刺のリンク管理システムです。",
     tags: ["Next.js API", "WordPress", "Supabase"],
     accent: "bg-blue-500",
     icon: "nfc" as WorkIconName,
@@ -114,7 +114,7 @@ const works = [
     title: "kobutsu-ledger-system",
     category: "Ledger System",
     description:
-      "Next.js と WordPress を組み合わせた古物台帳・EC販売管理システム。仕入れ、販売、支払い、為替、取引先管理をひとつの業務画面にまとめています。",
+      "古物台帳、仕入れ、EC販売、為替をひとつの業務画面で扱う管理システムです。",
     tags: ["Next.js", "WordPress", "Docker"],
     accent: "bg-cyan-900",
     icon: "ledger" as WorkIconName,
@@ -124,63 +124,70 @@ const works = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#f3f8fc] text-zinc-950">
-      <section className="relative min-h-[92vh] overflow-hidden">
-        <Image
-          src="/portfolio-hero.png"
-          alt="複数のアプリ画面が並ぶポートフォリオのビジュアル"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-center"
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(243,248,252,0.97)_0%,rgba(243,248,252,0.84)_36%,rgba(243,248,252,0.28)_68%,rgba(243,248,252,0)_100%)]" />
-        <div className="absolute inset-x-0 top-0 z-10 border-b border-sky-950/10 bg-[#f3f8fc]/76 backdrop-blur">
-          <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 text-sm font-medium sm:px-8">
-            <a href="#" className="text-base font-semibold">
-              Portfolio
-            </a>
-            <div className="flex items-center gap-5 text-zinc-700">
-              <a href="#works" className="transition hover:text-zinc-950">
-                Works
-              </a>
-            </div>
-          </nav>
-        </div>
+    <main className="min-h-screen bg-white text-zinc-950">
+      <section className="relative overflow-hidden px-5 pb-20 pt-8 sm:px-8">
+        <nav className="mx-auto flex max-w-7xl items-center justify-between py-6 text-sm font-semibold uppercase tracking-[0.28em] text-zinc-700">
+          <a href="#" className="text-base normal-case tracking-[0.18em] text-zinc-500">
+            Portfolio
+          </a>
+          <a href="#works" className="transition hover:text-cyan-700">
+            Works
+          </a>
+        </nav>
 
-        <div className="relative z-10 mx-auto flex min-h-[92vh] max-w-6xl items-center px-5 pb-24 pt-28 sm:px-8">
-          <div className="max-w-2xl">
-            <p className="mb-5 inline-flex rounded-md border border-zinc-950/15 bg-white/75 px-3 py-1 text-sm font-medium text-zinc-700 backdrop-blur">
-              Apps, systems, and small products
-            </p>
-            <h1 className="text-5xl font-semibold leading-[1.05] tracking-normal text-zinc-950 sm:text-7xl">
-              作ってきたものを、使い道ごとに見える形へ。
-            </h1>
-            <p className="mt-7 max-w-xl text-lg leading-8 text-zinc-700">
-              利益計算ツール、名刺デザインエディタ、NFCプロフィール連携、古物台帳システムまで。
-              実務で使うために作ってきたプロダクトを、背景と役割が伝わるように整理しています。
-            </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#works"
-                className="inline-flex h-12 items-center justify-center rounded-md bg-[#082f49] px-6 text-sm font-semibold text-white transition hover:bg-[#0c4a6e]"
-              >
-                実績を見る
-              </a>
+        <div className="relative mx-auto max-w-7xl pt-6">
+          <div className="relative z-10 mx-auto max-w-5xl overflow-hidden bg-[#d8f2ee]">
+            <div className="relative aspect-[16/9]">
+              <Image
+                src="/portfolio-hero.png"
+                alt="複数のアプリ画面が並ぶポートフォリオのビジュアル"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 1024px"
+                className="object-cover object-center"
+              />
             </div>
+          </div>
+
+          <div className="relative z-20 mx-auto -mt-14 grid max-w-6xl gap-6 lg:grid-cols-[1fr_20rem] lg:items-end">
+            <div className="bg-white/92 p-6 backdrop-blur sm:p-8">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+                Apps, Systems, Tools
+              </p>
+              <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-normal text-zinc-950 sm:text-6xl">
+                作ってきたものを、使い道ごとに紹介します。
+              </h1>
+              <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-700">
+                利益計算ツール、名刺デザインエディタ、NFCプロフィール連携、古物台帳システムまで。実務で使うために作ってきたプロダクトをまとめています。
+              </p>
+            </div>
+            <a
+              href="#works"
+              className="flex min-h-28 items-center justify-between bg-zinc-950 px-6 py-5 text-white transition hover:bg-cyan-950"
+            >
+              <span>
+                <span className="block text-sm font-semibold uppercase tracking-[0.24em] text-cyan-200">
+                  View More
+                </span>
+                <span className="mt-2 block text-lg font-semibold">Selected Works</span>
+              </span>
+              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-cyan-200 text-sm font-semibold">
+                04
+              </span>
+            </a>
           </div>
         </div>
       </section>
 
-      <section id="works" className="bg-white px-5 py-20 sm:px-8">
-        <div className="mx-auto max-w-6xl">
+      <section id="works" className="bg-[#f7f8f8] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-6 border-b border-zinc-200 pb-8 sm:flex-row sm:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
                 Selected Works
               </p>
               <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-                紹介するアプリ
+                紹介しているアプリです
               </h2>
             </div>
             <p className="max-w-md text-base leading-7 text-zinc-600">
@@ -230,7 +237,7 @@ export default function Home() {
                 return (
                   <article
                     key={work.title}
-                    className="group rounded-md border border-zinc-200 bg-zinc-50 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:bg-white hover:shadow-xl hover:shadow-zinc-950/5"
+                    className="group border border-zinc-200 bg-white p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-xl hover:shadow-zinc-950/5"
                   >
                     {cardContent}
                   </article>
@@ -243,7 +250,7 @@ export default function Home() {
                   href={work.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group rounded-md border border-zinc-200 bg-zinc-50 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:bg-white hover:shadow-xl hover:shadow-zinc-950/5"
+                  className="group border border-zinc-200 bg-white p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-xl hover:shadow-zinc-950/5"
                 >
                   {cardContent}
                 </a>
@@ -251,7 +258,7 @@ export default function Home() {
                 <Link
                   key={work.title}
                   href={work.href}
-                  className="group rounded-md border border-zinc-200 bg-zinc-50 p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:bg-white hover:shadow-xl hover:shadow-zinc-950/5"
+                  className="group border border-zinc-200 bg-white p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-xl hover:shadow-zinc-950/5"
                 >
                   {cardContent}
                 </Link>
