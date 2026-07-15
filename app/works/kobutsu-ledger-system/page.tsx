@@ -8,31 +8,31 @@ const workspaces = [
   {
     title: "古物台帳",
     description:
-      "受入れ、払出し、相手方・本人確認をタブで分け、SKU、商品名、仕入先、販売先を検索できる横長テーブルUIです。",
+      "スプレッドシートで追っていた受入れ、払出し、相手方情報を、検索できる台帳画面として整理しています。",
   },
   {
     title: "仕入れ管理",
     description:
-      "仕入れ元データと仕入れ表への反映を同じ操作感で扱います。発送、梱包、原票情報を業務単位で整理します。",
+      "仕入れ元データを原票として保存し、商品・仕入れ・販売へつながる入口にしています。",
   },
   {
     title: "EC販売",
     description:
-      "販売額、送料、手数料、為替、損益を追える集計ビュー。Shopee や決済明細との接続を見据えています。",
+      "販売額、送料、手数料、為替、損益をひとつの流れで確認できるようにしています。",
   },
   {
     title: "為替・ペイメント",
     description:
-      "販売時レート、出金時レート、Payout、手数料明細を分けて扱い、過度に自動計算しない段階的な設計にしています。",
+      "販売時レート、出金時レート、Payout、手数料明細を分けて、後から確認できる形にしています。",
   },
 ];
 
 const architecture = [
+  "スプレッドシートの横長データを、原票・商品・仕入れ・販売に分けて保存",
   "WordPress を台帳データと管理権限のバックエンドとして利用",
   "Next.js を日常入力に使うフロントエンドとして分離",
   "WordPress プラグインに REST API、カスタムテーブル、保存処理を集約",
-  "WordPress テーマは Vercel / Next.js を表示する薄いシェルに限定",
-  "既存の横長スプレッドシート運用に合わせ、カード型ではなく表形式UIを中心に設計",
+  "CSV 原票、Shopee オーダー、ペイメント、為替を補助データとして扱う",
 ];
 
 const stack = ["Next.js 16", "React 19", "TypeScript", "WordPress", "REST API", "Docker", "MySQL"];
@@ -68,7 +68,7 @@ const screenshots = [
 export const metadata: Metadata = {
   title: "kobutsu-ledger-system | Portfolio",
   description:
-    "Next.js と WordPress を組み合わせた古物台帳・EC販売管理システムの紹介ページです。",
+    "スプレッドシート運用をWeb化した、古物台帳・EC販売管理システムの紹介ページです。",
 };
 
 export default function KobutsuLedgerSystemPage() {
@@ -92,8 +92,9 @@ export default function KobutsuLedgerSystemPage() {
                 kobutsu-ledger-system
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-700">
-                古物台帳、仕入れ管理、EC販売、為替、ペイメントをひとつの業務画面で扱うための開発中システムです。
-                既存のスプレッドシート運用を残しながら、入力・確認・更新を少しずつWeb上に移しています。
+                スプレッドシートで管理していた古物台帳、仕入れ、EC販売、為替、ペイメントを、
+                Web上で扱える業務システムとして作り直しています。
+                原票を残しながら、入力・確認・更新の流れを整理しています。
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
@@ -143,11 +144,11 @@ export default function KobutsuLedgerSystemPage() {
                 Screenshots
               </p>
               <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
-                管理画面について
-                           </h2>
+                スプレッドシート運用を画面に移しました。
+              </h2>
             </div>
             <p className="max-w-md text-base leading-7 text-zinc-300">
-              古物台帳、EC販売、為替、CSV取込を同じ導線で扱えるように整理しています。
+              古物台帳、EC販売、為替、CSV取込を、同じ業務導線の中で確認できるようにしています。
             </p>
           </div>
 
@@ -162,7 +163,7 @@ export default function KobutsuLedgerSystemPage() {
               What It Handles
             </p>
             <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
-              台帳とEC販売をつなげています。
+              台帳、仕入れ、販売を分けて扱えます。
             </h2>
             <div className="mt-8 grid max-w-sm gap-2">
               {[
@@ -196,7 +197,7 @@ export default function KobutsuLedgerSystemPage() {
               Architecture
             </p>
             <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
-              WordPressをデータの置き場として活用。
+              原票を残して、必要な画面へ同期します。
             </h2>
             <div className="mt-8 max-w-sm border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
               <div className="border border-zinc-200 bg-[rgb(240,240,240)] px-3 py-3 text-center text-sm font-semibold text-zinc-800">
