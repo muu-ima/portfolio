@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
 import ScreenshotSlider from "./ScreenshotSlider";
 
@@ -72,15 +73,13 @@ export const metadata: Metadata = {
 
 export default function KobutsuLedgerSystemPage() {
   return (
-    <main className="min-h-screen bg-[#f3f8fc] text-zinc-950">
-      <section className="border-b border-zinc-200 bg-white px-5 py-8 sm:px-8">
+    <main className="min-h-screen bg-[rgb(240,240,240)] text-zinc-950">
+      <SideKanaNav />
+      <section className="border-b border-zinc-200 bg-[rgb(240,240,240)] px-5 py-8 sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <nav className="mb-20 flex items-center justify-between text-sm font-medium">
+          <nav className="mb-20 flex items-center text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
-            </Link>
-            <Link href="/#works" className="text-zinc-600 transition hover:text-zinc-950">
-              Works
             </Link>
           </nav>
 
@@ -190,7 +189,7 @@ export default function KobutsuLedgerSystemPage() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-14 sm:px-8">
+      <section className="bg-[rgb(240,240,240)] px-5 py-14 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-700">
@@ -200,7 +199,7 @@ export default function KobutsuLedgerSystemPage() {
               WordPressをデータの置き場として活用。
             </h2>
             <div className="mt-8 max-w-sm border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
-              <div className="border border-zinc-200 bg-[#f3f8fc] px-3 py-3 text-center text-sm font-semibold text-zinc-800">
+              <div className="border border-zinc-200 bg-[rgb(240,240,240)] px-3 py-3 text-center text-sm font-semibold text-zinc-800">
                 WordPress
               </div>
               <div className="my-3 grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-sm font-semibold text-zinc-700">

@@ -46,7 +46,7 @@ const socialLinks = [
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-zinc-200 bg-white px-5 py-10 text-zinc-950 sm:px-8">
+    <footer className="border-t border-zinc-200 bg-[rgb(240,240,240)] px-5 py-10 text-zinc-950 sm:px-8">
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-7 text-center">
         <div>
           <p className="text-xl font-semibold tracking-[0.18em] text-zinc-500">muu-ima</p>

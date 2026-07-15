@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
 
 const features = [
@@ -36,8 +37,9 @@ export const metadata: Metadata = {
 
 export default function ToolsHubPage() {
   return (
-    <main className="min-h-screen bg-[#f3f8fc] text-zinc-950">
-      <section className="relative overflow-hidden border-b border-zinc-200 bg-white">
+    <main className="min-h-screen bg-[rgb(240,240,240)] text-zinc-950">
+      <SideKanaNav />
+      <section className="relative overflow-hidden border-b border-zinc-200 bg-[rgb(240,240,240)]">
         <div className="absolute inset-0 opacity-35">
           <Image
             src="/portfolio-hero.png"
@@ -51,12 +53,9 @@ export default function ToolsHubPage() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_48%,rgba(255,255,255,0.62)_100%)]" />
 
         <div className="relative mx-auto max-w-7xl px-5 py-8 sm:px-8">
-          <nav className="mb-20 flex items-center justify-between text-sm font-medium">
+          <nav className="mb-20 flex items-center text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
-            </Link>
-            <Link href="/#works" className="text-zinc-600 transition hover:text-zinc-950">
-              Works
             </Link>
           </nav>
 
@@ -144,7 +143,7 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-14 sm:px-8">
+      <section className="bg-[rgb(240,240,240)] px-5 py-14 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <div>
@@ -200,7 +199,7 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="bg-[#f3f8fc] px-5 py-14 sm:px-8">
+      <section className="bg-[rgb(240,240,240)] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-4xl border-b border-zinc-200 pb-6">
             <div>
@@ -236,6 +235,7 @@ export default function ToolsHubPage() {
                   alt={screenshot.alt}
                   width={1920}
                   height={946}
+                  loading={screenshot.src.endsWith("tools-hub-entry.png") ? "eager" : "lazy"}
                   sizes="(max-width: 1024px) 100vw, 560px"
                   className="h-auto w-full rounded-md border border-zinc-200 object-cover"
                 />
@@ -251,7 +251,7 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-12 sm:px-8">
+      <section className="bg-[rgb(240,240,240)] px-5 py-12 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-200 pb-6 sm:flex-row sm:items-end">
             <div>

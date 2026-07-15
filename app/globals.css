@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f3f8fc;
+  --background: rgb(240,240,240);
   --foreground: #171717;
   --font-rounded: "Zen Maru Gothic", "Hiragino Maru Gothic ProN",
     "Hiragino Sans", "Yu Gothic", "Meiryo", Arial, Helvetica, sans-serif;
@@ -35,4 +35,9 @@ h2[class] {
 
 html {
   scroll-behavior: smooth;
+}
+
+.vertical-rl {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
 }
