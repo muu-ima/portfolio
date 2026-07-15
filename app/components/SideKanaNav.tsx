@@ -32,15 +32,31 @@ export default function SideKanaNav() {
       </button>
 
       <div
-        className={`fixed inset-0 z-40 bg-[#e6e0d6]/95 transition duration-300 ${
+        className={`fixed inset-0 z-40 bg-[rgb(240,240,240)]/95 transition duration-300 ${
           isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
         <nav
           aria-label="作品ナビゲーション"
-          className="mx-auto flex min-h-screen max-w-7xl items-center justify-end px-10 py-20"
+          className="mx-auto grid min-h-screen max-w-7xl gap-12 px-10 py-20 lg:grid-cols-[0.8fr_1.2fr] lg:items-center"
         >
-          <div className="grid gap-5 text-right">
+          <div className="max-w-sm self-end lg:self-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-800">
+              Portfolio
+            </p>
+            <p className="mt-6 text-4xl font-semibold tracking-normal text-zinc-900 sm:text-6xl">
+              muu-ima
+            </p>
+            <p className="mt-5 text-base leading-7 text-zinc-600">
+              実務の中で作ってきたアプリ、管理画面、ツールをまとめています。
+            </p>
+            <div className="mt-10 grid gap-3 border-t border-zinc-300 pt-6 text-sm font-medium text-zinc-500">
+              <span>Apps and systems</span>
+              <span>Next.js / WordPress / Supabase</span>
+            </div>
+          </div>
+
+          <div className="grid gap-5 text-right lg:justify-self-end">
             {navItems.map((item) => (
               <Link
                 key={item.href}
