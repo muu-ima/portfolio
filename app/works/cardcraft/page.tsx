@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
@@ -40,6 +41,27 @@ const hardParts = [
 ];
 
 const stack = ["Next.js 16", "React 19", "TypeScript", "Supabase", "Canvas", "PNG / JPEG Export"];
+
+const screenshots = [
+  {
+    title: "デスクトップ編集画面",
+    description:
+      "キャンバス、左側パネル、上部ツールバーを同時に見ながら、文字や配置を調整できます。",
+    src: "/screenshots/cardcraft/desktop-editor.png",
+    alt: "CardCraft のデスクトップ編集画面",
+    width: 1920,
+    height: 946,
+  },
+  {
+    title: "モバイル編集画面",
+    description:
+      "狭い画面でもプレビューと編集パネルを行き来しながら、入稿前の調整を進められます。",
+    src: "/screenshots/cardcraft/mobile-editor.png",
+    alt: "CardCraft のモバイル編集画面",
+    width: 1287,
+    height: 946,
+  },
+];
 
 export const metadata: Metadata = {
   title: "cardcraft | Portfolio",
@@ -107,18 +129,17 @@ export default function CardCraftPage() {
                   saved
                 </span>
               </div>
-              <div className="mt-5 rounded-md bg-cyan-50 p-4">
-                <div className="relative mx-auto aspect-[1.7/1] max-w-md overflow-hidden rounded-md border border-slate-500 bg-slate-200">
-                  <div className="absolute inset-y-8 left-10 w-24 bg-white/60" />
-                  <div className="absolute bottom-6 left-12 h-28 w-20 rounded-t-full bg-zinc-950" />
-                  <div className="absolute bottom-20 left-20 h-24 w-28 rounded-full border border-slate-500 bg-white" />
-                  <div className="absolute right-14 top-12 text-right">
-                    <p className="text-sm font-semibold text-zinc-700">Designer</p>
-                    <p className="mt-3 text-3xl font-semibold text-zinc-950">cardcraft</p>
-                  </div>
-                  <div className="absolute bottom-12 right-14 h-2 w-28 rounded-full bg-sky-300" />
-                </div>
-              </div>
+              <figure className="mt-5 overflow-hidden rounded-md border border-zinc-200 bg-zinc-50">
+                <Image
+                  src="/screenshots/cardcraft/desktop-editor.png"
+                  alt="CardCraft の編集画面プレビュー"
+                  width={1920}
+                  height={946}
+                  loading="eager"
+                  sizes="(max-width: 1024px) 100vw, 560px"
+                  className="h-auto w-full object-cover"
+                />
+              </figure>
               <div className="mt-4 grid grid-cols-2 gap-3">
                 {[
                   ["DESIGN ID", "saved-preview"],
@@ -156,6 +177,45 @@ export default function CardCraftPage() {
                 <h3 className="text-xl font-semibold tracking-normal">{feature.title}</h3>
                 <p className="mt-3 text-base leading-7 text-zinc-600">{feature.description}</p>
               </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-14 sm:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-4xl border-b border-zinc-200 pb-6">
+            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+              Editor Screenshots
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+              実際の編集画面です。
+            </h2>
+            <p className="mt-6 text-base leading-7 text-zinc-600">
+              PCでもモバイルでも、キャンバスを見ながら文字、背景、画像、レイヤーを調整できるようにしています。
+            </p>
+          </div>
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
+            {screenshots.map((screenshot) => (
+              <figure
+                key={screenshot.title}
+                className="rounded-md border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5"
+              >
+                <Image
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  width={screenshot.width}
+                  height={screenshot.height}
+                  sizes="(max-width: 1024px) 100vw, 600px"
+                  className="h-auto w-full rounded-md border border-zinc-200 object-cover"
+                />
+                <figcaption className="mt-4">
+                  <p className="text-xl font-semibold tracking-normal">{screenshot.title}</p>
+                  <p className="mt-2 text-sm leading-6 text-zinc-500">
+                    {screenshot.description}
+                  </p>
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>
