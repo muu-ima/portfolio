@@ -23,7 +23,7 @@ const editorFeatures = [
   {
     title: "デザイン保存",
     description:
-      "入稿前確認のタイミングで保存し、あとから調整を続けられる流れを用意しています。",
+      "ローカルストレージに編集中の状態を保存し、作業を切り上げてもあとから再開できます。",
   },
 ];
 
@@ -37,6 +37,7 @@ const buildPoints = [
 const hardParts = [
   "編集画面の自由度と、入稿データとして破綻しない制約のバランス",
   "テキスト、画像、背景、前後関係を触ってもレイアウトが崩れにくい状態管理",
+  "ローカル保存した編集状態を、次に開いたときも自然に復元できるようにすること",
   "表裏確認、保存、書き出しまでをひとつの体験としてつなげること",
 ];
 
@@ -143,9 +144,9 @@ export default function CardCraftPage() {
               <div className="mt-4 grid grid-cols-2 gap-3">
                 {[
                   ["DESIGN ID", "saved-preview"],
+                  ["LOCAL SAVE", "resume draft"],
                   ["EXPORT", "PNG / JPEG"],
                   ["LAYERS", "text / image"],
-                  ["STATUS", "submit ready"],
                 ].map(([label, value]) => (
                   <div key={label} className="rounded-md border border-cyan-200 bg-cyan-50 px-3 py-3">
                     <p className="text-xs font-semibold text-cyan-700">{label}</p>
