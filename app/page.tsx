@@ -99,7 +99,7 @@ const works = [
     tags: ["Next.js 16", "Editor", "Supabase"],
     accent: "bg-sky-400",
     icon: "card" as WorkIconName,
-    href: "https://muu-cardcraft.vercel.app/",
+    href: "/works/cardcraft",
   },
   {
     title: "nfc-redirect",
