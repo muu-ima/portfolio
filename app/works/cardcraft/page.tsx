@@ -8,7 +8,7 @@ const editorFeatures = [
   {
     title: "表裏プレビュー",
     description:
-      "オモテ面とウラ面を並べて確認しながら、入稿前の見え方を調整できます。",
+      "オモテ面とウラ面を何度でも確認しながら、デザインを調整できます。",
   },
   {
     title: "レイヤー編集",
@@ -56,7 +56,7 @@ const screenshots = [
   {
     title: "モバイル編集画面",
     description:
-      "狭い画面でもプレビューと編集パネルを行き来しながら、入稿前の調整を進められます。",
+      "狭い画面でもプレビューと編集パネルを行き来しながら、細かな調整を進められます。",
     src: "/screenshots/cardcraft/mobile-editor.png",
     alt: "CardCraft のモバイル編集画面",
     width: 1287,
@@ -124,7 +124,7 @@ export default function CardCraftPage() {
               <div className="flex items-center justify-between border-b border-zinc-200 pb-4">
                 <div>
                   <p className="text-sm font-semibold text-zinc-500">Editor Preview</p>
-                  <p className="mt-2 text-2xl font-semibold">入稿前の確認</p>
+                  <p className="mt-2 text-2xl font-semibold">何度でもプレビュー</p>
                 </div>
                 <span className="rounded-full bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700">
                   saved
