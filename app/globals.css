@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #e6e0d6;
+  --background: rgb(240,240,240);
   --foreground: #171717;
   --font-rounded: "Zen Maru Gothic", "Hiragino Maru Gothic ProN",
     "Hiragino Sans", "Yu Gothic", "Meiryo", Arial, Helvetica, sans-serif;

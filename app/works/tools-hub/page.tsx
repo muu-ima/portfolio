@@ -37,9 +37,9 @@ export const metadata: Metadata = {
 
 export default function ToolsHubPage() {
   return (
-    <main className="min-h-screen bg-[#e6e0d6] text-zinc-950">
+    <main className="min-h-screen bg-[rgb(240,240,240)] text-zinc-950">
       <SideKanaNav />
-      <section className="relative overflow-hidden border-b border-zinc-200 bg-[#e6e0d6]">
+      <section className="relative overflow-hidden border-b border-zinc-200 bg-[rgb(240,240,240)]">
         <div className="absolute inset-0 opacity-35">
           <Image
             src="/portfolio-hero.png"
@@ -143,7 +143,7 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="bg-[#e6e0d6] px-5 py-14 sm:px-8">
+      <section className="bg-[rgb(240,240,240)] px-5 py-14 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <div>
@@ -199,7 +199,7 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="bg-[#e6e0d6] px-5 py-14 sm:px-8">
+      <section className="bg-[rgb(240,240,240)] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-4xl border-b border-zinc-200 pb-6">
             <div>
@@ -251,7 +251,7 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="bg-[#e6e0d6] px-5 py-12 sm:px-8">
+      <section className="bg-[rgb(240,240,240)] px-5 py-12 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-200 pb-6 sm:flex-row sm:items-end">
             <div>

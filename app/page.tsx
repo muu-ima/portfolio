@@ -125,7 +125,7 @@ const works = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#e6e0d6] text-zinc-950">
+    <main className="min-h-screen bg-[rgb(240,240,240)] text-zinc-950">
       <SideKanaNav />
       <section className="relative overflow-hidden px-5 pb-20 pt-8 sm:px-8">
         <nav className="mx-auto flex max-w-7xl items-center py-6 text-sm font-semibold uppercase tracking-[0.28em] text-zinc-700">
@@ -178,7 +178,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="works" className="bg-[#e6e0d6] px-5 py-16 sm:px-8">
+      <section id="works" className="bg-[rgb(240,240,240)] px-5 py-16 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-6 border-b border-zinc-200 pb-8 sm:flex-row sm:items-end">
             <div>
