@@ -53,12 +53,9 @@ export default function ToolsHubPage() {
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_48%,rgba(255,255,255,0.62)_100%)]" />
 
         <div className="relative mx-auto max-w-7xl px-5 py-8 sm:px-8">
-          <nav className="mb-20 flex items-center justify-between text-sm font-medium">
+          <nav className="mb-20 flex items-center text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
-            </Link>
-            <Link href="/#works" className="text-zinc-600 transition hover:text-zinc-950">
-              Works
             </Link>
           </nav>
 
@@ -238,6 +235,7 @@ export default function ToolsHubPage() {
                   alt={screenshot.alt}
                   width={1920}
                   height={946}
+                  loading={screenshot.src.endsWith("tools-hub-entry.png") ? "eager" : "lazy"}
                   sizes="(max-width: 1024px) 100vw, 560px"
                   className="h-auto w-full rounded-md border border-zinc-200 object-cover"
                 />

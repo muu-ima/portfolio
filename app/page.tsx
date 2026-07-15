@@ -128,12 +128,9 @@ export default function Home() {
     <main className="min-h-screen bg-[#e6e0d6] text-zinc-950">
       <SideKanaNav />
       <section className="relative overflow-hidden px-5 pb-20 pt-8 sm:px-8">
-        <nav className="mx-auto flex max-w-7xl items-center justify-between py-6 text-sm font-semibold uppercase tracking-[0.28em] text-zinc-700">
+        <nav className="mx-auto flex max-w-7xl items-center py-6 text-sm font-semibold uppercase tracking-[0.28em] text-zinc-700">
           <a href="#" className="text-base normal-case tracking-[0.18em] text-zinc-500">
             Portfolio
-          </a>
-          <a href="#works" className="transition hover:text-cyan-700">
-            Works
           </a>
         </nav>
 

@@ -64,12 +64,9 @@ export default function NfcRedirectPage() {
       <SideKanaNav />
       <section className="border-b border-zinc-200 bg-[#e6e0d6] px-5 py-8 sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <nav className="mb-20 flex items-center justify-between text-sm font-medium">
+          <nav className="mb-20 flex items-center text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
-            </Link>
-            <Link href="/#works" className="text-zinc-600 transition hover:text-zinc-950">
-              Works
             </Link>
           </nav>
 

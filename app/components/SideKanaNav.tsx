@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navItems = [
-  { kana: "わーくす", slug: "works", href: "/#works" },
-  { kana: "つぅるはぶ", slug: "tools-hub", href: "/works/tools-hub" },
-  { kana: "えぬえふしー", slug: "nfc-redirect", href: "/works/nfc-redirect" },
-  { kana: "れじゃー", slug: "ledger-system", href: "/works/kobutsu-ledger-system" },
+  { label: "Works", href: "/#works" },
+  { label: "tools-hub", href: "/works/tools-hub" },
+  { label: "nfc-redirect", href: "/works/nfc-redirect" },
+  { label: "ledger-system", href: "/works/kobutsu-ledger-system" },
 ];
 
 export default function SideKanaNav() {
@@ -40,20 +40,15 @@ export default function SideKanaNav() {
           aria-label="作品ナビゲーション"
           className="mx-auto flex min-h-screen max-w-7xl items-center justify-end px-10 py-20"
         >
-          <div className="flex flex-row-reverse items-start gap-8">
+          <div className="grid gap-5 text-right">
             {navItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="group flex items-start gap-2 text-zinc-700 transition hover:text-cyan-800"
+                className="text-4xl font-semibold tracking-[0.08em] text-zinc-700 transition hover:text-cyan-800 sm:text-6xl"
               >
-                <span className="vertical-rl text-2xl font-semibold tracking-[0.2em]">
-                  {item.kana}
-                </span>
-                <span className="vertical-rl text-xs font-medium uppercase tracking-[0.18em] text-zinc-500 transition group-hover:text-cyan-700">
-                  {item.slug}
-                </span>
+                {item.label}
               </Link>
             ))}
           </div>
