@@ -71,6 +71,16 @@ Next.js 側は、プロフィール作成、編集、公開ページ表示を担
 - WordPress、Next.js、Supabase の責務を分けること
 - 管理画面では運用しやすく、表側ではシンプルな URL に見せること
 
+## Good Points
+
+- 配布済みの NFC / QR カードを無駄にせず、後から案内先を更新できる
+- code と slug を分けており、変えない軸と見せる URL を整理できている
+- WordPress 側で発行、停止、再発行を扱えるため、運用担当者が管理しやすい
+- active / disabled の状態をリダイレクト挙動に反映できている
+- 編集 URL と公開 URL を分け、公開ページと管理導線を混ぜない設計になっている
+- Next.js と Supabase を使い、プロフィール編集と保存を WordPress 本体から分離している
+- CardCraft と組み合わせることで、物理カードと Web プロフィールをつなぐ商品構想になっている
+
 ## Relationship With CardCraft
 
 CardCraft が「名刺のデザインと入稿データ」を作る場所で、nfc-redirect が「配った後のリンク先」を管理する場所です。
