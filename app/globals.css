@@ -37,26 +37,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.work-page {
-  position: relative;
-}
-
-.work-page::before {
-  content: "";
-  position: fixed;
-  inset-block: 0;
-  left: max(1.25rem, calc((100vw - 80rem) / 2));
-  right: max(1.25rem, calc((100vw - 80rem) / 2));
-  z-index: 1;
-  pointer-events: none;
-  border-inline: 1px solid rgba(24, 24, 27, 0.08);
-}
-
-.work-page > * {
-  position: relative;
-  z-index: 2;
-}
-
 .vertical-rl {
   writing-mode: vertical-rl;
   text-orientation: mixed;
