@@ -159,7 +159,7 @@ export default function CardCraftPage() {
         </div>
       </section>
 
-      <section className="px-5 py-14 sm:px-8">
+      <section className="border-b border-zinc-200 px-5 py-14 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
@@ -183,7 +183,7 @@ export default function CardCraftPage() {
         </div>
       </section>
 
-      <section className="px-5 py-14 sm:px-8">
+      <section className="border-b border-zinc-200 px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-4xl border-b border-zinc-200 pb-6">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
@@ -222,7 +222,7 @@ export default function CardCraftPage() {
         </div>
       </section>
 
-      <section className="bg-[#083344] px-5 py-14 text-white sm:px-8">
+      <section className="border-y border-white/10 bg-[#083344] px-5 py-14 text-white sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-4xl border-b border-white/10 pb-6">
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
@@ -248,7 +248,7 @@ export default function CardCraftPage() {
         </div>
       </section>
 
-      <section className="px-5 py-14 sm:px-8">
+      <section className="border-b border-zinc-200 px-5 py-14 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
@@ -271,7 +271,7 @@ export default function CardCraftPage() {
         </div>
       </section>
 
-      <section className="bg-[rgb(240,240,240)] px-5 py-12 sm:px-8">
+      <section className="border-b border-zinc-200 bg-[rgb(240,240,240)] px-5 py-12 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-300 pb-8 sm:flex-row sm:items-end">
             <div>
