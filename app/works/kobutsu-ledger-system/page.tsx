@@ -81,6 +81,29 @@ const outcomes = [
   },
 ];
 
+const dataFlow = [
+  {
+    title: "仕入れ元データ",
+    description:
+      "日々の入力は原票として保存し、後から参照できる入口にします。",
+  },
+  {
+    title: "商品・仕入れへ同期",
+    description:
+      "SKU、商品名、仕入日、仕入先を台帳側で使える形に分けます。",
+  },
+  {
+    title: "販売・精算へ接続",
+    description:
+      "販売額、送料、手数料、為替、Payout を同じ販売の流れに結びます。",
+  },
+  {
+    title: "CSV原票で補完",
+    description:
+      "Shopee オーダーやペイメントは、確定前の確認材料として残します。",
+  },
+];
+
 const screenshots = [
   {
     title: "古物台帳一覧",
@@ -295,6 +318,39 @@ export default function KobutsuLedgerSystemPage() {
                 </p>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-zinc-200 bg-[#083344] px-5 py-16 text-white sm:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
+                Data Flow
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+                ひとつの入力から、必要な画面へ分かれます。
+              </h2>
+            </div>
+            <div className="grid gap-3">
+              {dataFlow.map((item, index) => (
+                <article
+                  key={item.title}
+                  className="grid gap-4 rounded-md border border-white/15 bg-white/5 p-4 sm:grid-cols-[3rem_1fr] sm:p-5"
+                >
+                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-cyan-200 text-sm font-semibold text-[#083344]">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
+                    <p className="mt-3 text-base leading-7 text-zinc-300">
+                      {item.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>
