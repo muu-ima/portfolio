@@ -8,34 +8,101 @@ const workspaces = [
   {
     title: "古物台帳",
     description:
-      "受入れ、払出し、相手方・本人確認をタブで分け、SKU、商品名、仕入先、販売先を検索できる横長テーブルUIです。",
+      "スプレッドシートで追っていた受入れ、払出し、相手方情報を、検索できる台帳画面として整理しています。",
   },
   {
     title: "仕入れ管理",
     description:
-      "仕入れ元データと仕入れ表への反映を同じ操作感で扱います。発送、梱包、原票情報を業務単位で整理します。",
+      "仕入れ元データを原票として保存し、商品・仕入れ・販売へつながる入口にしています。",
   },
   {
     title: "EC販売",
     description:
-      "販売額、送料、手数料、為替、損益を追える集計ビュー。Shopee や決済明細との接続を見据えています。",
+      "販売額、送料、手数料、為替、損益をひとつの流れで確認できるようにしています。",
   },
   {
     title: "為替・ペイメント",
     description:
-      "販売時レート、出金時レート、Payout、手数料明細を分けて扱い、過度に自動計算しない段階的な設計にしています。",
+      "販売時レート、出金時レート、Payout、手数料明細を分けて、後から確認できる形にしています。",
   },
 ];
 
 const architecture = [
+  "スプレッドシートの横長データを、原票・商品・仕入れ・販売に分けて保存",
   "WordPress を台帳データと管理権限のバックエンドとして利用",
   "Next.js を日常入力に使うフロントエンドとして分離",
   "WordPress プラグインに REST API、カスタムテーブル、保存処理を集約",
-  "WordPress テーマは Vercel / Next.js を表示する薄いシェルに限定",
-  "既存の横長スプレッドシート運用に合わせ、カード型ではなく表形式UIを中心に設計",
+  "CSV 原票、Shopee オーダー、ペイメント、為替を補助データとして扱う",
 ];
 
 const stack = ["Next.js 16", "React 19", "TypeScript", "WordPress", "REST API", "Docker", "MySQL"];
+
+const migrationPoints = [
+  {
+    label: "Before",
+    title: "横長シートで人が判断",
+    description:
+      "古物台帳、EC販売、仕入れ、為替、ペイメントが複数タブに分かれ、手動列と自動計算が同じ流れに混在していました。",
+  },
+  {
+    label: "Issue",
+    title: "数式と参照が崩れやすい",
+    description:
+      "VLOOKUP、為替レート、送料、容積重量、手数料の参照が増えるほど、#N/A や #VALUE! の確認が必要になっていました。",
+  },
+  {
+    label: "After",
+    title: "原票を残してWeb管理",
+    description:
+      "入力元を原票として保存し、商品、仕入れ、販売、精算へ分けて扱えるようにしています。",
+  },
+];
+
+const outcomes = [
+  {
+    title: "原票を残せる",
+    description:
+      "仕入れ元データ、Shopee オーダー、ペイメントを元データとして残し、後から確認できるようにしています。",
+  },
+  {
+    title: "参照先を分けられる",
+    description:
+      "古物台帳、仕入れ、販売、精算を別テーブルとして扱い、ひとつの横長シートに詰め込まない構造にしています。",
+  },
+  {
+    title: "手動判断を減らせる",
+    description:
+      "SKU、注文番号、販売日、為替、送料などを画面ごとに整理し、探す・確認する作業を短くしています。",
+  },
+  {
+    title: "後から直せる",
+    description:
+      "まだ未確定の情報を無理に自動化せず、段階的に更新できる余地を残しています。",
+  },
+];
+
+const dataFlow = [
+  {
+    title: "仕入れ元データ",
+    description:
+      "日々の入力は原票として保存し、後から参照できる入口にします。",
+  },
+  {
+    title: "商品・仕入れへ同期",
+    description:
+      "SKU、商品名、仕入日、仕入先を台帳側で使える形に分けます。",
+  },
+  {
+    title: "販売・精算へ接続",
+    description:
+      "販売額、送料、手数料、為替、Payout を同じ販売の流れに結びます。",
+  },
+  {
+    title: "CSV原票で補完",
+    description:
+      "Shopee オーダーやペイメントは、確定前の確認材料として残します。",
+  },
+];
 
 const screenshots = [
   {
@@ -68,7 +135,7 @@ const screenshots = [
 export const metadata: Metadata = {
   title: "kobutsu-ledger-system | Portfolio",
   description:
-    "Next.js と WordPress を組み合わせた古物台帳・EC販売管理システムの紹介ページです。",
+    "スプレッドシート運用をWeb化した、古物台帳・EC販売管理システムの紹介ページです。",
 };
 
 export default function KobutsuLedgerSystemPage() {
@@ -92,8 +159,9 @@ export default function KobutsuLedgerSystemPage() {
                 kobutsu-ledger-system
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-700">
-                古物台帳、仕入れ管理、EC販売、為替、ペイメントをひとつの業務画面で扱うための開発中システムです。
-                既存のスプレッドシート運用を残しながら、入力・確認・更新を少しずつWeb上に移しています。
+                スプレッドシートで管理していた古物台帳、仕入れ、EC販売、為替、ペイメントを、
+                Web上で扱える業務システムとして作り直しています。
+                原票を残しながら、入力・確認・更新の流れを整理しています。
               </p>
               <div className="mt-9 flex flex-col gap-3 sm:flex-row">
                 <a
@@ -135,6 +203,39 @@ export default function KobutsuLedgerSystemPage() {
         </div>
       </section>
 
+      <section className="border-b border-zinc-200 bg-[rgb(240,240,240)] px-5 py-14 sm:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+                Migration
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+                表計算の運用を、業務データとして分けました。
+              </h2>
+            </div>
+            <div className="grid gap-3">
+              {migrationPoints.map((item) => (
+                <article
+                  key={item.label}
+                  className="grid gap-3 rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:grid-cols-[7rem_1fr] sm:p-5"
+                >
+                  <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+                    {item.label}
+                  </p>
+                  <div>
+                    <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
+                    <p className="mt-3 text-base leading-7 text-zinc-600">
+                      {item.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[#083344] px-5 py-20 text-white sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-6 border-b border-white/15 pb-8 sm:flex-row sm:items-end">
@@ -143,11 +244,11 @@ export default function KobutsuLedgerSystemPage() {
                 Screenshots
               </p>
               <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
-                管理画面について
-                           </h2>
+                スプレッドシート運用を画面に移しました。
+              </h2>
             </div>
             <p className="max-w-md text-base leading-7 text-zinc-300">
-              古物台帳、EC販売、為替、CSV取込を同じ導線で扱えるように整理しています。
+              古物台帳、EC販売、為替、CSV取込を、同じ業務導線の中で確認できるようにしています。
             </p>
           </div>
 
@@ -162,7 +263,7 @@ export default function KobutsuLedgerSystemPage() {
               What It Handles
             </p>
             <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
-              台帳とEC販売をつなげています。
+              台帳、仕入れ、販売を分けて扱えます。
             </h2>
             <div className="mt-8 grid max-w-sm gap-2">
               {[
@@ -189,6 +290,71 @@ export default function KobutsuLedgerSystemPage() {
         </div>
       </section>
 
+      <section className="bg-white px-5 py-14 sm:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 border-b border-zinc-200 pb-8 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+                Outcomes
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+                人が見ていた判断を、画面で追える形にしました。
+              </h2>
+            </div>
+            <p className="max-w-2xl text-base leading-7 text-zinc-600">
+              スプレッドシートの柔軟さは残しつつ、入力元、同期先、確認画面を分けています。
+              何を元データにして、どこを更新すればよいかが見えやすい構成です。
+            </p>
+          </div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {outcomes.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-md border border-zinc-200 bg-[rgb(240,240,240)] p-5 shadow-sm shadow-zinc-950/5"
+              >
+                <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
+                <p className="mt-3 text-base leading-7 text-zinc-600">
+                  {item.description}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-zinc-200 bg-[#083344] px-5 py-16 text-white sm:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
+                Data Flow
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+                ひとつの入力から、必要な画面へ分かれます。
+              </h2>
+            </div>
+            <div className="grid gap-3">
+              {dataFlow.map((item, index) => (
+                <article
+                  key={item.title}
+                  className="grid gap-4 rounded-md border border-white/15 bg-white/5 p-4 sm:grid-cols-[3rem_1fr] sm:p-5"
+                >
+                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-cyan-200 text-sm font-semibold text-[#083344]">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
+                    <p className="mt-3 text-base leading-7 text-zinc-300">
+                      {item.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-[rgb(240,240,240)] px-5 py-14 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
@@ -196,7 +362,7 @@ export default function KobutsuLedgerSystemPage() {
               Architecture
             </p>
             <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
-              WordPressをデータの置き場として活用。
+              原票を残して、必要な画面へ同期します。
             </h2>
             <div className="mt-8 max-w-sm border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
               <div className="border border-zinc-200 bg-[rgb(240,240,240)] px-3 py-3 text-center text-sm font-semibold text-zinc-800">
