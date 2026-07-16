@@ -185,7 +185,7 @@ export default function NfcRedirectPage() {
               </div>
             </div>
           </div>
-          <div className="grid gap-3">
+          <div className="grid gap-3 sm:grid-cols-2">
             {pluginFeatures.map((feature, index) => (
               <div key={feature} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-3 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-sky-400 text-sm font-semibold text-zinc-950">
@@ -231,9 +231,10 @@ export default function NfcRedirectPage() {
               </p>
             </div>
           </div>
-          <div className="grid gap-3">
+          <div className="grid gap-3 sm:grid-cols-2">
             {principles.map((item) => (
-              <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5">
+              <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5">
+                <div className="mb-5 h-1.5 w-12 rounded-full bg-sky-400" />
                 <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
                 <p className="mt-3 text-base leading-7 text-zinc-600">{item.description}</p>
               </article>
@@ -270,7 +271,7 @@ export default function NfcRedirectPage() {
               </p>
             </div>
           </div>
-          <div className="grid gap-3">
+          <div className="grid gap-3 sm:grid-cols-2">
             {flows.map((flow, index) => (
               <div key={flow} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-3 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#082f49] text-sm font-semibold text-white">
