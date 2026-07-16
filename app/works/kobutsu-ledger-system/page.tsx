@@ -58,6 +58,29 @@ const migrationPoints = [
   },
 ];
 
+const outcomes = [
+  {
+    title: "原票を残せる",
+    description:
+      "仕入れ元データ、Shopee オーダー、ペイメントを元データとして残し、後から確認できるようにしています。",
+  },
+  {
+    title: "参照先を分けられる",
+    description:
+      "古物台帳、仕入れ、販売、精算を別テーブルとして扱い、ひとつの横長シートに詰め込まない構造にしています。",
+  },
+  {
+    title: "手動判断を減らせる",
+    description:
+      "SKU、注文番号、販売日、為替、送料などを画面ごとに整理し、探す・確認する作業を短くしています。",
+  },
+  {
+    title: "後から直せる",
+    description:
+      "まだ未確定の情報を無理に自動化せず、段階的に更新できる余地を残しています。",
+  },
+];
+
 const screenshots = [
   {
     title: "古物台帳一覧",
@@ -238,6 +261,38 @@ export default function KobutsuLedgerSystemPage() {
               <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5">
                 <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
                 <p className="mt-3 text-base leading-7 text-zinc-600">{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white px-5 py-14 sm:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 border-b border-zinc-200 pb-8 lg:grid-cols-[0.75fr_1.25fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+                Outcomes
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+                人が見ていた判断を、画面で追える形にしました。
+              </h2>
+            </div>
+            <p className="max-w-2xl text-base leading-7 text-zinc-600">
+              スプレッドシートの柔軟さは残しつつ、入力元、同期先、確認画面を分けています。
+              何を元データにして、どこを更新すればよいかが見えやすい構成です。
+            </p>
+          </div>
+          <div className="mt-8 grid gap-3 sm:grid-cols-2">
+            {outcomes.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-md border border-zinc-200 bg-[rgb(240,240,240)] p-5 shadow-sm shadow-zinc-950/5"
+              >
+                <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
+                <p className="mt-3 text-base leading-7 text-zinc-600">
+                  {item.description}
+                </p>
               </article>
             ))}
           </div>
