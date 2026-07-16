@@ -37,6 +37,27 @@ const architecture = [
 
 const stack = ["Next.js 16", "React 19", "TypeScript", "WordPress", "REST API", "Docker", "MySQL"];
 
+const migrationPoints = [
+  {
+    label: "Before",
+    title: "横長シートで人が判断",
+    description:
+      "古物台帳、EC販売、仕入れ、為替、ペイメントが複数タブに分かれ、手動列と自動計算が同じ流れに混在していました。",
+  },
+  {
+    label: "Issue",
+    title: "数式と参照が崩れやすい",
+    description:
+      "VLOOKUP、為替レート、送料、容積重量、手数料の参照が増えるほど、#N/A や #VALUE! の確認が必要になっていました。",
+  },
+  {
+    label: "After",
+    title: "原票を残してWeb管理",
+    description:
+      "入力元を原票として保存し、商品、仕入れ、販売、精算へ分けて扱えるようにしています。",
+  },
+];
+
 const screenshots = [
   {
     title: "古物台帳一覧",
@@ -131,6 +152,39 @@ export default function KobutsuLedgerSystemPage() {
                   ),
                 )}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-zinc-200 bg-[rgb(240,240,240)] px-5 py-14 sm:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+                Migration
+              </p>
+              <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+                表計算の運用を、業務データとして分けました。
+              </h2>
+            </div>
+            <div className="grid gap-3">
+              {migrationPoints.map((item) => (
+                <article
+                  key={item.label}
+                  className="grid gap-3 rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:grid-cols-[7rem_1fr] sm:p-5"
+                >
+                  <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+                    {item.label}
+                  </p>
+                  <div>
+                    <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
+                    <p className="mt-3 text-base leading-7 text-zinc-600">
+                      {item.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </div>
