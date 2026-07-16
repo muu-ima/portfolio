@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 
 export default function ToolsHubPage() {
   return (
-    <main className="min-h-screen bg-[rgb(240,240,240)] text-zinc-950">
+    <main className="work-page min-h-screen bg-[rgb(240,240,240)] text-zinc-950">
       <SideKanaNav />
       <section className="relative overflow-hidden border-b border-zinc-200 bg-[rgb(240,240,240)]">
         <div className="absolute inset-0 opacity-35">

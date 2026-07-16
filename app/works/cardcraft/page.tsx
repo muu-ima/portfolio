@@ -72,7 +72,7 @@ export const metadata: Metadata = {
 
 export default function CardCraftPage() {
   return (
-    <main className="min-h-screen bg-[rgb(240,240,240)] text-zinc-950">
+    <main className="work-page min-h-screen bg-[rgb(240,240,240)] text-zinc-950">
       <SideKanaNav />
       <section className="border-b border-zinc-200 bg-[rgb(240,240,240)] px-5 py-8 sm:px-8">
         <div className="mx-auto max-w-7xl">
