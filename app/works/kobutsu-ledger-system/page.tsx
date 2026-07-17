@@ -333,7 +333,7 @@ export default function KobutsuLedgerSystemPage() {
       </section>
 
       <section className="border-y border-[#c8c0b6] bg-[#2a2a2a] px-5 py-16 text-[#dbd5cd] sm:px-8">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1440px]">
           <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
@@ -342,6 +342,16 @@ export default function KobutsuLedgerSystemPage() {
               <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
                 ひとつの入力から、必要な画面へ分かれます。
               </h2>
+              <figure className="mt-8 overflow-hidden rounded-md border border-white/15 bg-white/5 p-2 shadow-sm shadow-black/20">
+                <Image
+                  src="/kobutsu-ledger/ledger-editing.png"
+                  alt="仕入れ管理画面のスクリーンショット"
+                  width={1920}
+                  height={943}
+                  sizes="(min-width: 1024px) 420px, 100vw"
+                  className="h-auto w-full rounded-sm object-cover"
+                />
+              </figure>
             </div>
             <div className="grid gap-3">
               {dataFlow.map((item, index) => (
