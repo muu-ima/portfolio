@@ -292,18 +292,15 @@ export default function KobutsuLedgerSystemPage() {
 
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 border-b border-zinc-200 pb-8 lg:grid-cols-[0.75fr_1.25fr]">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
-                Outcomes
-              </p>
-              <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
-                人が見ていた判断を、画面で追える形にしました。
-              </h2>
-            </div>
-            <p className="max-w-2xl text-base leading-7 text-zinc-600">
-              スプレッドシートの柔軟さは残しつつ、入力元、同期先、確認画面を分けています。
-              何を元データにして、どこを更新すればよいかが見えやすい構成です。
+          <div className="border-b border-zinc-200 pb-8">
+            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+              Outcomes
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl lg:whitespace-nowrap">
+              人が見ていた判断を、画面で追える形にしました。
+            </h2>
+            <p className="mt-6 text-base leading-7 text-zinc-600">
+              元のスプレッドシートで担っていた記録、確認、更新の流れを、Web上で迷わず扱える単位に分けています。
             </p>
           </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
