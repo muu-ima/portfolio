@@ -344,29 +344,29 @@ export default function KobutsuLedgerSystemPage() {
               </h2>
             </div>
 
-            <div className="mt-9 grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+            <div className="mt-9 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
               <figure className="overflow-hidden rounded-md border border-white/15 bg-white/5 p-2 shadow-sm shadow-black/20">
                 <Image
                   src="/kobutsu-ledger/ledger-editing.png"
                   alt="仕入れ管理画面のスクリーンショット"
                   width={1920}
                   height={943}
-                  sizes="(min-width: 1024px) 420px, 100vw"
-                  className="h-auto w-full rounded-sm object-cover"
+                  sizes="(min-width: 1024px) 680px, 100vw"
+                  className="h-auto min-h-[340px] w-full rounded-sm object-cover object-left-top lg:min-h-[430px]"
                 />
               </figure>
               <div className="grid gap-3">
                 {dataFlow.map((item, index) => (
                   <article
                     key={item.title}
-                    className="grid gap-4 rounded-md border border-white/15 bg-white/5 p-4 sm:grid-cols-[3rem_1fr] sm:p-5"
+                    className="grid gap-3 rounded-md border border-white/15 bg-white/5 p-4 sm:grid-cols-[2.75rem_1fr]"
                   >
-                    <span className="flex h-10 w-10 items-center justify-center rounded-md bg-cyan-200 text-sm font-semibold text-[#083344]">
+                    <span className="flex h-9 w-9 items-center justify-center rounded-md bg-cyan-200 text-sm font-semibold text-[#083344]">
                       {index + 1}
                     </span>
                     <div>
-                      <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
-                      <p className="mt-3 text-base leading-7 text-zinc-300">
+                      <h3 className="text-lg font-semibold tracking-normal">{item.title}</h3>
+                      <p className="mt-2 text-sm leading-6 text-zinc-300">
                         {item.description}
                       </p>
                     </div>
