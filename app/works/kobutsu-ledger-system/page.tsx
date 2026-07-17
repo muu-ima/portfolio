@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
+import MigrationImageSlider from "./MigrationImageSlider";
 import ScreenshotSlider from "./ScreenshotSlider";
 
 const workspaces = [
@@ -217,8 +218,8 @@ export default function KobutsuLedgerSystemPage() {
       </section>
 
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+        <div className="mx-auto max-w-[1440px]">
+          <div>
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
                 Migration
@@ -227,23 +228,27 @@ export default function KobutsuLedgerSystemPage() {
                 表計算の運用を、業務データとして分けました。
               </h2>
             </div>
-            <div className="grid gap-3">
-              {migrationPoints.map((item) => (
-                <article
-                  key={item.label}
-                  className="grid gap-3 rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:grid-cols-[7rem_1fr] sm:p-5"
-                >
-                  <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
-                    {item.label}
-                  </p>
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
-                    <p className="mt-3 text-base leading-7 text-zinc-600">
-                      {item.description}
+
+            <div className="mt-9 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+              <MigrationImageSlider />
+              <div className="grid gap-3">
+                {migrationPoints.map((item) => (
+                  <article
+                    key={item.label}
+                    className="grid gap-3 rounded-md border border-zinc-200 bg-[rgb(240,240,240)] p-4 shadow-sm shadow-zinc-950/5 sm:grid-cols-[5.5rem_1fr] sm:p-5"
+                  >
+                    <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+                      {item.label}
                     </p>
-                  </div>
-                </article>
-              ))}
+                    <div>
+                      <h3 className="text-lg font-semibold tracking-normal">{item.title}</h3>
+                      <p className="mt-2 text-sm leading-6 text-zinc-600">
+                        {item.description}
+                      </p>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </div>
