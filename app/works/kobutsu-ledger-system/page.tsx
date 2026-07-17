@@ -334,15 +334,18 @@ export default function KobutsuLedgerSystemPage() {
 
       <section className="border-y border-[#c8c0b6] bg-[#2a2a2a] px-5 py-16 text-[#dbd5cd] sm:px-8">
         <div className="mx-auto max-w-[1440px]">
-          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
                 Data Flow
               </p>
-              <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+              <h2 className="mt-3 max-w-5xl text-2xl font-semibold tracking-normal sm:text-5xl">
                 ひとつの入力から、必要な画面へ分かれます。
               </h2>
-              <figure className="mt-8 overflow-hidden rounded-md border border-white/15 bg-white/5 p-2 shadow-sm shadow-black/20">
+            </div>
+
+            <div className="mt-9 grid gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-start">
+              <figure className="overflow-hidden rounded-md border border-white/15 bg-white/5 p-2 shadow-sm shadow-black/20">
                 <Image
                   src="/kobutsu-ledger/ledger-editing.png"
                   alt="仕入れ管理画面のスクリーンショット"
@@ -352,24 +355,24 @@ export default function KobutsuLedgerSystemPage() {
                   className="h-auto w-full rounded-sm object-cover"
                 />
               </figure>
-            </div>
-            <div className="grid gap-3">
-              {dataFlow.map((item, index) => (
-                <article
-                  key={item.title}
-                  className="grid gap-4 rounded-md border border-white/15 bg-white/5 p-4 sm:grid-cols-[3rem_1fr] sm:p-5"
-                >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-cyan-200 text-sm font-semibold text-[#083344]">
-                    {index + 1}
-                  </span>
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
-                    <p className="mt-3 text-base leading-7 text-zinc-300">
-                      {item.description}
-                    </p>
-                  </div>
-                </article>
-              ))}
+              <div className="grid gap-3">
+                {dataFlow.map((item, index) => (
+                  <article
+                    key={item.title}
+                    className="grid gap-4 rounded-md border border-white/15 bg-white/5 p-4 sm:grid-cols-[3rem_1fr] sm:p-5"
+                  >
+                    <span className="flex h-10 w-10 items-center justify-center rounded-md bg-cyan-200 text-sm font-semibold text-[#083344]">
+                      {index + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
+                      <p className="mt-3 text-base leading-7 text-zinc-300">
+                        {item.description}
+                      </p>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </div>
