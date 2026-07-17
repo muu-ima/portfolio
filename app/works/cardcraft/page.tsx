@@ -74,8 +74,20 @@ export default function CardCraftPage() {
   return (
     <main className="min-h-screen bg-[#dbd5cd] text-[#2a2a2a]">
       <SideKanaNav />
-      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-8 sm:px-8">
-        <div className="mx-auto max-w-[1440px]">
+      <section className="relative overflow-hidden border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-8 sm:px-8">
+        <div className="absolute inset-0 opacity-45">
+          <Image
+            src="/work-hero.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
+        <div className="absolute inset-0 bg-[#dbd5cd]/75" />
+
+        <div className="relative mx-auto max-w-[1440px]">
           <nav className="mb-20 flex items-center text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
