@@ -143,7 +143,7 @@ export default function KobutsuLedgerSystemPage() {
     <main className="min-h-screen bg-[#dbd5cd] text-[#2a2a2a]">
       <SideKanaNav />
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-8 sm:px-8">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1440px]">
           <nav className="mb-20 flex items-center text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
@@ -237,7 +237,7 @@ export default function KobutsuLedgerSystemPage() {
       </section>
 
       <section className="border-y border-[#c8c0b6] bg-[#2a2a2a] px-5 py-20 text-[#dbd5cd] sm:px-8">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1440px]">
           <div className="flex flex-col justify-between gap-6 border-b border-white/15 pb-8 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">

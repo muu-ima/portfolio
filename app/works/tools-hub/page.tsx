@@ -52,7 +52,7 @@ export default function ToolsHubPage() {
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(219,213,205,0.98)_0%,rgba(219,213,205,0.92)_48%,rgba(219,213,205,0.64)_100%)]" />
 
-        <div className="relative mx-auto max-w-7xl px-5 py-8 sm:px-8">
+        <div className="relative mx-auto max-w-[1440px] px-5 py-8 sm:px-8">
           <nav className="mb-20 flex items-center text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
@@ -144,7 +144,7 @@ export default function ToolsHubPage() {
       </section>
 
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+        <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
@@ -175,7 +175,7 @@ export default function ToolsHubPage() {
       </section>
 
       <section className="border-y border-[#c8c0b6] bg-[#2a2a2a] px-5 py-14 text-[#dbd5cd] sm:px-8">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1440px]">
           <div className="max-w-4xl border-b border-white/10 pb-6">
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
               Shipping Manager
@@ -200,7 +200,7 @@ export default function ToolsHubPage() {
       </section>
 
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-[1440px]">
           <div className="max-w-4xl border-b border-zinc-200 pb-6">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
