@@ -91,30 +91,16 @@ export default function ToolsHubPage() {
               </div>
             </div>
 
-            <div className="rounded-md border border-zinc-200 bg-white/88 p-5 shadow-2xl shadow-zinc-950/10 backdrop-blur">
-              <div className="border-b border-zinc-200 pb-4">
-                <p className="text-sm font-semibold text-zinc-500">Dashboard Preview</p>
-                <p className="mt-2 text-2xl font-semibold">Profit Calculator</p>
-              </div>
-              <div className="grid gap-4 py-5">
-                {[
-                  ["Final Profit", "JPY 18,420", "text-cyan-700"],
-                  ["VAT / Tax", "Auto", "text-blue-600"],
-                  ["Shipping", "EMS / FedEx", "text-sky-600"],
-                  ["Product Meta", "WP Sync", "text-indigo-700"],
-                ].map(([label, value, color]) => (
-                  <div key={label} className="flex items-center justify-between rounded-md bg-zinc-50 p-4">
-                    <span className="text-sm font-medium text-zinc-500">{label}</span>
-                    <span className={`text-xl font-semibold ${color}`}>{value}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="grid grid-cols-3 gap-2">
-                <div className="h-16 bg-cyan-500" />
-                <div className="h-16 bg-sky-400" />
-                <div className="h-16 bg-blue-500" />
-              </div>
-            </div>
+            <figure className="overflow-hidden rounded-md border border-zinc-200 bg-white/88 p-3 shadow-2xl shadow-zinc-950/10 backdrop-blur">
+              <Image
+                src="/screenshots/tools-hub/tools-hub.png"
+                alt="tools-hub のダッシュボード画面"
+                width={1920}
+                height={828}
+                sizes="(min-width: 1024px) 680px, 100vw"
+                className="h-auto w-full rounded-sm object-contain"
+              />
+            </figure>
           </div>
         </div>
       </section>
@@ -125,8 +111,8 @@ export default function ToolsHubPage() {
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Overview
             </p>
-            <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-normal sm:text-5xl">
-              面倒な計算と発送管理を、日々の作業に馴染ませています。
+            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl lg:whitespace-nowrap">
+              計算と発送管理をひとつにまとめています。
             </h2>
           </div>
           <div className="mt-8 grid gap-3">
