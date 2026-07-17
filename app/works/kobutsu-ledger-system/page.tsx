@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
+import MigrationImageSlider from "./MigrationImageSlider";
 import ScreenshotSlider from "./ScreenshotSlider";
 
 const workspaces = [
@@ -140,10 +142,22 @@ export const metadata: Metadata = {
 
 export default function KobutsuLedgerSystemPage() {
   return (
-    <main className="min-h-screen bg-[rgb(240,240,240)] text-zinc-950">
+    <main className="min-h-screen bg-[#dbd5cd] text-[#2a2a2a]">
       <SideKanaNav />
-      <section className="border-b border-zinc-200 bg-[rgb(240,240,240)] px-5 py-8 sm:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="relative overflow-hidden border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-8 sm:px-8">
+        <div className="absolute inset-0 opacity-45">
+          <Image
+            src="/work-hero.png"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+          />
+        </div>
+        <div className="absolute inset-0 bg-[#dbd5cd]/75" />
+
+        <div className="relative mx-auto max-w-[1440px]">
           <nav className="mb-20 flex items-center text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
@@ -203,9 +217,9 @@ export default function KobutsuLedgerSystemPage() {
         </div>
       </section>
 
-      <section className="border-b border-zinc-200 bg-[rgb(240,240,240)] px-5 py-14 sm:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
+        <div className="mx-auto max-w-[1440px]">
+          <div>
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
                 Migration
@@ -214,30 +228,34 @@ export default function KobutsuLedgerSystemPage() {
                 表計算の運用を、業務データとして分けました。
               </h2>
             </div>
-            <div className="grid gap-3">
-              {migrationPoints.map((item) => (
-                <article
-                  key={item.label}
-                  className="grid gap-3 rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:grid-cols-[7rem_1fr] sm:p-5"
-                >
-                  <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
-                    {item.label}
-                  </p>
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
-                    <p className="mt-3 text-base leading-7 text-zinc-600">
-                      {item.description}
+
+            <div className="mt-9 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+              <MigrationImageSlider />
+              <div className="grid gap-3">
+                {migrationPoints.map((item) => (
+                  <article
+                    key={item.label}
+                    className="grid gap-3 rounded-md border border-zinc-200 bg-[rgb(240,240,240)] p-4 shadow-sm shadow-zinc-950/5 sm:grid-cols-[5.5rem_1fr] sm:p-5"
+                  >
+                    <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+                      {item.label}
                     </p>
-                  </div>
-                </article>
-              ))}
+                    <div>
+                      <h3 className="text-lg font-semibold tracking-normal">{item.title}</h3>
+                      <p className="mt-2 text-sm leading-6 text-zinc-600">
+                        {item.description}
+                      </p>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#083344] px-5 py-20 text-white sm:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="border-y border-[#c8c0b6] bg-[#2a2a2a] px-5 py-20 text-[#dbd5cd] sm:px-8">
+        <div className="mx-auto max-w-[1440px]">
           <div className="flex flex-col justify-between gap-6 border-b border-white/15 pb-8 sm:flex-row sm:items-end">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
@@ -256,7 +274,7 @@ export default function KobutsuLedgerSystemPage() {
         </div>
       </section>
 
-      <section className="border-b border-zinc-200 px-5 py-14 sm:px-8">
+      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
@@ -290,20 +308,17 @@ export default function KobutsuLedgerSystemPage() {
         </div>
       </section>
 
-      <section className="border-b border-zinc-200 bg-white px-5 py-14 sm:px-8">
+      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 border-b border-zinc-200 pb-8 lg:grid-cols-[0.75fr_1.25fr]">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
-                Outcomes
-              </p>
-              <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
-                人が見ていた判断を、画面で追える形にしました。
-              </h2>
-            </div>
-            <p className="max-w-2xl text-base leading-7 text-zinc-600">
-              スプレッドシートの柔軟さは残しつつ、入力元、同期先、確認画面を分けています。
-              何を元データにして、どこを更新すればよいかが見えやすい構成です。
+          <div className="border-b border-zinc-200 pb-8">
+            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+              Outcomes
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl lg:whitespace-nowrap">
+              人が見ていた判断を、画面で追える形にしました。
+            </h2>
+            <p className="mt-6 text-base leading-7 text-zinc-600">
+              元のスプレッドシートで担っていた記録、確認、更新の流れを、Web上で迷わず扱える単位に分けています。
             </p>
           </div>
           <div className="mt-8 grid gap-3 sm:grid-cols-2">
@@ -322,40 +337,53 @@ export default function KobutsuLedgerSystemPage() {
         </div>
       </section>
 
-      <section className="border-y border-zinc-200 bg-[#083344] px-5 py-16 text-white sm:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
+      <section className="border-y border-[#c8c0b6] bg-[#2a2a2a] px-5 py-16 text-[#dbd5cd] sm:px-8">
+        <div className="mx-auto max-w-[1440px]">
+          <div>
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
                 Data Flow
               </p>
-              <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+              <h2 className="mt-3 max-w-5xl text-2xl font-semibold tracking-normal sm:text-5xl">
                 ひとつの入力から、必要な画面へ分かれます。
               </h2>
             </div>
-            <div className="grid gap-3">
-              {dataFlow.map((item, index) => (
-                <article
-                  key={item.title}
-                  className="grid gap-4 rounded-md border border-white/15 bg-white/5 p-4 sm:grid-cols-[3rem_1fr] sm:p-5"
-                >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-cyan-200 text-sm font-semibold text-[#083344]">
-                    {index + 1}
-                  </span>
-                  <div>
-                    <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
-                    <p className="mt-3 text-base leading-7 text-zinc-300">
-                      {item.description}
-                    </p>
-                  </div>
-                </article>
-              ))}
+
+            <div className="mt-9 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+              <figure className="overflow-hidden rounded-md border border-white/15 bg-white/5 p-2 shadow-sm shadow-black/20">
+                <Image
+                  src="/kobutsu-ledger/ledger-editing.png"
+                  alt="仕入れ管理画面のスクリーンショット"
+                  width={1920}
+                  height={943}
+                  sizes="(min-width: 1024px) 680px, 100vw"
+                  className="h-auto min-h-[340px] w-full rounded-sm object-cover object-left-top lg:min-h-[430px]"
+                />
+              </figure>
+              <div className="grid gap-3">
+                {dataFlow.map((item, index) => (
+                  <article
+                    key={item.title}
+                    className="grid gap-3 rounded-md border border-white/15 bg-white/5 p-4 sm:grid-cols-[2.75rem_1fr]"
+                  >
+                    <span className="flex h-9 w-9 items-center justify-center rounded-md bg-cyan-200 text-sm font-semibold text-[#083344]">
+                      {index + 1}
+                    </span>
+                    <div>
+                      <h3 className="text-lg font-semibold tracking-normal">{item.title}</h3>
+                      <p className="mt-2 text-sm leading-6 text-zinc-300">
+                        {item.description}
+                      </p>
+                    </div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="border-b border-zinc-200 bg-[rgb(240,240,240)] px-5 py-14 sm:px-8">
+      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr]">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-700">
@@ -401,7 +429,7 @@ export default function KobutsuLedgerSystemPage() {
         </div>
       </section>
 
-      <section className="border-b border-zinc-200 px-5 py-12 sm:px-8">
+      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-12 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="border-b border-zinc-300 pb-8">
             <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">

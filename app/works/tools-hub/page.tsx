@@ -37,9 +37,9 @@ export const metadata: Metadata = {
 
 export default function ToolsHubPage() {
   return (
-    <main className="min-h-screen bg-[rgb(240,240,240)] text-zinc-950">
+    <main className="min-h-screen bg-[#dbd5cd] text-[#2a2a2a]">
       <SideKanaNav />
-      <section className="relative overflow-hidden border-b border-zinc-200 bg-[rgb(240,240,240)]">
+      <section className="relative overflow-hidden border-b border-[#c8c0b6] bg-[#dbd5cd]">
         <div className="absolute inset-0 opacity-35">
           <Image
             src="/portfolio-hero.png"
@@ -50,9 +50,9 @@ export default function ToolsHubPage() {
             className="object-cover object-center"
           />
         </div>
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_48%,rgba(255,255,255,0.62)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(219,213,205,0.98)_0%,rgba(219,213,205,0.92)_48%,rgba(219,213,205,0.64)_100%)]" />
 
-        <div className="relative mx-auto max-w-7xl px-5 py-8 sm:px-8">
+        <div className="relative mx-auto max-w-[1440px] px-5 py-8 sm:px-8">
           <nav className="mb-20 flex items-center text-sm font-medium">
             <Link href="/" className="transition hover:text-sky-700">
               Portfolio
@@ -91,42 +91,28 @@ export default function ToolsHubPage() {
               </div>
             </div>
 
-            <div className="rounded-md border border-zinc-200 bg-white/88 p-5 shadow-2xl shadow-zinc-950/10 backdrop-blur">
-              <div className="border-b border-zinc-200 pb-4">
-                <p className="text-sm font-semibold text-zinc-500">Dashboard Preview</p>
-                <p className="mt-2 text-2xl font-semibold">Profit Calculator</p>
-              </div>
-              <div className="grid gap-4 py-5">
-                {[
-                  ["Final Profit", "JPY 18,420", "text-cyan-700"],
-                  ["VAT / Tax", "Auto", "text-blue-600"],
-                  ["Shipping", "EMS / FedEx", "text-sky-600"],
-                  ["Product Meta", "WP Sync", "text-indigo-700"],
-                ].map(([label, value, color]) => (
-                  <div key={label} className="flex items-center justify-between rounded-md bg-zinc-50 p-4">
-                    <span className="text-sm font-medium text-zinc-500">{label}</span>
-                    <span className={`text-xl font-semibold ${color}`}>{value}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="grid grid-cols-3 gap-2">
-                <div className="h-16 bg-cyan-500" />
-                <div className="h-16 bg-sky-400" />
-                <div className="h-16 bg-blue-500" />
-              </div>
-            </div>
+            <figure className="overflow-hidden rounded-md border border-zinc-200 bg-white/88 p-3 shadow-2xl shadow-zinc-950/10 backdrop-blur">
+              <Image
+                src="/screenshots/tools-hub/tools-hub.png"
+                alt="tools-hub のダッシュボード画面"
+                width={1920}
+                height={828}
+                sizes="(min-width: 1024px) 680px, 100vw"
+                className="h-auto w-full rounded-sm object-contain"
+              />
+            </figure>
           </div>
         </div>
       </section>
 
-      <section className="border-b border-zinc-200 px-5 py-14 sm:px-8">
+      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div>
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Overview
             </p>
-            <h2 className="mt-3 max-w-4xl text-3xl font-semibold tracking-normal sm:text-5xl">
-              面倒な計算と発送管理を、日々の作業に馴染ませています。
+            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl lg:whitespace-nowrap">
+              計算と発送管理をひとつにまとめています。
             </h2>
           </div>
           <div className="mt-8 grid gap-3">
@@ -143,8 +129,8 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="border-b border-zinc-200 bg-[rgb(240,240,240)] px-5 py-14 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
@@ -174,8 +160,8 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-[#083344] px-5 py-14 text-white sm:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="border-y border-[#c8c0b6] bg-[#2a2a2a] px-5 py-14 text-[#dbd5cd] sm:px-8">
+        <div className="mx-auto max-w-[1440px]">
           <div className="max-w-4xl border-b border-white/10 pb-6">
             <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
               Shipping Manager
@@ -199,8 +185,8 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="border-b border-zinc-200 bg-[rgb(240,240,240)] px-5 py-14 sm:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
+        <div className="mx-auto max-w-[1440px]">
           <div className="max-w-4xl border-b border-zinc-200 pb-6">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
@@ -251,7 +237,7 @@ export default function ToolsHubPage() {
         </div>
       </section>
 
-      <section className="border-b border-zinc-200 bg-[rgb(240,240,240)] px-5 py-12 sm:px-8">
+      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-12 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-200 pb-6 sm:flex-row sm:items-end">
             <div>
