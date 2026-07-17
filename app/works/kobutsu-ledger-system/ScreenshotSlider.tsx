@@ -52,6 +52,7 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
                 alt={`${active.title}のスクリーンショット`}
                 fill
                 priority={activeIndex === 0}
+                unoptimized
                 sizes="(min-width: 1280px) 980px, 100vw"
                 className="object-contain"
               />
@@ -83,6 +84,7 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
                   src={next.src}
                   alt={`${next.title}のスクリーンショット`}
                   fill
+                  unoptimized
                   sizes="420px"
                   className="object-cover"
                 />
