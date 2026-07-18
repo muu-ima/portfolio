@@ -139,29 +139,30 @@ export default function NfcRedirectPage() {
       </section>
 
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
+        <div className="mx-auto max-w-[1440px]">
+          <div className="border-b border-[#c8c0b6] pb-8">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Product Concept
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal text-zinc-950 sm:text-5xl">
+            <h2 className="mt-3 max-w-5xl text-3xl font-semibold tracking-normal text-zinc-950 sm:text-5xl">
               CardCraft とセットで、配った後も育てられる名刺にしています。
             </h2>
-            <p className="mt-6 text-base leading-7 text-zinc-600">
+            <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
               名刺デザインを作るだけで終わらせず、NFC / QR に紐づくプロフィールやリンク先を後から変更できる構成を想定しました。印刷して配ったあとでも、案内先を変えられるのがこの仕組みの中心です。
             </p>
-            <div className="mt-8">
-              <a
-                href="https://muu-cardcraft.vercel.app/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center rounded-md bg-[#082f49] px-6 text-sm font-semibold text-white transition hover:bg-[#0c4a6e]"
-              >
-                CardCraftを見る
-              </a>
-            </div>
           </div>
-          <div className="grid gap-3">
+          <div className="mt-8 flex">
+            <a
+              href="https://muu-cardcraft.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 items-center justify-center rounded-md bg-[#082f49] px-6 text-sm font-semibold text-white transition hover:bg-[#0c4a6e]"
+            >
+              CardCraftを見る
+            </a>
+          </div>
+
+          <div className="mt-8 grid gap-3 md:grid-cols-2">
             {productFlow.map((item, index) => (
               <div key={item} className="flex gap-4 rounded-md border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-sky-400 text-sm font-semibold text-zinc-950">

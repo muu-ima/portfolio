@@ -60,29 +60,6 @@ const migrationPoints = [
   },
 ];
 
-const outcomes = [
-  {
-    title: "原票を残せる",
-    description:
-      "仕入れ元データ、Shopee オーダー、ペイメントを元データとして残し、後から確認できるようにしています。",
-  },
-  {
-    title: "参照先を分けられる",
-    description:
-      "古物台帳、仕入れ、販売、精算を別テーブルとして扱い、ひとつの横長シートに詰め込まない構造にしています。",
-  },
-  {
-    title: "手動判断を減らせる",
-    description:
-      "SKU、注文番号、販売日、為替、送料などを画面ごとに整理し、探す・確認する作業を短くしています。",
-  },
-  {
-    title: "後から直せる",
-    description:
-      "まだ未確定の情報を無理に自動化せず、段階的に更新できる余地を残しています。",
-  },
-];
-
 const dataFlow = [
   {
     title: "仕入れ元データ",
@@ -219,36 +196,34 @@ export default function KobutsuLedgerSystemPage() {
 
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-[1440px]">
-          <div>
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
-                Migration
-              </p>
-              <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
-                表計算の運用を、業務データとして分けました。
-              </h2>
-            </div>
+          <div className="border-b border-[#c8c0b6] pb-8">
+            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+              Migration
+            </p>
+            <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl">
+              表計算の運用を、業務データとして分けました。
+            </h2>
+          </div>
 
-            <div className="mt-9 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
-              <MigrationImageSlider />
-              <div className="grid gap-3">
-                {migrationPoints.map((item) => (
-                  <article
-                    key={item.label}
-                    className="grid gap-3 rounded-md border border-zinc-200 bg-[rgb(240,240,240)] p-4 shadow-sm shadow-zinc-950/5 sm:grid-cols-[5.5rem_1fr] sm:p-5"
-                  >
-                    <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
-                      {item.label}
+          <div className="mt-9 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+            <MigrationImageSlider />
+            <div className="grid gap-3">
+              {migrationPoints.map((item) => (
+                <article
+                  key={item.label}
+                  className="grid gap-3 rounded-md border border-zinc-200 bg-[rgb(240,240,240)] p-4 shadow-sm shadow-zinc-950/5 sm:grid-cols-[5.5rem_1fr] sm:p-5"
+                >
+                  <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+                    {item.label}
+                  </p>
+                  <div>
+                    <h3 className="text-lg font-semibold tracking-normal">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-zinc-600">
+                      {item.description}
                     </p>
-                    <div>
-                      <h3 className="text-lg font-semibold tracking-normal">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-6 text-zinc-600">
-                        {item.description}
-                      </p>
-                    </div>
-                  </article>
-                ))}
-              </div>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </div>
@@ -308,38 +283,9 @@ export default function KobutsuLedgerSystemPage() {
         </div>
       </section>
 
-      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="border-b border-zinc-200 pb-8">
-            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
-              Outcomes
-            </p>
-            <h2 className="mt-3 text-2xl font-semibold tracking-normal sm:text-5xl lg:whitespace-nowrap">
-              人が見ていた判断を、画面で追える形にしました。
-            </h2>
-            <p className="mt-6 text-base leading-7 text-zinc-600">
-              元のスプレッドシートで担っていた記録、確認、更新の流れを、Web上で迷わず扱える単位に分けています。
-            </p>
-          </div>
-          <div className="mt-8 grid gap-3 sm:grid-cols-2">
-            {outcomes.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-md border border-zinc-200 bg-[rgb(240,240,240)] p-5 shadow-sm shadow-zinc-950/5"
-              >
-                <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
-                <p className="mt-3 text-base leading-7 text-zinc-600">
-                  {item.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="border-y border-[#c8c0b6] bg-[#2a2a2a] px-5 py-16 text-[#dbd5cd] sm:px-8">
         <div className="mx-auto max-w-[1440px]">
-          <div>
+          <div className="border-b border-white/15 pb-8">
             <div>
               <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
                 Data Flow
@@ -348,6 +294,11 @@ export default function KobutsuLedgerSystemPage() {
                 ひとつの入力から、必要な画面へ分かれます。
               </h2>
             </div>
+
+            <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-300">
+              原票を残しながら、商品、仕入れ、販売、精算へ分けて同期する流れです。
+            </p>
+          </div>
 
             <div className="mt-9 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
               <figure className="overflow-hidden rounded-md border border-white/15 bg-white/5 p-2 shadow-sm shadow-black/20">
@@ -379,7 +330,6 @@ export default function KobutsuLedgerSystemPage() {
                 ))}
               </div>
             </div>
-          </div>
         </div>
       </section>
 

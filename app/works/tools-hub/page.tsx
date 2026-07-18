@@ -106,16 +106,19 @@ export default function ToolsHubPage() {
       </section>
 
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div>
+        <div className="mx-auto max-w-[1440px]">
+          <div className="border-b border-[#c8c0b6] pb-8">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Overview
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl lg:whitespace-nowrap">
+            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
               計算と発送管理をひとつにまとめています。
             </h2>
+            <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
+              利益計算、送料候補、商品ごとの発送情報を同じ場所で確認できるようにしています。
+            </p>
           </div>
-          <div className="mt-8 grid gap-3">
+          <div className="mt-8 grid gap-3 lg:grid-cols-2">
             {features.map((feature) => (
               <article
                 key={feature.title}
