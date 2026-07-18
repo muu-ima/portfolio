@@ -127,7 +127,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#dbd5cd] text-[#2a2a2a]">
       <SideKanaNav />
-      <section className="relative overflow-hidden px-5 pb-20 pt-8 sm:px-8">
+      <section className="relative overflow-hidden border-b border-[#c8c0b6] px-5 pb-20 pt-8 sm:px-8">
         <nav className="mx-auto flex max-w-7xl items-center py-6 text-sm font-semibold uppercase tracking-[0.28em] text-zinc-700">
           <a href="#" className="text-base normal-case tracking-[0.18em] text-zinc-500">
             Portfolio
