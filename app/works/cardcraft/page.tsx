@@ -132,7 +132,7 @@ export default function CardCraftPage() {
               </div>
             </div>
 
-            <div className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
+            <div className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
               <div className="flex items-center justify-between border-b border-zinc-200 pb-4">
                 <div>
                   <p className="text-sm font-semibold text-zinc-500">Editor Preview</p>
@@ -160,7 +160,7 @@ export default function CardCraftPage() {
                   ["EXPORT", "PNG / JPEG"],
                   ["LAYERS", "text / image"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-md border border-cyan-200 bg-cyan-50 px-3 py-3">
+                  <div key={label} className="rounded-lg border border-cyan-200 bg-cyan-50 px-3 py-3">
                     <p className="text-xs font-semibold text-cyan-700">{label}</p>
                     <p className="mt-1 text-sm font-medium text-zinc-700">{value}</p>
                   </div>
@@ -172,20 +172,23 @@ export default function CardCraftPage() {
       </section>
 
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
-        <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[0.75fr_1.25fr]">
-          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
+        <div className="mx-auto max-w-[1440px]">
+          <div className="border-b border-[#c8c0b6] pb-8">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               What It Does
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="mt-3 max-w-5xl text-3xl font-semibold tracking-normal sm:text-5xl">
               名刺づくりを、ブラウザ上で完結できるようにしています。
             </h2>
+            <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
+              表裏確認、レイヤー調整、画像書き出し、保存再開までを、ひとつの編集体験としてまとめています。
+            </p>
           </div>
-          <div className="grid gap-3">
+          <div className="mt-8 grid gap-3 lg:grid-cols-2">
             {editorFeatures.map((feature) => (
               <article
                 key={feature.title}
-                className="rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5"
+                className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5"
               >
                 <h3 className="text-xl font-semibold tracking-normal">{feature.title}</h3>
                 <p className="mt-3 text-base leading-7 text-zinc-600">{feature.description}</p>
@@ -197,14 +200,14 @@ export default function CardCraftPage() {
 
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-[1440px]">
-          <div className="max-w-4xl border-b border-zinc-200 pb-6">
+          <div className="border-b border-[#c8c0b6] pb-8">
             <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
               Editor Screenshots
             </p>
             <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
               実際の編集画面です。
             </h2>
-            <p className="mt-6 text-base leading-7 text-zinc-600">
+            <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
               PCでもモバイルでも、キャンバスを見ながら文字、背景、画像、レイヤーを調整できるようにしています。
             </p>
           </div>
@@ -249,7 +252,7 @@ export default function CardCraftPage() {
           </div>
           <div className="mt-8 grid gap-3 md:grid-cols-2">
             {buildPoints.map((point, index) => (
-              <div key={point} className="flex gap-4 rounded-md border border-white/15 bg-white/5 p-4 sm:p-5">
+              <div key={point} className="flex gap-4 rounded-lg border border-white/15 bg-white/5 p-4 sm:p-5">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-cyan-200 text-sm font-semibold text-cyan-950">
                   {index + 1}
                 </span>
@@ -261,18 +264,18 @@ export default function CardCraftPage() {
       </section>
 
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.75fr_1.25fr]">
-          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
+        <div className="mx-auto max-w-7xl">
+          <div className="border-b border-[#c8c0b6] pb-8">
             <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
               Hard Parts
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="mt-3 max-w-5xl text-3xl font-semibold tracking-normal sm:text-5xl">
               自由に触れる編集体験を、崩れにくくまとめています。
             </h2>
           </div>
-          <div className="grid gap-3">
+          <div className="mt-8 grid gap-3">
             {hardParts.map((part, index) => (
-              <div key={part} className="flex gap-4 rounded-md border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5 sm:p-4">
+              <div key={part} className="flex gap-4 rounded-lg border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#082f49] text-sm font-semibold text-white">
                   {index + 1}
                 </span>
