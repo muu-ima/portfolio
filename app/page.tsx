@@ -180,16 +180,14 @@ export default function Home() {
 
       <section id="works" className="bg-[#dbd5cd] px-5 py-16 sm:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-6 border-b border-zinc-200 pb-8 sm:flex-row sm:items-end">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
-                Selected Works
-              </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
-                紹介しているアプリです
-              </h2>
-            </div>
-            <p className="max-w-md text-base leading-7 text-zinc-600">
+          <div className="border-b border-zinc-200 pb-8">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+              Selected Works
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+              紹介しているアプリです
+            </h2>
+            <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
               それぞれの目的、役割、使っている技術がひと目で伝わるようにまとめています。
             </p>
           </div>
