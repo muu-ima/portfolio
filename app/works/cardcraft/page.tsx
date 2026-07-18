@@ -132,7 +132,7 @@ export default function CardCraftPage() {
               </div>
             </div>
 
-            <div className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
+            <div className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
               <div className="flex items-center justify-between border-b border-zinc-200 pb-4">
                 <div>
                   <p className="text-sm font-semibold text-zinc-500">Editor Preview</p>
@@ -160,7 +160,7 @@ export default function CardCraftPage() {
                   ["EXPORT", "PNG / JPEG"],
                   ["LAYERS", "text / image"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-md border border-cyan-200 bg-cyan-50 px-3 py-3">
+                  <div key={label} className="rounded-lg border border-cyan-200 bg-cyan-50 px-3 py-3">
                     <p className="text-xs font-semibold text-cyan-700">{label}</p>
                     <p className="mt-1 text-sm font-medium text-zinc-700">{value}</p>
                   </div>
@@ -188,7 +188,7 @@ export default function CardCraftPage() {
             {editorFeatures.map((feature) => (
               <article
                 key={feature.title}
-                className="rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5"
+                className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5"
               >
                 <h3 className="text-xl font-semibold tracking-normal">{feature.title}</h3>
                 <p className="mt-3 text-base leading-7 text-zinc-600">{feature.description}</p>
@@ -252,7 +252,7 @@ export default function CardCraftPage() {
           </div>
           <div className="mt-8 grid gap-3 md:grid-cols-2">
             {buildPoints.map((point, index) => (
-              <div key={point} className="flex gap-4 rounded-md border border-white/15 bg-white/5 p-4 sm:p-5">
+              <div key={point} className="flex gap-4 rounded-lg border border-white/15 bg-white/5 p-4 sm:p-5">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-cyan-200 text-sm font-semibold text-cyan-950">
                   {index + 1}
                 </span>
@@ -275,7 +275,7 @@ export default function CardCraftPage() {
           </div>
           <div className="mt-8 grid gap-3">
             {hardParts.map((part, index) => (
-              <div key={part} className="flex gap-4 rounded-md border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5 sm:p-4">
+              <div key={part} className="flex gap-4 rounded-lg border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#082f49] text-sm font-semibold text-white">
                   {index + 1}
                 </span>

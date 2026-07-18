@@ -122,7 +122,7 @@ export default function ToolsHubPage() {
             {features.map((feature) => (
               <article
                 key={feature.title}
-                className="rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5"
+                className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5"
               >
                 <h3 className="text-xl font-semibold tracking-normal">{feature.title}</h3>
                 <p className="mt-3 text-base leading-7 text-zinc-600">{feature.description}</p>
@@ -180,7 +180,7 @@ export default function ToolsHubPage() {
               "実重量と容積重量を比較し、送料計算に使う重量を整理",
               "商品一覧、編集フォーム、認証付き入力フォームを Next.js 側で実装",
             ].map((item) => (
-              <div key={item} className="rounded-md border border-white/15 bg-white/5 p-4 sm:p-5">
+              <div key={item} className="rounded-lg border border-white/15 bg-white/5 p-4 sm:p-5">
                 <p className="text-base leading-7 text-zinc-100">{item}</p>
               </div>
             ))}

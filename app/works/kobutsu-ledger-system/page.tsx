@@ -174,7 +174,7 @@ export default function KobutsuLedgerSystemPage() {
               </div>
             </div>
 
-            <div className="rounded-md border border-zinc-200 bg-zinc-50 p-5 shadow-sm shadow-zinc-950/5">
+            <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-5 shadow-sm shadow-zinc-950/5">
               <div className="border-b border-zinc-200 pb-4">
                 <p className="text-sm font-semibold text-zinc-500">Workspace</p>
                 <p className="mt-2 text-2xl font-semibold">業務別の画面構成</p>
@@ -182,7 +182,7 @@ export default function KobutsuLedgerSystemPage() {
               <div className="mt-5 grid gap-3">
                 {["古物台帳", "仕入れ管理", "EC販売", "為替レート", "ペイメント", "Shopeeオーダー"].map(
                   (item, index) => (
-                    <div key={item} className="flex items-center justify-between rounded-md border border-zinc-200 bg-white p-4">
+                    <div key={item} className="flex items-center justify-between rounded-lg border border-zinc-200 bg-white p-4">
                       <span className="text-sm font-semibold text-zinc-700">{item}</span>
                       <span className="text-xs font-medium text-zinc-400">0{index + 1}</span>
                     </div>
@@ -211,7 +211,7 @@ export default function KobutsuLedgerSystemPage() {
               {migrationPoints.map((item) => (
                 <article
                   key={item.label}
-                  className="grid gap-3 rounded-md border border-zinc-200 bg-[rgb(240,240,240)] p-4 shadow-sm shadow-zinc-950/5 sm:grid-cols-[5.5rem_1fr] sm:p-5"
+                  className="grid gap-3 rounded-lg border border-zinc-200 bg-[rgb(240,240,240)] p-4 shadow-sm shadow-zinc-950/5 sm:grid-cols-[5.5rem_1fr] sm:p-5"
                 >
                   <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
                     {item.label}
@@ -274,7 +274,7 @@ export default function KobutsuLedgerSystemPage() {
           </div>
           <div className="grid gap-3">
             {workspaces.map((item) => (
-              <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5">
+              <article key={item.title} className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5">
                 <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
                 <p className="mt-3 text-base leading-7 text-zinc-600">{item.description}</p>
               </article>
@@ -315,7 +315,7 @@ export default function KobutsuLedgerSystemPage() {
                 {dataFlow.map((item, index) => (
                   <article
                     key={item.title}
-                    className="grid gap-3 rounded-md border border-white/15 bg-white/5 p-4 sm:grid-cols-[2.75rem_1fr]"
+                    className="grid gap-3 rounded-lg border border-white/15 bg-white/5 p-4 sm:grid-cols-[2.75rem_1fr]"
                   >
                     <span className="flex h-9 w-9 items-center justify-center rounded-md bg-cyan-200 text-sm font-semibold text-[#083344]">
                       {index + 1}
@@ -368,7 +368,7 @@ export default function KobutsuLedgerSystemPage() {
           </div>
           <div className="grid gap-3">
             {architecture.map((item, index) => (
-              <div key={item} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-3 sm:p-4">
+              <div key={item} className="flex gap-4 rounded-lg border border-zinc-200 bg-zinc-50 p-3 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#082f49] text-sm font-semibold text-white">
                   {index + 1}
                 </span>

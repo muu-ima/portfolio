@@ -114,7 +114,7 @@ export default function NfcRedirectPage() {
               </div>
             </div>
 
-            <div className="rounded-md border border-zinc-200 bg-zinc-50 p-5">
+            <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-5">
               <div className="border-b border-zinc-200 pb-4">
                 <p className="text-sm font-semibold text-zinc-500">System Boundary</p>
                 <p className="mt-2 text-2xl font-semibold">役割を3つに分ける</p>
@@ -125,7 +125,7 @@ export default function NfcRedirectPage() {
                   ["Next.js", "同期処理 / 公開ページ / 編集画面", "bg-cyan-950"],
                   ["Supabase", "プロフィール情報の保存先", "bg-cyan-500"],
                 ].map(([label, text, color]) => (
-                  <div key={label} className="grid grid-cols-[9rem_1fr] overflow-hidden rounded-md border border-zinc-200 bg-white">
+                  <div key={label} className="grid grid-cols-[9rem_1fr] overflow-hidden rounded-lg border border-zinc-200 bg-white">
                     <div className={`${color} px-4 py-4 text-sm font-semibold text-white`}>
                       {label}
                     </div>
@@ -164,7 +164,7 @@ export default function NfcRedirectPage() {
 
           <div className="mt-8 grid gap-3 md:grid-cols-2">
             {productFlow.map((item, index) => (
-              <div key={item} className="flex gap-4 rounded-md border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5 sm:p-4">
+              <div key={item} className="flex gap-4 rounded-lg border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5 sm:p-4">
                 <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-sky-400 text-sm font-semibold text-zinc-950">
                   {index + 1}
                 </span>
@@ -207,7 +207,7 @@ export default function NfcRedirectPage() {
 
             <div className="grid gap-3 sm:grid-cols-2">
               {pluginFeatures.map((feature, index) => (
-                <div key={feature} className="flex gap-4 rounded-md border border-zinc-200 bg-zinc-50 p-3 sm:p-4">
+                <div key={feature} className="flex gap-4 rounded-lg border border-zinc-200 bg-zinc-50 p-3 sm:p-4">
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-sky-400 text-sm font-semibold text-zinc-950">
                     {index + 1}
                   </span>
@@ -236,27 +236,27 @@ export default function NfcRedirectPage() {
           </div>
 
           <div className="mt-9 grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
-            <div className="rounded-md border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
+            <div className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
               <p className="text-sm font-semibold text-sky-700">Structure Map</p>
               <div className="mt-6 grid grid-cols-[1fr_auto_1fr] items-center gap-4 text-center text-sm font-semibold text-zinc-700">
-                <div className="rounded-md border border-zinc-200 bg-[rgb(240,240,240)] px-4 py-5">
+                <div className="rounded-lg border border-zinc-200 bg-[rgb(240,240,240)] px-4 py-5">
                   code
                   <span className="mt-2 block text-xs font-medium text-zinc-500">変えないID</span>
                 </div>
                 <span className="text-xl text-sky-700">→</span>
-                <div className="rounded-md border border-zinc-200 bg-[rgb(240,240,240)] px-4 py-5">
+                <div className="rounded-lg border border-zinc-200 bg-[rgb(240,240,240)] px-4 py-5">
                   profile
                   <span className="mt-2 block text-xs font-medium text-zinc-500">見せる内容</span>
                 </div>
               </div>
               <div className="my-5 flex justify-center text-sky-700">↓</div>
               <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 text-center text-sm font-semibold text-zinc-700">
-                <div className="rounded-md border border-zinc-200 bg-white px-4 py-5">
+                <div className="rounded-lg border border-zinc-200 bg-white px-4 py-5">
                   WordPress
                   <span className="mt-2 block text-xs font-medium text-zinc-500">発行管理</span>
                 </div>
                 <span className="text-xl text-sky-700">↔</span>
-                <div className="rounded-md border border-zinc-200 bg-white px-4 py-5">
+                <div className="rounded-lg border border-zinc-200 bg-white px-4 py-5">
                   Next.js
                   <span className="mt-2 block text-xs font-medium text-zinc-500">公開・編集</span>
                 </div>
@@ -265,7 +265,7 @@ export default function NfcRedirectPage() {
 
             <div className="grid gap-3 sm:grid-cols-2">
               {principles.map((item) => (
-                <article key={item.title} className="rounded-md border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5">
+                <article key={item.title} className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5">
                   <div className="mb-5 h-1.5 w-12 rounded-full bg-sky-400" />
                   <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
                   <p className="mt-3 text-base leading-7 text-zinc-600">{item.description}</p>
@@ -292,7 +292,7 @@ export default function NfcRedirectPage() {
             </p>
           </div>
 
-          <div className="mt-9 overflow-hidden rounded-md border border-zinc-200 bg-white shadow-sm shadow-zinc-950/5">
+          <div className="mt-9 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm shadow-zinc-950/5">
             <div className="grid gap-0 lg:grid-cols-6">
               {flows.map((flow, index) => (
                 <article
