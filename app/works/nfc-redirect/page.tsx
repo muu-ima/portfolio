@@ -145,10 +145,10 @@ export default function NfcRedirectPage() {
               Product Concept
             </p>
             <h2 className="mt-3 max-w-5xl text-3xl font-semibold tracking-normal text-zinc-950 sm:text-5xl">
-              CardCraft とセットで、配った後も育てられる名刺にしています。
+              CardCraft とつなぐ名刺です。
             </h2>
             <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
-              名刺デザインを作るだけで終わらせず、NFC / QR に紐づくプロフィールやリンク先を後から変更できる構成を想定しました。印刷して配ったあとでも、案内先を変えられるのがこの仕組みの中心です。
+              NFC / QR に紐づくプロフィールやリンク先を、配ったあとでも差し替えられるようにしています。
             </p>
           </div>
           <div className="mt-8 flex">

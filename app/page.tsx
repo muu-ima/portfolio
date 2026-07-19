@@ -154,10 +154,10 @@ export default function Home() {
                 Apps, Systems, Tools
               </p>
               <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-normal text-zinc-950 sm:text-6xl">
-                作ってきたものを、使い道ごとに紹介します。
+                作ってきたものを紹介します。
               </h1>
               <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-700">
-                利益計算ツール、名刺デザインエディタ、NFCプロフィール連携、古物台帳システムまで。実務で使うために作ってきたプロダクトをまとめています。
+                実務の中で作ってきたアプリと管理システムをまとめています。
               </p>
             </div>
             <a
