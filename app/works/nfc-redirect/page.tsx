@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
+import WordPressSideImage from "./WordPressSideImage";
 
 const principles = [
   {
@@ -190,20 +191,7 @@ export default function NfcRedirectPage() {
           </div>
 
           <div className="mt-9 grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
-            <figure className="overflow-hidden rounded-md border border-zinc-200 bg-white p-2 shadow-sm shadow-zinc-950/5">
-              <div className="relative aspect-[16/9] overflow-hidden rounded-sm bg-zinc-50">
-                <Image
-                  src="/screenshots/nfc-redirect/nfc-redirect.png"
-                  alt="NFC Redirect の WordPress 管理画面。code の自動生成、path 生成、停止機能を扱う画面。"
-                  fill
-                  sizes="(min-width: 1024px) 42vw, 100vw"
-                  className="object-contain"
-                />
-              </div>
-              <figcaption className="px-2 pb-1 pt-3 text-sm leading-6 text-zinc-500">
-                WordPress の管理画面で、発行・公開・停止・URL再発行をまとめて扱います。
-              </figcaption>
-            </figure>
+            <WordPressSideImage />
 
             <div className="grid gap-3 sm:grid-cols-2">
               {pluginFeatures.map((feature, index) => (
