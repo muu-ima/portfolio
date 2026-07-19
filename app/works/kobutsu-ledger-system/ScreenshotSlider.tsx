@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import LightboxImage from "../../components/LightboxImage";
 
 type Screenshot = {
   title: string;
@@ -15,7 +16,6 @@ type ScreenshotSliderProps = {
 
 export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const active = screenshots[activeIndex];
   const nextIndex =
     activeIndex === screenshots.length - 1 ? 0 : activeIndex + 1;
@@ -47,25 +47,19 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
       <div className="relative overflow-hidden">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_360px] xl:grid-cols-[minmax(0,1fr)_420px]">
           <article className="relative">
-            <button
-              type="button"
-              onClick={() => setIsGalleryOpen(true)}
-              className="group relative block aspect-[1920/946] w-full overflow-hidden border border-white/20 bg-white text-left shadow-sm"
-              aria-label={`${active.title}のスクリーンショットを拡大表示`}
-            >
-              <Image
-                src={active.src}
-                alt={`${active.title}のスクリーンショット`}
-                fill
-                priority={activeIndex === 0}
-                unoptimized
-                sizes="(min-width: 1280px) 980px, 100vw"
-                className="object-contain transition duration-300 group-hover:scale-[1.01]"
-              />
-              <span className="absolute bottom-4 right-4 bg-zinc-950 px-3 py-2 text-xs font-semibold text-white opacity-0 shadow-sm transition group-hover:opacity-100">
-                拡大
-              </span>
-            </button>
+            <LightboxImage
+              src={active.src}
+              alt={`${active.title}のスクリーンショット`}
+              width={1920}
+              height={946}
+              sizes="(min-width: 1280px) 980px, 100vw"
+              title={active.title}
+              description={active.description}
+              priority={activeIndex === 0}
+              unoptimized
+              buttonClassName="aspect-[1920/946] w-full border border-white/20 bg-white shadow-sm"
+              imageClassName="h-full w-full object-contain transition duration-300 group-hover:scale-[1.01]"
+            />
             <div className="mt-5 grid gap-4 lg:grid-cols-[0.45fr_1fr] lg:items-start">
               <div>
                 <p className="text-sm font-semibold text-cyan-200">
@@ -147,72 +141,6 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
         })}
       </div>
 
-      {isGalleryOpen ? (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={`${active.title}のスクリーンショット拡大表示`}
-          className="fixed inset-0 z-50 bg-zinc-950/90 p-4 text-white sm:p-8"
-        >
-          <button
-            type="button"
-            onClick={() => setIsGalleryOpen(false)}
-            className="absolute inset-0 cursor-zoom-out"
-            aria-label="拡大表示を閉じる"
-          />
-
-          <div className="relative z-10 mx-auto flex h-full max-w-[1440px] flex-col">
-            <div className="mb-4 flex items-center justify-between gap-4">
-              <div>
-                <p className="text-sm font-semibold text-cyan-200">
-                  {activeIndex + 1} / {screenshots.length}
-                </p>
-                <p className="mt-1 text-xl font-semibold">{active.title}</p>
-              </div>
-              <button
-                type="button"
-                onClick={() => setIsGalleryOpen(false)}
-                className="border border-white/30 px-4 py-2 text-sm font-semibold transition hover:bg-white hover:text-zinc-950"
-              >
-                閉じる
-              </button>
-            </div>
-
-            <div className="relative min-h-0 flex-1 overflow-hidden border border-white/20 bg-white">
-              <Image
-                src={active.src}
-                alt={`${active.title}のスクリーンショット`}
-                fill
-                unoptimized
-                sizes="100vw"
-                className="object-contain"
-              />
-            </div>
-
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-              <p className="max-w-3xl text-sm leading-6 text-zinc-300">
-                {active.description}
-              </p>
-              <div className="flex gap-2">
-                <button
-                  type="button"
-                  onClick={goToPrevious}
-                  className="border border-white/30 px-4 py-2 text-sm font-semibold transition hover:bg-white hover:text-zinc-950"
-                >
-                  ←
-                </button>
-                <button
-                  type="button"
-                  onClick={goToNext}
-                  className="border border-white/30 px-4 py-2 text-sm font-semibold transition hover:bg-white hover:text-zinc-950"
-                >
-                  →
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : null}
     </div>
   );
 }

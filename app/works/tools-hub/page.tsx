@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import LightboxImage from "../../components/LightboxImage";
 import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
 
@@ -92,13 +93,15 @@ export default function ToolsHubPage() {
             </div>
 
             <figure className="overflow-hidden rounded-md border border-zinc-200 bg-white/88 p-3 shadow-2xl shadow-zinc-950/10 backdrop-blur">
-              <Image
+              <LightboxImage
                 src="/screenshots/tools-hub/tools-hub.png"
                 alt="tools-hub のダッシュボード画面"
                 width={1920}
                 height={828}
                 sizes="(min-width: 1024px) 680px, 100vw"
-                className="h-auto w-full rounded-sm object-contain"
+                title="tools-hub ダッシュボード"
+                description="利益計算、送料、為替、発送情報へ移動する業務支援ハブのトップ画面です。"
+                imageClassName="h-auto w-full rounded-sm object-contain"
               />
             </figure>
           </div>
@@ -148,13 +151,15 @@ export default function ToolsHubPage() {
             </p>
           </div>
           <figure className="rounded-md border border-zinc-200 bg-zinc-50 p-3 shadow-sm shadow-zinc-950/5">
-            <Image
+            <LightboxImage
               src="/screenshots/tools-hub/mode-switcher.png"
               alt="tools-hub のモードチェンジャー画面"
               width={1920}
               height={951}
               sizes="(max-width: 1024px) 100vw, 800px"
-              className="h-auto w-full rounded-md border border-zinc-200 object-cover"
+              title="計算モード切り替え"
+              description="利益計算の通常・逆算・最安値モードと、発送管理への切り替えを同じハブ上で扱います。"
+              imageClassName="h-auto w-full rounded-md border border-zinc-200 object-cover"
             />
             <figcaption className="mt-4 text-sm leading-6 text-zinc-500">
               利益計算の通常・逆算・最安値モードと、発送管理への切り替えを同じハブ上で扱います。
@@ -219,14 +224,16 @@ export default function ToolsHubPage() {
               },
             ].map((screenshot) => (
               <figure key={screenshot.title} className="rounded-md border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5">
-                <Image
+                <LightboxImage
                   src={screenshot.src}
                   alt={screenshot.alt}
                   width={1920}
-                  height={946}
+                  height={screenshot.src.endsWith("tools-hub-entry.png") ? 946 : 941}
                   loading={screenshot.src.endsWith("tools-hub-entry.png") ? "eager" : "lazy"}
                   sizes="(max-width: 1024px) 100vw, 560px"
-                  className="h-auto w-full rounded-md border border-zinc-200 object-cover"
+                  title={screenshot.title}
+                  description={screenshot.description}
+                  imageClassName="h-auto w-full rounded-md border border-zinc-200 object-cover"
                 />
                 <figcaption className="mt-4">
                   <p className="text-xl font-semibold tracking-normal">{screenshot.title}</p>

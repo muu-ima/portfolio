@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import LightboxImage from "../../components/LightboxImage";
 import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
 import MigrationImageSlider from "./MigrationImageSlider";
@@ -302,13 +303,15 @@ export default function KobutsuLedgerSystemPage() {
 
             <div className="mt-9 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
               <figure className="overflow-hidden rounded-md border border-white/15 bg-white/5 p-2 shadow-sm shadow-black/20">
-                <Image
+                <LightboxImage
                   src="/kobutsu-ledger/ledger-editing.png"
                   alt="仕入れ管理画面のスクリーンショット"
                   width={1920}
                   height={943}
                   sizes="(min-width: 1024px) 680px, 100vw"
-                  className="h-auto min-h-[340px] w-full rounded-sm object-cover object-left-top lg:min-h-[430px]"
+                  title="仕入れ管理画面"
+                  description="仕入れ元データを原票として保存し、商品・仕入れ・販売へつなぐ入力画面です。"
+                  imageClassName="h-auto min-h-[340px] w-full rounded-sm object-cover object-left-top lg:min-h-[430px]"
                 />
               </figure>
               <div className="grid gap-3">

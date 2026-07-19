@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
-import LightboxImage from "./LightboxImage";
+import LightboxImage from "../../components/LightboxImage";
 
 const editorFeatures = [
   {

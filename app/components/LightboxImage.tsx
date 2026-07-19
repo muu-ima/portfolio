@@ -14,6 +14,8 @@ type LightboxImageProps = {
   imageClassName?: string;
   buttonClassName?: string;
   loading?: ImageProps["loading"];
+  priority?: ImageProps["priority"];
+  unoptimized?: ImageProps["unoptimized"];
 };
 
 export default function LightboxImage({
@@ -27,6 +29,8 @@ export default function LightboxImage({
   imageClassName = "h-auto w-full",
   buttonClassName = "w-full",
   loading,
+  priority,
+  unoptimized,
 }: LightboxImageProps) {
   const [isOpen, setIsOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -69,6 +73,8 @@ export default function LightboxImage({
           height={height}
           sizes={sizes}
           loading={loading}
+          priority={priority}
+          unoptimized={unoptimized}
           className={imageClassName}
         />
         <span className="absolute bottom-3 right-3 rounded-full bg-zinc-950 px-3 py-2 text-xs font-semibold text-white opacity-0 shadow-sm transition group-hover:opacity-100 group-focus-visible:opacity-100">
