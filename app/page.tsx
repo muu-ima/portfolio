@@ -134,43 +134,44 @@ export default function Home() {
           </a>
         </nav>
 
-        <div className="relative mx-auto max-w-7xl pt-6">
-          <div className="relative z-10 mx-auto max-w-5xl overflow-hidden bg-[#d8f2ee]">
-            <div className="relative aspect-[16/9]">
+        <div className="relative mx-auto grid max-w-7xl gap-5 pt-6 sm:gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+          <div className="hero-drop-in border border-[#c8c0b6] bg-white/85 p-5 shadow-2xl shadow-zinc-950/5 backdrop-blur sm:p-8 lg:mb-16">
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+              Apps, Systems, Tools
+            </p>
+            <h1 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-normal text-zinc-950 sm:text-6xl">
+              作ってきたものを紹介します。
+            </h1>
+            <p className="mt-5 max-w-2xl text-sm leading-7 text-zinc-700 sm:text-base sm:leading-8">
+              実務の中で作ってきたアプリと管理システムをまとめています。
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden border border-[#c8c0b6] bg-[#d8e2dd] p-3 shadow-2xl shadow-zinc-950/10 sm:p-5">
+            <div className="relative aspect-[4/3] bg-[#d8e2dd]">
               <Image
-                src="/portfolio-hero.png"
-                alt="複数のアプリ画面が並ぶポートフォリオのビジュアル"
+                src="/main-hero.jpg"
+                alt="自作イラストを使ったポートフォリオのメインビジュアル"
                 fill
                 priority
-                sizes="(max-width: 1024px) 100vw, 1024px"
-                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 720px"
+                className="object-contain object-center opacity-90"
               />
             </div>
           </div>
 
-          <div className="relative z-20 mx-auto -mt-14 grid max-w-6xl gap-6 lg:grid-cols-[1fr_20rem] lg:items-end">
-            <div className="bg-white/92 p-6 backdrop-blur sm:p-8">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
-                Apps, Systems, Tools
-              </p>
-              <h1 className="mt-4 max-w-3xl text-4xl font-semibold leading-[1.08] tracking-normal text-zinc-950 sm:text-6xl">
-                作ってきたものを紹介します。
-              </h1>
-              <p className="mt-6 max-w-2xl text-base leading-8 text-zinc-700">
-                実務の中で作ってきたアプリと管理システムをまとめています。
-              </p>
-            </div>
+          <div className="lg:col-start-2 lg:flex lg:justify-end">
             <a
               href="#works"
-              className="flex min-h-28 items-center justify-between bg-zinc-950 px-6 py-5 text-white transition hover:bg-cyan-950"
+              className="flex min-h-20 w-full items-center justify-between bg-zinc-950 px-5 py-4 text-white transition hover:bg-cyan-950 sm:min-h-28 sm:px-6 sm:py-5 lg:w-80"
             >
               <span>
-                <span className="block text-sm font-semibold uppercase tracking-[0.24em] text-cyan-200">
+                <span className="block text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200 sm:text-sm">
                   View More
                 </span>
-                <span className="mt-2 block text-lg font-semibold">Selected Works</span>
+                <span className="mt-2 block text-base font-semibold sm:text-lg">Selected Works</span>
               </span>
-              <span className="flex h-12 w-12 items-center justify-center rounded-full border border-cyan-200 text-sm font-semibold">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-200 text-xs font-semibold sm:h-12 sm:w-12 sm:text-sm">
                 04
               </span>
             </a>
