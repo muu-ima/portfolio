@@ -128,13 +128,23 @@ export default function Home() {
     <main className="min-h-screen bg-[#dbd5cd] text-[#2a2a2a]">
       <SideKanaNav />
       <section className="relative overflow-hidden border-b border-[#c8c0b6] px-5 pb-20 pt-8 sm:px-8">
-        <nav className="mx-auto flex max-w-7xl items-center py-6 text-sm font-semibold uppercase tracking-[0.28em] text-zinc-700">
+        <Image
+          src="/work-hero.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="pointer-events-none object-cover object-center opacity-35 mix-blend-multiply"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-[#dbd5cd]/35" aria-hidden="true" />
+        <nav className="relative z-10 mx-auto flex max-w-7xl items-center py-6 text-sm font-semibold uppercase tracking-[0.28em] text-zinc-700">
           <a href="#" className="text-base normal-case tracking-[0.18em] text-zinc-500">
             Portfolio
           </a>
         </nav>
 
-        <div className="relative mx-auto grid max-w-7xl gap-5 pt-6 sm:gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
+        <div className="relative z-10 mx-auto grid max-w-7xl gap-5 pt-6 sm:gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
           <div className="hero-drop-in border border-[#c8c0b6] bg-white/85 p-5 shadow-2xl shadow-zinc-950/5 backdrop-blur sm:p-8 lg:mb-16">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
               Apps, Systems, Tools

@@ -75,7 +75,7 @@ export default function CardCraftPage() {
     <main className="min-h-screen bg-[#dbd5cd] text-[#2a2a2a]">
       <SideKanaNav />
       <section className="relative overflow-hidden border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-8 sm:px-8">
-        <div className="absolute inset-0 opacity-45">
+        <div className="absolute inset-0 opacity-60">
           <Image
             src="/work-hero.png"
             alt=""
@@ -85,7 +85,7 @@ export default function CardCraftPage() {
             className="object-cover object-center"
           />
         </div>
-        <div className="absolute inset-0 bg-[#dbd5cd]/75" />
+        <div className="absolute inset-0 bg-[#dbd5cd]/62" />
 
         <div className="relative mx-auto max-w-[1440px]">
           <nav className="mb-20 flex items-center text-sm font-medium">
