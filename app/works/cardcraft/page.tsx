@@ -277,15 +277,27 @@ export default function CardCraftPage() {
               崩れにくくまとめています。
             </h2>
           </div>
-          <div className="mt-8 grid gap-3">
-            {hardParts.map((part, index) => (
-              <div key={part} className="flex gap-4 rounded-lg border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5 sm:p-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#082f49] text-sm font-semibold text-white">
-                  {index + 1}
-                </span>
-                <p className="pt-1 text-base leading-7 text-zinc-800">{part}</p>
-              </div>
-            ))}
+          <div className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+            <figure className="overflow-hidden rounded-lg border border-zinc-200 bg-white p-2 shadow-sm shadow-zinc-950/5">
+              <Image
+                src="/screenshots/cardcraft/hard-parts.png"
+                alt="CardCraft の編集画面でテキストとレイヤーを調整している状態"
+                width={1920}
+                height={938}
+                sizes="(max-width: 1024px) 100vw, 560px"
+                className="h-auto w-full rounded-md border border-zinc-200 object-cover"
+              />
+            </figure>
+            <div className="grid gap-3">
+              {hardParts.map((part, index) => (
+                <div key={part} className="flex gap-4 rounded-lg border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5 sm:p-4">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#082f49] text-sm font-semibold text-white">
+                    {index + 1}
+                  </span>
+                  <p className="pt-1 text-base leading-7 text-zinc-800">{part}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
