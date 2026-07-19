@@ -178,7 +178,9 @@ export default function CardCraftPage() {
               What It Does
             </p>
             <h2 className="mt-3 max-w-5xl text-3xl font-semibold tracking-normal sm:text-5xl">
-              名刺づくりを、ブラウザ上で完結できるようにしています。
+              名刺づくりを、
+              <br />
+              ブラウザ上で完結できるようにしています。
             </h2>
             <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
               表裏確認、レイヤー調整、画像書き出し、保存再開までを、ひとつの編集体験としてまとめています。
@@ -270,7 +272,9 @@ export default function CardCraftPage() {
               Hard Parts
             </p>
             <h2 className="mt-3 max-w-5xl text-3xl font-semibold tracking-normal sm:text-5xl">
-              自由に触れる編集体験を、崩れにくくまとめています。
+              自由に触れる編集体験を、
+              <br />
+              崩れにくくまとめています。
             </h2>
           </div>
           <div className="mt-8 grid gap-3">
