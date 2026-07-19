@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
+import LightboxImage from "./LightboxImage";
 
 const editorFeatures = [
   {
@@ -143,14 +144,16 @@ export default function CardCraftPage() {
                 </span>
               </div>
               <figure className="mt-5 overflow-hidden rounded-md border border-zinc-200 bg-zinc-50">
-                <Image
+                <LightboxImage
                   src="/screenshots/cardcraft/desktop-editor.png"
                   alt="CardCraft の編集画面プレビュー"
                   width={1920}
                   height={946}
                   loading="eager"
                   sizes="(max-width: 1024px) 100vw, 560px"
-                  className="h-auto w-full object-cover"
+                  title="Editor Preview"
+                  description="CardCraft のデスクトップ編集画面です。"
+                  imageClassName="h-auto w-full object-cover"
                 />
               </figure>
               <div className="mt-4 grid grid-cols-2 gap-3">
@@ -219,13 +222,15 @@ export default function CardCraftPage() {
                 key={screenshot.title}
                 className="rounded-md border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5"
               >
-                <Image
+                <LightboxImage
                   src={screenshot.src}
                   alt={screenshot.alt}
                   width={screenshot.width}
                   height={screenshot.height}
                   sizes="(max-width: 1024px) 100vw, 600px"
-                  className="h-auto w-full rounded-md border border-zinc-200 object-cover"
+                  title={screenshot.title}
+                  description={screenshot.description}
+                  imageClassName="h-auto w-full rounded-md border border-zinc-200 object-cover"
                 />
                 <figcaption className="mt-4">
                   <p className="text-xl font-semibold tracking-normal">{screenshot.title}</p>
@@ -279,13 +284,15 @@ export default function CardCraftPage() {
           </div>
           <div className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <figure className="overflow-hidden rounded-lg border border-zinc-200 bg-white p-2 shadow-sm shadow-zinc-950/5">
-              <Image
+              <LightboxImage
                 src="/screenshots/cardcraft/hard-parts.png"
                 alt="CardCraft の編集画面でテキストとレイヤーを調整している状態"
                 width={1920}
                 height={938}
                 sizes="(max-width: 1024px) 100vw, 560px"
-                className="h-auto w-full rounded-md border border-zinc-200 object-cover"
+                title="編集状態とレイヤー管理"
+                description="テキスト、画像、背景の調整とレイヤー操作を同じ編集画面で扱います。"
+                imageClassName="h-auto w-full rounded-md border border-zinc-200 object-cover"
               />
             </figure>
             <div className="grid gap-3">
