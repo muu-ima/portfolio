@@ -55,17 +55,17 @@ export default function ToolsHubPage() {
 
         <div className="relative mx-auto max-w-[1440px] px-5 py-8 sm:px-8">
           <nav className="mb-20 flex items-center text-sm font-medium">
-            <Link href="/" className="transition hover:text-sky-700">
+            <Link href="/" className="transition hover:text-[#0e6871]">
               Portfolio
             </Link>
           </nav>
 
           <div className="grid gap-10 pb-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
             <div>
-              <p className="mb-5 inline-flex rounded-md border border-sky-700/20 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-800">
+              <p className="section-kicker mb-5 inline-flex border-b border-[#0e6871]/30 pb-1">
                 Business Tools
               </p>
-              <h1 className="text-5xl font-semibold leading-[1.05] tracking-normal sm:text-7xl">
+              <h1 className="section-title text-4xl font-semibold sm:text-7xl">
                 tools-hub
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-700">
@@ -77,7 +77,7 @@ export default function ToolsHubPage() {
                   href="https://muu-tools-hub.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center rounded-md bg-sky-700 px-6 text-sm font-semibold text-white transition hover:bg-sky-800"
+                  className="primary-action"
                 >
                   アプリを開く
                 </a>
@@ -85,14 +85,14 @@ export default function ToolsHubPage() {
                   href="https://github.com/muu-ima/muu-tools-hub"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center rounded-md border border-zinc-950/20 bg-white/80 px-6 text-sm font-semibold text-zinc-950 transition hover:bg-white"
+                  className="secondary-action"
                 >
                   GitHubを見る
                 </a>
               </div>
             </div>
 
-            <figure className="overflow-hidden rounded-md border border-zinc-200 bg-white/88 p-3 shadow-2xl shadow-zinc-950/10 backdrop-blur">
+            <figure className="media-frame p-3 backdrop-blur">
               <LightboxImage
                 src="/screenshots/tools-hub/tools-hub.png"
                 alt="tools-hub のダッシュボード画面"
@@ -101,7 +101,7 @@ export default function ToolsHubPage() {
                 sizes="(min-width: 1024px) 680px, 100vw"
                 title="tools-hub ダッシュボード"
                 description="利益計算、送料、為替、発送情報へ移動する業務支援ハブのトップ画面です。"
-                imageClassName="h-auto w-full rounded-sm object-contain"
+                imageClassName="portfolio-image h-auto w-full object-contain"
               />
             </figure>
           </div>
@@ -111,10 +111,10 @@ export default function ToolsHubPage() {
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-[1440px]">
           <div className="border-b border-[#c8c0b6] pb-8">
-            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+            <p className="section-kicker">
               Overview
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
               計算と発送管理をひとつにまとめています。
             </h2>
             <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
@@ -125,7 +125,7 @@ export default function ToolsHubPage() {
             {features.map((feature) => (
               <article
                 key={feature.title}
-                className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5"
+                className="surface-card p-4 sm:p-5"
               >
                 <h3 className="text-xl font-semibold tracking-normal">{feature.title}</h3>
                 <p className="mt-3 text-base leading-7 text-zinc-600">{feature.description}</p>
@@ -139,10 +139,10 @@ export default function ToolsHubPage() {
         <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
           <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
+              <p className="section-kicker">
                 Mode Switcher
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+              <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
                 計算モードを切り替えられます。
               </h2>
             </div>
@@ -150,7 +150,7 @@ export default function ToolsHubPage() {
               UK版、US版、発送管理を上部ナビから移動しつつ、計算画面では通常計算、逆算ロジック、最安値モードを切り替えられるようにしています。
             </p>
           </div>
-          <figure className="rounded-md border border-zinc-200 bg-zinc-50 p-3 shadow-sm shadow-zinc-950/5">
+          <figure className="media-frame p-3">
             <LightboxImage
               src="/screenshots/tools-hub/mode-switcher.png"
               alt="tools-hub のモードチェンジャー画面"
@@ -159,9 +159,9 @@ export default function ToolsHubPage() {
               sizes="(max-width: 1024px) 100vw, 800px"
               title="計算モード切り替え"
               description="利益計算の通常・逆算・最安値モードと、発送管理への切り替えを同じハブ上で扱います。"
-              imageClassName="h-auto w-full rounded-md border border-zinc-200 object-cover"
+              imageClassName="portfolio-image h-auto w-full object-cover"
             />
-            <figcaption className="mt-4 text-sm leading-6 text-zinc-500">
+            <figcaption className="image-caption mt-4">
               利益計算の通常・逆算・最安値モードと、発送管理への切り替えを同じハブ上で扱います。
             </figcaption>
           </figure>
@@ -171,10 +171,10 @@ export default function ToolsHubPage() {
       <section className="border-y border-[#c8c0b6] bg-[#2a2a2a] px-5 py-14 text-[#dbd5cd] sm:px-8">
         <div className="mx-auto max-w-[1440px]">
           <div className="max-w-4xl border-b border-white/10 pb-6">
-            <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
+            <p className="section-kicker-dark">
               Shipping Manager
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
               発送情報を商品データとして扱えます。
             </h2>
           </div>
@@ -185,7 +185,7 @@ export default function ToolsHubPage() {
               "実重量と容積重量を比較し、送料計算に使う重量を整理",
               "商品一覧、編集フォーム、認証付き入力フォームを Next.js 側で実装",
             ].map((item) => (
-              <div key={item} className="rounded-lg border border-white/15 bg-white/5 p-4 sm:p-5">
+              <div key={item} className="rounded-[var(--portfolio-radius)] border border-white/15 bg-white/5 p-4 sm:p-5">
                 <p className="text-base leading-7 text-zinc-100">{item}</p>
               </div>
             ))}
@@ -197,10 +197,10 @@ export default function ToolsHubPage() {
         <div className="mx-auto max-w-[1440px]">
           <div className="max-w-4xl border-b border-zinc-200 pb-6">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+              <p className="section-kicker">
                 Entry Form
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+              <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
                 必要な人だけが入力できる導線です。
               </h2>
             </div>
@@ -223,7 +223,7 @@ export default function ToolsHubPage() {
                 alt: "tools-hub の発送情報入力フォーム画面",
               },
             ].map((screenshot) => (
-              <figure key={screenshot.title} className="rounded-md border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5">
+              <figure key={screenshot.title} className="media-frame p-3">
                 <LightboxImage
                   src={screenshot.src}
                   alt={screenshot.alt}
@@ -233,11 +233,11 @@ export default function ToolsHubPage() {
                   sizes="(max-width: 1024px) 100vw, 560px"
                   title={screenshot.title}
                   description={screenshot.description}
-                  imageClassName="h-auto w-full rounded-md border border-zinc-200 object-cover"
+                  imageClassName="portfolio-image h-auto w-full object-cover"
                 />
                 <figcaption className="mt-4">
                   <p className="text-xl font-semibold tracking-normal">{screenshot.title}</p>
-                  <p className="mt-2 text-sm leading-6 text-zinc-500">
+                  <p className="image-caption mt-2">
                     {screenshot.description}
                   </p>
                 </figcaption>
@@ -251,17 +251,17 @@ export default function ToolsHubPage() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-200 pb-6 sm:flex-row sm:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
+              <p className="section-kicker">
                 Stack
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術です</h2>
+              <h2 className="section-title mt-3 text-3xl font-semibold">使っている技術です</h2>
             </div>
           </div>
           <div className="mt-6 flex flex-wrap gap-2">
             {stack.map((item) => (
               <span
                 key={item}
-                className="border border-zinc-200 bg-zinc-50 px-3 py-2 text-sm font-medium text-zinc-700"
+                className="meta-tag"
               >
                 {item}
               </span>

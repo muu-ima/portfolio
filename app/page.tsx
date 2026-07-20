@@ -87,7 +87,7 @@ const works = [
     description:
       "海外販売向けの利益計算、送料、為替、発送情報管理をまとめた業務支援ハブです。",
     tags: ["Next.js", "Profit Calc", "Shipping"],
-    accent: "bg-cyan-500",
+    accent: "bg-[#0e6871]",
     icon: "tools" as WorkIconName,
     href: "/works/tools-hub",
   },
@@ -97,7 +97,7 @@ const works = [
     description:
       "名刺デザインをブラウザ上で編集し、保存やPNG / JPEG書き出しまで行えるエディタです。",
     tags: ["Next.js 16", "Editor", "Supabase"],
-    accent: "bg-sky-400",
+    accent: "bg-[#0e6871]",
     icon: "card" as WorkIconName,
     href: "/works/cardcraft",
   },
@@ -107,7 +107,7 @@ const works = [
     description:
       "CardCraft と組み合わせて使う、NFC / QR 名刺のリンク管理システムです。",
     tags: ["Next.js API", "WordPress", "Supabase"],
-    accent: "bg-blue-500",
+    accent: "bg-[#0e6871]",
     icon: "nfc" as WorkIconName,
     href: "/works/nfc-redirect",
   },
@@ -117,7 +117,7 @@ const works = [
     description:
       "古物台帳、仕入れ、EC販売、為替をひとつの業務画面で扱う管理システムです。",
     tags: ["Next.js", "WordPress", "Docker"],
-    accent: "bg-cyan-900",
+    accent: "bg-[#0e6871]",
     icon: "ledger" as WorkIconName,
     href: "/works/kobutsu-ledger-system",
   },
@@ -145,11 +145,11 @@ export default function Home() {
         </nav>
 
         <div className="relative z-10 mx-auto grid max-w-7xl gap-5 pt-6 sm:gap-8 lg:grid-cols-[0.82fr_1.18fr] lg:items-end">
-          <div className="hero-drop-in border border-[#c8c0b6] bg-white/85 p-5 shadow-2xl shadow-zinc-950/5 backdrop-blur sm:p-8 lg:mb-16">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+          <div className="hero-drop-in surface-card bg-white/60 p-5 backdrop-blur sm:p-8 lg:mb-16">
+            <p className="section-kicker">
               Apps, Systems, Tools
             </p>
-            <h1 className="mt-4 text-3xl font-semibold leading-[1.08] tracking-normal text-zinc-950 sm:text-6xl">
+            <h1 className="section-title mt-4 text-3xl font-semibold text-zinc-950 sm:text-6xl">
               作ってきたものを紹介します。
             </h1>
             <p className="mt-5 max-w-2xl text-sm leading-7 text-zinc-700 sm:text-base sm:leading-8">
@@ -157,7 +157,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="relative overflow-hidden border border-[#c8c0b6] bg-[#d8e2dd] p-3 shadow-2xl shadow-zinc-950/10 sm:p-5">
+          <div className="media-frame relative bg-[#d8e2dd] p-3 sm:p-5">
             <div className="relative aspect-[4/3] bg-[#d8e2dd]">
               <Image
                 src="/main-hero.jpg"
@@ -173,7 +173,7 @@ export default function Home() {
           <div className="lg:col-start-2 lg:flex lg:justify-end">
             <a
               href="#works"
-              className="flex min-h-20 w-full items-center justify-between bg-zinc-950 px-5 py-4 text-white transition hover:bg-cyan-950 sm:min-h-28 sm:px-6 sm:py-5 lg:w-80"
+              className="flex min-h-20 w-full items-center justify-between bg-zinc-950 px-5 py-4 text-white transition hover:bg-[#083b46] sm:min-h-28 sm:px-6 sm:py-5 lg:w-80"
             >
               <span>
                 <span className="block text-xs font-semibold uppercase tracking-[0.24em] text-cyan-200 sm:text-sm">
@@ -192,10 +192,10 @@ export default function Home() {
       <section id="works" className="bg-[#dbd5cd] px-5 py-16 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="border-b border-zinc-200 pb-8">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-700">
+            <p className="section-kicker">
               Selected Works
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
               紹介しているアプリです
             </h2>
             <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
@@ -204,19 +204,21 @@ export default function Home() {
           </div>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {works.map((work) => {
+            {works.map((work, index) => {
               const isExternal = work.href?.startsWith("http");
               const cardContent = (
                 <>
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="text-sm font-semibold text-zinc-500">{work.category}</p>
-                      <h3 className="mt-3 text-2xl font-semibold tracking-normal">
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-zinc-500">
+                        0{index + 1} / {work.category}
+                      </p>
+                      <h3 className="mt-3 text-2xl font-semibold tracking-[-0.02em] [overflow-wrap:anywhere]">
                         {work.title}
                       </h3>
                     </div>
                     <span
-                      className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full ${work.accent} text-white shadow-lg shadow-sky-950/10 ring-8 ring-sky-50 transition group-hover:scale-105`}
+                      className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full ${work.accent} text-white transition group-hover:scale-105`}
                       aria-hidden="true"
                     >
                       {workIcons[work.icon]}
@@ -227,15 +229,16 @@ export default function Home() {
                     {work.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="border border-zinc-200 bg-white px-3 py-1 text-sm font-medium text-zinc-600"
+                        className="meta-tag"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
                   {work.href ? (
-                    <p className="mt-7 text-sm font-semibold text-sky-700">
+                    <p className="mt-auto flex items-center gap-2 pt-7 text-sm font-semibold text-[#0e6871]">
                       {isExternal ? "サイトを見る" : "詳細を見る"}
+                      <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
                     </p>
                   ) : null}
                 </>
@@ -245,7 +248,7 @@ export default function Home() {
                 return (
                   <article
                     key={work.title}
-                    className="group border border-zinc-200 bg-white p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-xl hover:shadow-zinc-950/5"
+                    className="surface-card surface-card-interactive group flex h-full flex-col p-5"
                   >
                     {cardContent}
                   </article>
@@ -258,7 +261,7 @@ export default function Home() {
                   href={work.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group border border-zinc-200 bg-white p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-xl hover:shadow-zinc-950/5"
+                  className="surface-card surface-card-interactive group flex h-full flex-col p-5"
                 >
                   {cardContent}
                 </a>
@@ -266,7 +269,7 @@ export default function Home() {
                 <Link
                   key={work.title}
                   href={work.href}
-                  className="group border border-zinc-200 bg-white p-5 transition hover:-translate-y-1 hover:border-zinc-300 hover:shadow-xl hover:shadow-zinc-950/5"
+                  className="surface-card surface-card-interactive group flex h-full flex-col p-5"
                 >
                   {cardContent}
                 </Link>

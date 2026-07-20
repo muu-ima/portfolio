@@ -54,13 +54,13 @@ export default function SiteFooter() {
             Apps and systems
           </p>
         </div>
-        <div className="flex items-center justify-center gap-8">
+        <div className="flex items-center justify-center gap-3">
           {socialLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               aria-label={link.label}
-              className="text-zinc-950 transition hover:-translate-y-0.5 hover:text-cyan-700"
+              className="flex h-11 w-11 items-center justify-center rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-white/20 text-zinc-950 transition hover:-translate-y-0.5 hover:border-[#0e6871] hover:bg-white/40 hover:text-[#0e6871]"
             >
               {link.icon}
             </a>

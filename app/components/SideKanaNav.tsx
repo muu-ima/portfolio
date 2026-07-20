@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "Works", href: "/#works" },
@@ -13,6 +14,23 @@ const navItems = [
 
 export default function SideKanaNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -20,20 +38,23 @@ export default function SideKanaNav() {
         type="button"
         aria-label={isOpen ? "ナビゲーションを閉じる" : "ナビゲーションを開く"}
         aria-expanded={isOpen}
+        aria-controls="portfolio-navigation"
         onClick={() => setIsOpen((current) => !current)}
-        className="fixed right-6 top-8 z-50 flex h-12 w-16 flex-col items-center justify-center gap-2 text-zinc-700 transition hover:text-cyan-800"
+        className="fixed right-4 top-5 z-50 flex h-16 w-20 flex-col items-center justify-center gap-2 text-zinc-700 transition hover:text-[#0e6871] sm:right-7 sm:top-6"
       >
         <span
-          className={`h-px w-14 bg-current transition ${isOpen ? "translate-y-[9px] rotate-12" : ""}`}
+          className={`h-px w-16 bg-current transition ${isOpen ? "translate-y-[9px] rotate-45" : ""}`}
         />
-        <span className={`h-px w-14 bg-current transition ${isOpen ? "opacity-0" : ""}`} />
+        <span className={`h-px w-16 bg-current transition ${isOpen ? "opacity-0" : ""}`} />
         <span
-          className={`h-px w-14 bg-current transition ${isOpen ? "-translate-y-[9px] -rotate-12" : ""}`}
+          className={`h-px w-16 bg-current transition ${isOpen ? "-translate-y-[9px] -rotate-45" : ""}`}
         />
       </button>
 
       <div
-        className={`fixed inset-0 z-40 bg-[rgb(240,240,240)]/95 transition duration-300 ${
+        id="portfolio-navigation"
+        aria-hidden={!isOpen}
+        className={`fixed inset-0 z-40 bg-[#dbd5cd]/95 transition duration-300 ${
           isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
@@ -42,7 +63,7 @@ export default function SideKanaNav() {
           className="mx-auto grid min-h-screen max-w-7xl gap-12 px-10 py-20 lg:grid-cols-[0.8fr_1.2fr] lg:items-center"
         >
           <div className="max-w-sm self-end lg:self-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-800">
+            <p className="section-kicker">
               Portfolio
             </p>
             <p className="mt-6 text-4xl font-semibold tracking-normal text-zinc-900 sm:text-6xl">
@@ -58,16 +79,30 @@ export default function SideKanaNav() {
           </div>
 
           <div className="grid gap-5 text-right lg:justify-self-end">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className="text-4xl font-semibold tracking-[0.08em] text-zinc-700 transition hover:text-cyan-800 sm:text-6xl"
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = item.href === "/#works" ? pathname === "/" : pathname === item.href;
+
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)}
+                  tabIndex={isOpen ? 0 : -1}
+                  aria-current={isActive ? "page" : undefined}
+                  className={`group inline-flex items-center justify-end gap-4 text-4xl font-semibold tracking-[0.04em] transition sm:text-6xl ${
+                    isActive ? "text-[#0e6871]" : "text-zinc-700 hover:text-[#0e6871]"
+                  }`}
+                >
+                  <span
+                    aria-hidden="true"
+                    className={`h-2 w-2 rounded-full bg-current transition ${
+                      isActive ? "scale-100 opacity-100" : "scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-60"
+                    }`}
+                  />
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
         </nav>
       </div>

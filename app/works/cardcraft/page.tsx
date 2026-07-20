@@ -90,17 +90,17 @@ export default function CardCraftPage() {
 
         <div className="relative mx-auto max-w-[1440px]">
           <nav className="mb-20 flex items-center text-sm font-medium">
-            <Link href="/" className="transition hover:text-sky-700">
+            <Link href="/" className="transition hover:text-[#0e6871]">
               Portfolio
             </Link>
           </nav>
 
           <div className="grid gap-10 pb-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-end">
             <div>
-              <p className="mb-5 inline-flex rounded-md border border-sky-500/30 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">
+              <p className="section-kicker mb-5 inline-flex border-b border-[#0e6871]/30 pb-1">
                 Business card editor
               </p>
-              <h1 className="text-5xl font-semibold leading-[1.05] tracking-normal sm:text-7xl">
+              <h1 className="section-title text-4xl font-semibold sm:text-7xl">
                 cardcraft
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-700">
@@ -112,38 +112,38 @@ export default function CardCraftPage() {
                   href="https://muu-cardcraft.vercel.app/editor"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center rounded-md bg-sky-700 px-6 text-sm font-semibold text-white transition hover:bg-sky-800"
+                  className="primary-action"
                 >
                   アプリを開く
                 </a>
                 <a
                   href="/downloads/cardcraft-1.pptx"
                   download
-                  className="inline-flex h-12 items-center justify-center rounded-md border border-zinc-950/20 bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-50"
+                  className="secondary-action"
                 >
                   資料1をダウンロード
                 </a>
                 <a
                   href="/downloads/cardcraft-2.pptx"
                   download
-                  className="inline-flex h-12 items-center justify-center rounded-md border border-zinc-950/20 bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-50"
+                  className="secondary-action"
                 >
                   資料2をダウンロード
                 </a>
               </div>
             </div>
 
-            <div className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
+            <div className="surface-card p-5">
               <div className="flex items-center justify-between border-b border-zinc-200 pb-4">
                 <div>
                   <p className="text-sm font-semibold text-zinc-500">Editor Preview</p>
                   <p className="mt-2 text-2xl font-semibold">何度でもプレビュー</p>
                 </div>
-                <span className="rounded-full bg-cyan-50 px-3 py-1 text-xs font-semibold text-cyan-700">
+                <span className="rounded-full bg-[#0e6871]/10 px-3 py-1 text-xs font-semibold text-[#0e6871]">
                   saved
                 </span>
               </div>
-              <figure className="mt-5 overflow-hidden rounded-md border border-zinc-200 bg-zinc-50">
+              <figure className="media-frame mt-5 p-0">
                 <LightboxImage
                   src="/screenshots/cardcraft/desktop-editor.png"
                   alt="CardCraft の編集画面プレビュー"
@@ -153,7 +153,7 @@ export default function CardCraftPage() {
                   sizes="(max-width: 1024px) 100vw, 560px"
                   title="Editor Preview"
                   description="CardCraft のデスクトップ編集画面です。"
-                  imageClassName="h-auto w-full object-cover"
+                  imageClassName="portfolio-image h-auto w-full object-cover"
                 />
               </figure>
               <div className="mt-4 grid grid-cols-2 gap-3">
@@ -163,8 +163,8 @@ export default function CardCraftPage() {
                   ["EXPORT", "PNG / JPEG"],
                   ["LAYERS", "text / image"],
                 ].map(([label, value]) => (
-                  <div key={label} className="rounded-lg border border-cyan-200 bg-cyan-50 px-3 py-3">
-                    <p className="text-xs font-semibold text-cyan-700">{label}</p>
+                  <div key={label} className="rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-white/25 px-3 py-3">
+                    <p className="text-xs font-semibold text-[#0e6871]">{label}</p>
                     <p className="mt-1 text-sm font-medium text-zinc-700">{value}</p>
                   </div>
                 ))}
@@ -177,10 +177,10 @@ export default function CardCraftPage() {
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-[1440px]">
           <div className="border-b border-[#c8c0b6] pb-8">
-            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+            <p className="section-kicker">
               What It Does
             </p>
-            <h2 className="mt-3 max-w-5xl text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="section-title mt-3 max-w-5xl text-3xl font-semibold sm:text-5xl">
               名刺づくりを、
               <br />
               ブラウザ上で完結できるようにしています。
@@ -193,7 +193,7 @@ export default function CardCraftPage() {
             {editorFeatures.map((feature) => (
               <article
                 key={feature.title}
-                className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5"
+                className="surface-card p-4 sm:p-5"
               >
                 <h3 className="text-xl font-semibold tracking-normal">{feature.title}</h3>
                 <p className="mt-3 text-base leading-7 text-zinc-600">{feature.description}</p>
@@ -206,10 +206,10 @@ export default function CardCraftPage() {
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-[1440px]">
           <div className="border-b border-[#c8c0b6] pb-8">
-            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+            <p className="section-kicker">
               Editor Screenshots
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
               実際の編集画面です。
             </h2>
             <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
@@ -220,7 +220,7 @@ export default function CardCraftPage() {
             {screenshots.map((screenshot) => (
               <figure
                 key={screenshot.title}
-                className="rounded-md border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5"
+                className="media-frame p-3"
               >
                 <LightboxImage
                   src={screenshot.src}
@@ -230,11 +230,11 @@ export default function CardCraftPage() {
                   sizes="(max-width: 1024px) 100vw, 600px"
                   title={screenshot.title}
                   description={screenshot.description}
-                  imageClassName="h-auto w-full rounded-md border border-zinc-200 object-cover"
+                  imageClassName="portfolio-image h-auto w-full object-cover"
                 />
                 <figcaption className="mt-4">
                   <p className="text-xl font-semibold tracking-normal">{screenshot.title}</p>
-                  <p className="mt-2 text-sm leading-6 text-zinc-500">
+                  <p className="image-caption mt-2">
                     {screenshot.description}
                   </p>
                 </figcaption>
@@ -247,10 +247,10 @@ export default function CardCraftPage() {
       <section className="border-y border-[#c8c0b6] bg-[#2a2a2a] px-5 py-14 text-[#dbd5cd] sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-4xl border-b border-white/10 pb-6">
-            <p className="text-sm font-semibold uppercase tracking-normal text-cyan-200">
+            <p className="section-kicker-dark">
               Product Flow
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
               nfc-redirect とセットで使う想定でした。
             </h2>
             <p className="mt-6 text-base leading-7 text-zinc-200">
@@ -259,8 +259,8 @@ export default function CardCraftPage() {
           </div>
           <div className="mt-8 grid gap-3 md:grid-cols-2">
             {buildPoints.map((point, index) => (
-              <div key={point} className="flex gap-4 rounded-lg border border-white/15 bg-white/5 p-4 sm:p-5">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-cyan-200 text-sm font-semibold text-cyan-950">
+              <div key={point} className="flex gap-4 rounded-[var(--portfolio-radius)] border border-white/15 bg-white/5 p-4 sm:p-5">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--portfolio-radius)] bg-[#b6d9dc] text-sm font-semibold text-[#083b46]">
                   {index + 1}
                 </span>
                 <p className="pt-1 text-base leading-7 text-zinc-100">{point}</p>
@@ -273,17 +273,17 @@ export default function CardCraftPage() {
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="border-b border-[#c8c0b6] pb-8">
-            <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
+            <p className="section-kicker">
               Hard Parts
             </p>
-            <h2 className="mt-3 max-w-5xl text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="section-title mt-3 max-w-5xl text-3xl font-semibold sm:text-5xl">
               自由に触れる編集体験を、
               <br />
               崩れにくくまとめています。
             </h2>
           </div>
           <div className="mt-8 grid gap-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
-            <figure className="overflow-hidden rounded-lg border border-zinc-200 bg-white p-2 shadow-sm shadow-zinc-950/5">
+            <figure className="media-frame p-2">
               <LightboxImage
                 src="/screenshots/cardcraft/hard-parts.png"
                 alt="CardCraft の編集画面でテキストとレイヤーを調整している状態"
@@ -292,13 +292,13 @@ export default function CardCraftPage() {
                 sizes="(max-width: 1024px) 100vw, 560px"
                 title="編集状態とレイヤー管理"
                 description="テキスト、画像、背景の調整とレイヤー操作を同じ編集画面で扱います。"
-                imageClassName="h-auto w-full rounded-md border border-zinc-200 object-cover"
+                imageClassName="portfolio-image h-auto w-full object-cover"
               />
             </figure>
             <div className="grid gap-3">
               {hardParts.map((part, index) => (
-                <div key={part} className="flex gap-4 rounded-lg border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5 sm:p-4">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-[#082f49] text-sm font-semibold text-white">
+                <div key={part} className="surface-card flex gap-4 p-3 sm:p-4">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--portfolio-radius)] bg-[#083b46] text-sm font-semibold text-white">
                     {index + 1}
                   </span>
                   <p className="pt-1 text-base leading-7 text-zinc-800">{part}</p>
@@ -313,23 +313,23 @@ export default function CardCraftPage() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-300 pb-8 sm:flex-row sm:items-end">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
+              <p className="section-kicker">
                 Stack
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術です</h2>
+              <h2 className="section-title mt-3 text-3xl font-semibold">使っている技術です</h2>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row">
               <a
                 href="/downloads/cardcraft-1.pptx"
                 download
-                className="inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-[#082f49] px-6 text-sm font-semibold text-white transition hover:bg-[#0c4a6e]"
+                className="primary-action shrink-0"
               >
                 資料1をダウンロード
               </a>
               <a
                 href="/downloads/cardcraft-2.pptx"
                 download
-                className="inline-flex h-12 shrink-0 items-center justify-center rounded-md border border-zinc-950/20 bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-50"
+                className="secondary-action shrink-0"
               >
                 資料2をダウンロード
               </a>
@@ -339,7 +339,7 @@ export default function CardCraftPage() {
             {stack.map((item) => (
               <span
                 key={item}
-                className="border border-zinc-200 bg-white px-3 py-2 text-sm font-medium text-zinc-700"
+                className="meta-tag"
               >
                 {item}
               </span>

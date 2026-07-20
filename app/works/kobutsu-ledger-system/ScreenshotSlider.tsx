@@ -60,8 +60,8 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
               onPrevious={goToPrevious}
               onNext={goToNext}
               positionLabel={`${activeIndex + 1} / ${screenshots.length}`}
-              buttonClassName="aspect-[1920/946] w-full border border-white/20 bg-white shadow-sm"
-              imageClassName="h-full w-full object-contain transition duration-300 group-hover:scale-[1.01]"
+              buttonClassName="aspect-[1920/946] w-full border border-white/20 bg-white"
+              imageClassName="portfolio-image h-full w-full object-contain transition duration-300 group-hover:scale-[1.01]"
             />
             <div className="mt-5 grid gap-4 lg:grid-cols-[0.45fr_1fr] lg:items-start">
               <div>
@@ -134,7 +134,7 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
               aria-pressed={selected}
               className={`border px-3 py-2 text-left text-sm font-semibold transition ${
                 selected
-                  ? "border-cyan-200 bg-cyan-200 text-zinc-950"
+                  ? "border-[#0e6871] bg-[#b6d9dc] text-[#083b46]"
                   : "border-white/20 bg-white/5 text-zinc-300 hover:bg-white/10"
               }`}
             >

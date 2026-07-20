@@ -39,7 +39,7 @@ export default function MigrationImageSlider() {
   };
 
   return (
-    <figure className="overflow-hidden rounded-md border border-zinc-200 bg-[rgb(240,240,240)] p-2 shadow-sm shadow-zinc-950/10">
+    <figure className="media-frame p-2">
       <LightboxImage
         src={active.src}
         alt={active.alt}
@@ -53,13 +53,13 @@ export default function MigrationImageSlider() {
         onNext={showNext}
         positionLabel={`${activeIndex + 1} / ${migrationSlides.length}`}
         buttonClassName="aspect-[16/10] w-full rounded-sm bg-white"
-        imageClassName="h-full w-full object-contain transition duration-300 group-hover:scale-[1.01]"
+        imageClassName="portfolio-image h-full w-full object-contain transition duration-300 group-hover:scale-[1.01]"
       />
 
       <figcaption className="mt-4 min-h-24 px-1 pb-1">
         <div className="flex flex-col gap-3">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+            <p className="section-kicker">
               {active.label}
             </p>
             <h3 className="mt-1 text-xl font-semibold tracking-normal">
@@ -84,7 +84,7 @@ export default function MigrationImageSlider() {
               aria-pressed={selected}
               className={`border px-3 py-2 text-sm font-semibold transition ${
                 selected
-                  ? "border-cyan-200 bg-cyan-200 text-[#083344]"
+                  ? "border-[#0e6871] bg-[#b6d9dc] text-[#083b46]"
                   : "border-zinc-300 bg-white text-zinc-700 hover:border-zinc-500"
               }`}
             >
