@@ -40,15 +40,20 @@ export default function SideKanaNav() {
         aria-expanded={isOpen}
         aria-controls="portfolio-navigation"
         onClick={() => setIsOpen((current) => !current)}
-        className="fixed right-4 top-5 z-50 flex h-16 w-20 flex-col items-center justify-center gap-2 text-zinc-700 transition hover:text-[#0e6871] sm:right-7 sm:top-6"
+        className="fixed right-4 top-4 z-50 flex h-20 w-24 flex-col items-center justify-center gap-2 text-zinc-700 transition hover:text-[#0e6871] sm:right-7 sm:top-5"
       >
-        <span
-          className={`h-px w-16 bg-current transition ${isOpen ? "translate-y-[9px] rotate-45" : ""}`}
-        />
-        <span className={`h-px w-16 bg-current transition ${isOpen ? "opacity-0" : ""}`} />
-        <span
-          className={`h-px w-16 bg-current transition ${isOpen ? "-translate-y-[9px] -rotate-45" : ""}`}
-        />
+        <span aria-hidden="true" className="flex h-5 flex-col items-center justify-center gap-2">
+          <span
+            className={`h-px w-16 bg-current transition ${isOpen ? "translate-y-[9px] rotate-[30deg]" : ""}`}
+          />
+          <span className={`h-px w-16 bg-current transition ${isOpen ? "opacity-0" : ""}`} />
+          <span
+            className={`h-px w-16 bg-current transition ${isOpen ? "-translate-y-[9px] -rotate-[30deg]" : ""}`}
+          />
+        </span>
+        <span className="text-[10px] font-semibold uppercase tracking-[0.18em]">
+          {isOpen ? "Close" : "Menu"}
+        </span>
       </button>
 
       <div
