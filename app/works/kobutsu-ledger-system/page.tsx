@@ -147,7 +147,7 @@ export default function KobutsuLedgerSystemPage() {
               <p className="section-kicker mb-5 inline-flex border-b border-[#0e6871]/30 pb-1">
                 Ledger System / Operations Workspace
               </p>
-              <h1 className="section-title text-5xl font-semibold sm:text-7xl">
+              <h1 className="section-title text-4xl font-semibold sm:text-7xl">
                 kobutsu-ledger-system
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-700">

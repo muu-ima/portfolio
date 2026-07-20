@@ -100,7 +100,7 @@ export default function CardCraftPage() {
               <p className="section-kicker mb-5 inline-flex border-b border-[#0e6871]/30 pb-1">
                 Business card editor
               </p>
-              <h1 className="section-title text-5xl font-semibold sm:text-7xl">
+              <h1 className="section-title text-4xl font-semibold sm:text-7xl">
                 cardcraft
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-700">

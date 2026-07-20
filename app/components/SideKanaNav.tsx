@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "Works", href: "/#works" },
@@ -14,12 +14,29 @@ const navItems = [
 export default function SideKanaNav() {
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setIsOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", closeOnEscape);
+    };
+  }, [isOpen]);
+
   return (
     <>
       <button
         type="button"
         aria-label={isOpen ? "ナビゲーションを閉じる" : "ナビゲーションを開く"}
         aria-expanded={isOpen}
+        aria-controls="portfolio-navigation"
         onClick={() => setIsOpen((current) => !current)}
         className="fixed right-6 top-8 z-50 flex h-12 w-16 flex-col items-center justify-center gap-2 text-zinc-700 transition hover:text-[#0e6871]"
       >
@@ -33,6 +50,8 @@ export default function SideKanaNav() {
       </button>
 
       <div
+        id="portfolio-navigation"
+        aria-hidden={!isOpen}
         className={`fixed inset-0 z-40 bg-[rgb(240,240,240)]/95 transition duration-300 ${
           isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
@@ -63,6 +82,7 @@ export default function SideKanaNav() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
+                tabIndex={isOpen ? 0 : -1}
                 className="text-4xl font-semibold tracking-[0.04em] text-zinc-700 transition hover:text-[#0e6871] sm:text-6xl"
               >
                 {item.label}
