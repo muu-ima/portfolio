@@ -2,6 +2,7 @@
 
 import Image, { type ImageProps } from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
 type LightboxImageProps = {
   src: string;
@@ -97,16 +98,17 @@ export default function LightboxImage({
         </span>
       </button>
 
-      {isOpen ? (
-        <div
-          className="fixed inset-0 z-[80] bg-zinc-950/90 px-4 py-6 text-white backdrop-blur-sm sm:px-8"
+      {isOpen
+        ? createPortal(
+          <div
+          className="lightbox-backdrop fixed inset-0 z-[80] bg-zinc-950/90 px-4 py-6 text-white backdrop-blur-sm sm:px-8"
           role="dialog"
           aria-modal="true"
           aria-label={`${label}の拡大画像`}
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="relative mx-auto flex h-full max-w-7xl flex-col gap-4"
+            className="lightbox-panel relative mx-auto flex h-full max-w-7xl flex-col gap-4"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex items-start justify-between gap-4">
@@ -167,8 +169,10 @@ export default function LightboxImage({
               </div>
             ) : null}
           </div>
-        </div>
-      ) : null}
+          </div>,
+          document.body,
+        )
+        : null}
     </>
   );
 }
