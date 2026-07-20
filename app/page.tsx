@@ -204,14 +204,16 @@ export default function Home() {
           </div>
 
           <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {works.map((work) => {
+            {works.map((work, index) => {
               const isExternal = work.href?.startsWith("http");
               const cardContent = (
                 <>
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <p className="text-sm font-semibold text-zinc-500">{work.category}</p>
-                      <h3 className="mt-3 text-2xl font-semibold tracking-normal">
+                      <p className="text-xs font-semibold uppercase tracking-[0.12em] text-zinc-500">
+                        0{index + 1} / {work.category}
+                      </p>
+                      <h3 className="mt-3 text-2xl font-semibold tracking-[-0.02em] [overflow-wrap:anywhere]">
                         {work.title}
                       </h3>
                     </div>
@@ -234,8 +236,9 @@ export default function Home() {
                     ))}
                   </div>
                   {work.href ? (
-                    <p className="mt-7 text-sm font-semibold text-[#0e6871]">
+                    <p className="mt-auto flex items-center gap-2 pt-7 text-sm font-semibold text-[#0e6871]">
                       {isExternal ? "サイトを見る" : "詳細を見る"}
+                      <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
                     </p>
                   ) : null}
                 </>
@@ -245,7 +248,7 @@ export default function Home() {
                 return (
                   <article
                     key={work.title}
-                    className="surface-card surface-card-interactive group p-5"
+                    className="surface-card surface-card-interactive group flex h-full flex-col p-5"
                   >
                     {cardContent}
                   </article>
@@ -258,7 +261,7 @@ export default function Home() {
                   href={work.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="surface-card surface-card-interactive group p-5"
+                  className="surface-card surface-card-interactive group flex h-full flex-col p-5"
                 >
                   {cardContent}
                 </a>
@@ -266,7 +269,7 @@ export default function Home() {
                 <Link
                   key={work.title}
                   href={work.href}
-                  className="surface-card surface-card-interactive group p-5"
+                  className="surface-card surface-card-interactive group flex h-full flex-col p-5"
                 >
                   {cardContent}
                 </Link>
