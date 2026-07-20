@@ -21,7 +21,7 @@ export default function SideKanaNav() {
         aria-label={isOpen ? "ナビゲーションを閉じる" : "ナビゲーションを開く"}
         aria-expanded={isOpen}
         onClick={() => setIsOpen((current) => !current)}
-        className="fixed right-6 top-8 z-50 flex h-12 w-16 flex-col items-center justify-center gap-2 text-zinc-700 transition hover:text-cyan-800"
+        className="fixed right-6 top-8 z-50 flex h-12 w-16 flex-col items-center justify-center gap-2 text-zinc-700 transition hover:text-[#0e6871]"
       >
         <span
           className={`h-px w-14 bg-current transition ${isOpen ? "translate-y-[9px] rotate-12" : ""}`}
@@ -42,7 +42,7 @@ export default function SideKanaNav() {
           className="mx-auto grid min-h-screen max-w-7xl gap-12 px-10 py-20 lg:grid-cols-[0.8fr_1.2fr] lg:items-center"
         >
           <div className="max-w-sm self-end lg:self-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-800">
+            <p className="section-kicker">
               Portfolio
             </p>
             <p className="mt-6 text-4xl font-semibold tracking-normal text-zinc-900 sm:text-6xl">
@@ -63,7 +63,7 @@ export default function SideKanaNav() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsOpen(false)}
-                className="text-4xl font-semibold tracking-[0.08em] text-zinc-700 transition hover:text-cyan-800 sm:text-6xl"
+                className="text-4xl font-semibold tracking-[0.04em] text-zinc-700 transition hover:text-[#0e6871] sm:text-6xl"
               >
                 {item.label}
               </Link>

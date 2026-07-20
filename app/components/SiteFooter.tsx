@@ -60,7 +60,7 @@ export default function SiteFooter() {
               key={link.label}
               href={link.href}
               aria-label={link.label}
-              className="text-zinc-950 transition hover:-translate-y-0.5 hover:text-cyan-700"
+              className="text-zinc-950 transition hover:-translate-y-0.5 hover:text-[#0e6871]"
             >
               {link.icon}
             </a>

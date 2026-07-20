@@ -10,7 +10,7 @@ const screenshot = {
 
 export default function WordPressSideImage() {
   return (
-    <figure className="overflow-hidden rounded-md border border-zinc-200 bg-white p-2 shadow-sm shadow-zinc-950/5">
+    <figure className="media-frame p-2">
       <LightboxImage
         src={screenshot.src}
         alt={screenshot.alt}
@@ -20,9 +20,9 @@ export default function WordPressSideImage() {
         title={screenshot.title}
         description={screenshot.description}
         buttonClassName="aspect-[16/9] w-full rounded-sm bg-zinc-50"
-        imageClassName="h-full w-full object-contain transition duration-300 group-hover:scale-[1.01]"
+        imageClassName="portfolio-image h-full w-full object-contain transition duration-300 group-hover:scale-[1.01]"
       />
-      <figcaption className="px-2 pb-1 pt-3 text-sm leading-6 text-zinc-500">
+      <figcaption className="image-caption px-2 pb-1 pt-3">
         {screenshot.description}
       </figcaption>
     </figure>

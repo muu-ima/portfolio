@@ -79,17 +79,17 @@ export default function NfcRedirectPage() {
 
         <div className="relative mx-auto max-w-[1440px]">
           <nav className="mb-20 flex items-center text-sm font-medium">
-            <Link href="/" className="transition hover:text-sky-700">
+            <Link href="/" className="transition hover:text-[#0e6871]">
               Portfolio
             </Link>
           </nav>
 
           <div className="grid gap-10 pb-20 lg:grid-cols-[1.02fr_0.98fr] lg:items-end">
             <div>
-              <p className="mb-5 inline-flex rounded-md border border-sky-500/30 bg-sky-50 px-3 py-1 text-sm font-semibold text-sky-700">
+              <p className="section-kicker mb-5 inline-flex border-b border-[#0e6871]/30 pb-1">
                 Digital card operation
               </p>
-              <h1 className="text-5xl font-semibold leading-[1.05] tracking-normal sm:text-7xl">
+              <h1 className="section-title text-5xl font-semibold sm:text-7xl">
                 nfc-redirect
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-700">
@@ -100,7 +100,7 @@ export default function NfcRedirectPage() {
                 <a
                   href="/downloads/nfc-redirect-overview.pptx"
                   download
-                  className="inline-flex h-12 items-center justify-center rounded-md bg-[#082f49] px-6 text-sm font-semibold text-white transition hover:bg-[#0c4a6e]"
+                  className="primary-action"
                 >
                   PPTX資料をダウンロード
                 </a>
@@ -108,25 +108,25 @@ export default function NfcRedirectPage() {
                   href="https://github.com/muu-ima/nfc-profile"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex h-12 items-center justify-center rounded-md border border-zinc-950/20 bg-white px-6 text-sm font-semibold text-zinc-950 transition hover:bg-zinc-50"
+                  className="secondary-action"
                 >
                   GitHubを見る
                 </a>
               </div>
             </div>
 
-            <div className="rounded-lg border border-zinc-200 bg-zinc-50 p-5">
+            <div className="surface-card p-5">
               <div className="border-b border-zinc-200 pb-4">
                 <p className="text-sm font-semibold text-zinc-500">System Boundary</p>
                 <p className="mt-2 text-2xl font-semibold">役割を3つに分ける</p>
               </div>
               <div className="mt-5 grid gap-3">
                 {[
-                  ["WordPress", "カード発行 / 公開・停止 / URL再発行", "bg-sky-500"],
-                  ["Next.js", "同期処理 / 公開ページ / 編集画面", "bg-cyan-950"],
-                  ["Supabase", "プロフィール情報の保存先", "bg-cyan-500"],
+                  ["WordPress", "カード発行 / 公開・停止 / URL再発行", "bg-[#0e6871]"],
+                  ["Next.js", "同期処理 / 公開ページ / 編集画面", "bg-[#0e6871]"],
+                  ["Supabase", "プロフィール情報の保存先", "bg-[#0e6871]"],
                 ].map(([label, text, color]) => (
-                  <div key={label} className="grid grid-cols-[9rem_1fr] overflow-hidden rounded-lg border border-zinc-200 bg-white">
+                  <div key={label} className="grid grid-cols-[9rem_1fr] overflow-hidden rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-white/25">
                     <div className={`${color} px-4 py-4 text-sm font-semibold text-white`}>
                       {label}
                     </div>
@@ -142,10 +142,10 @@ export default function NfcRedirectPage() {
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-[1440px]">
           <div className="border-b border-[#c8c0b6] pb-8">
-            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+            <p className="section-kicker">
               Product Concept
             </p>
-            <h2 className="mt-3 max-w-5xl text-3xl font-semibold tracking-normal text-zinc-950 sm:text-5xl">
+            <h2 className="section-title mt-3 max-w-5xl text-3xl font-semibold text-zinc-950 sm:text-5xl">
               CardCraft とつなぐ名刺です。
             </h2>
             <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
@@ -157,7 +157,7 @@ export default function NfcRedirectPage() {
               href="https://muu-cardcraft.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-md bg-[#082f49] px-6 text-sm font-semibold text-white transition hover:bg-[#0c4a6e]"
+              className="primary-action"
             >
               CardCraftを見る
             </a>
@@ -165,8 +165,8 @@ export default function NfcRedirectPage() {
 
           <div className="mt-8 grid gap-3 md:grid-cols-2">
             {productFlow.map((item, index) => (
-              <div key={item} className="flex gap-4 rounded-lg border border-zinc-200 bg-white p-3 shadow-sm shadow-zinc-950/5 sm:p-4">
-                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-sky-400 text-sm font-semibold text-zinc-950">
+              <div key={item} className="surface-card flex gap-4 p-3 sm:p-4">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--portfolio-radius)] bg-[#b6d9dc] text-sm font-semibold text-[#083b46]">
                   {index + 1}
                 </span>
                 <p className="pt-1 text-base leading-7 text-zinc-800">{item}</p>
@@ -179,10 +179,10 @@ export default function NfcRedirectPage() {
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-[1440px]">
           <div className="border-b border-[#c8c0b6] pb-8">
-            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+            <p className="section-kicker">
               WordPress Side
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
               WordPress 側で、発行と停止を管理しています。
             </h2>
             <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
@@ -195,8 +195,8 @@ export default function NfcRedirectPage() {
 
             <div className="grid gap-3 sm:grid-cols-2">
               {pluginFeatures.map((feature, index) => (
-                <div key={feature} className="flex gap-4 rounded-lg border border-zinc-200 bg-zinc-50 p-3 sm:p-4">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-sky-400 text-sm font-semibold text-zinc-950">
+                <div key={feature} className="surface-card flex gap-4 p-3 sm:p-4">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--portfolio-radius)] bg-[#b6d9dc] text-sm font-semibold text-[#083b46]">
                     {index + 1}
                   </span>
                   <p className="pt-1 text-base leading-7 text-zinc-800">{feature}</p>
@@ -210,10 +210,10 @@ export default function NfcRedirectPage() {
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-[1440px]">
           <div className="border-b border-[#c8c0b6] pb-8">
-            <p className="text-sm font-semibold uppercase tracking-normal text-sky-700">
+            <p className="section-kicker">
               Design Rules
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
               変えられるものと、変えないものを分けています。
             </h2>
             <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
@@ -224,27 +224,27 @@ export default function NfcRedirectPage() {
           </div>
 
           <div className="mt-9 grid gap-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-stretch">
-            <div className="rounded-lg border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5">
-              <p className="text-sm font-semibold text-sky-700">Structure Map</p>
+            <div className="surface-card p-5">
+              <p className="section-kicker">Structure Map</p>
               <div className="mt-6 grid grid-cols-[1fr_auto_1fr] items-center gap-4 text-center text-sm font-semibold text-zinc-700">
-                <div className="rounded-lg border border-zinc-200 bg-[rgb(240,240,240)] px-4 py-5">
+                <div className="rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-white/25 px-4 py-5">
                   code
                   <span className="mt-2 block text-xs font-medium text-zinc-500">変えないID</span>
                 </div>
-                <span className="text-xl text-sky-700">→</span>
-                <div className="rounded-lg border border-zinc-200 bg-[rgb(240,240,240)] px-4 py-5">
+                <span className="text-xl text-[#0e6871]">→</span>
+                <div className="rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-white/25 px-4 py-5">
                   profile
                   <span className="mt-2 block text-xs font-medium text-zinc-500">見せる内容</span>
                 </div>
               </div>
-              <div className="my-5 flex justify-center text-sky-700">↓</div>
+              <div className="my-5 flex justify-center text-[#0e6871]">↓</div>
               <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-4 text-center text-sm font-semibold text-zinc-700">
-                <div className="rounded-lg border border-zinc-200 bg-white px-4 py-5">
+                <div className="rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-white/25 px-4 py-5">
                   WordPress
                   <span className="mt-2 block text-xs font-medium text-zinc-500">発行管理</span>
                 </div>
-                <span className="text-xl text-sky-700">↔</span>
-                <div className="rounded-lg border border-zinc-200 bg-white px-4 py-5">
+                <span className="text-xl text-[#0e6871]">↔</span>
+                <div className="rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-white/25 px-4 py-5">
                   Next.js
                   <span className="mt-2 block text-xs font-medium text-zinc-500">公開・編集</span>
                 </div>
@@ -253,8 +253,8 @@ export default function NfcRedirectPage() {
 
             <div className="grid gap-3 sm:grid-cols-2">
               {principles.map((item) => (
-                <article key={item.title} className="rounded-lg border border-zinc-200 bg-white p-4 shadow-sm shadow-zinc-950/5 sm:p-5">
-                  <div className="mb-5 h-1.5 w-12 rounded-full bg-sky-400" />
+                <article key={item.title} className="surface-card p-4 sm:p-5">
+                  <div className="mb-5 h-px w-12 bg-[#0e6871]" />
                   <h3 className="text-xl font-semibold tracking-normal">{item.title}</h3>
                   <p className="mt-3 text-base leading-7 text-zinc-600">{item.description}</p>
                 </article>
@@ -267,10 +267,10 @@ export default function NfcRedirectPage() {
       <section className="border-b border-[#c8c0b6] bg-[rgb(240,240,240)] px-5 py-14 sm:px-8">
         <div className="mx-auto max-w-[1440px]">
           <div className="border-b border-zinc-300 pb-8">
-            <p className="text-sm font-semibold uppercase tracking-normal text-cyan-700">
+            <p className="section-kicker">
               Flow
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-normal sm:text-5xl">
+            <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
               発行して、公開して、あとから直せます。
             </h2>
             <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
@@ -280,32 +280,32 @@ export default function NfcRedirectPage() {
             </p>
           </div>
 
-          <div className="mt-9 overflow-hidden rounded-lg border border-zinc-200 bg-white shadow-sm shadow-zinc-950/5">
+          <div className="surface-card mt-9 overflow-hidden">
             <div className="grid gap-0 lg:grid-cols-6">
               {flows.map((flow, index) => (
                 <article
                   key={flow}
                   className="relative border-b border-zinc-200 p-5 lg:border-b-0 lg:border-r lg:last:border-r-0"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-[#082f49] text-sm font-semibold text-white">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-[var(--portfolio-radius)] bg-[#083b46] text-sm font-semibold text-white">
                     {index + 1}
                   </span>
                   <p className="mt-5 text-base font-semibold leading-7 text-zinc-800">{flow}</p>
                   {index < flows.length - 1 ? (
-                    <span className="absolute bottom-5 right-5 hidden text-xl text-sky-700 lg:block">→</span>
+                    <span className="absolute bottom-5 right-5 hidden text-xl text-[#0e6871] lg:block">→</span>
                   ) : null}
                 </article>
               ))}
             </div>
           </div>
 
-          <div className="mt-6 grid gap-4 border border-zinc-200 bg-white p-5 shadow-sm shadow-zinc-950/5 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+          <div className="surface-card mt-6 grid gap-4 p-5 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
             <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 text-sm font-semibold text-zinc-700">
-              <span className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-3 text-center">
+              <span className="rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-white/25 px-3 py-3 text-center">
                 NFC / QR
               </span>
               <span className="text-cyan-700">→</span>
-              <span className="rounded-md border border-zinc-200 bg-zinc-50 px-3 py-3 text-center">
+              <span className="rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-white/25 px-3 py-3 text-center">
                 /n/code
               </span>
             </div>
@@ -320,15 +320,15 @@ export default function NfcRedirectPage() {
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 border-b border-zinc-300 pb-8 sm:flex-row sm:items-end">
             <div>
-            <p className="text-sm font-semibold uppercase tracking-normal text-blue-700">
+            <p className="section-kicker">
                 Stack
               </p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-normal">使っている技術です</h2>
+              <h2 className="section-title mt-3 text-3xl font-semibold">使っている技術です</h2>
             </div>
             <a
               href="/downloads/nfc-redirect-overview.pptx"
               download
-              className="inline-flex h-12 shrink-0 items-center justify-center rounded-md bg-[#082f49] px-6 text-sm font-semibold text-white transition hover:bg-[#0c4a6e]"
+              className="primary-action shrink-0"
             >
               資料をダウンロード
             </a>
@@ -337,7 +337,7 @@ export default function NfcRedirectPage() {
             {stack.map((item) => (
               <span
                 key={item}
-                className="border border-zinc-200 bg-white px-3 py-2 text-sm font-medium text-zinc-700"
+                className="meta-tag"
               >
                 {item}
               </span>
