@@ -16,6 +16,9 @@ type LightboxImageProps = {
   loading?: ImageProps["loading"];
   priority?: ImageProps["priority"];
   unoptimized?: ImageProps["unoptimized"];
+  onPrevious?: () => void;
+  onNext?: () => void;
+  positionLabel?: string;
 };
 
 export default function LightboxImage({
@@ -31,11 +34,21 @@ export default function LightboxImage({
   loading,
   priority,
   unoptimized,
+  onPrevious,
+  onNext,
+  positionLabel,
 }: LightboxImageProps) {
   const [isOpen, setIsOpen] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const previousHandlerRef = useRef(onPrevious);
+  const nextHandlerRef = useRef(onNext);
   const label = title ?? alt;
+
+  useEffect(() => {
+    previousHandlerRef.current = onPrevious;
+    nextHandlerRef.current = onNext;
+  }, [onPrevious, onNext]);
 
   useEffect(() => {
     if (!isOpen) return;
@@ -45,14 +58,16 @@ export default function LightboxImage({
     document.body.style.overflow = "hidden";
     closeButtonRef.current?.focus();
 
-    const closeOnEscape = (event: KeyboardEvent) => {
+    const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") setIsOpen(false);
+      if (event.key === "ArrowLeft") previousHandlerRef.current?.();
+      if (event.key === "ArrowRight") nextHandlerRef.current?.();
     };
-    window.addEventListener("keydown", closeOnEscape);
+    window.addEventListener("keydown", handleKeyDown);
 
     return () => {
       document.body.style.overflow = previousOverflow;
-      window.removeEventListener("keydown", closeOnEscape);
+      window.removeEventListener("keydown", handleKeyDown);
       triggerElement?.focus();
     };
   }, [isOpen]);
@@ -124,6 +139,33 @@ export default function LightboxImage({
                 onClick={(event) => event.stopPropagation()}
               />
             </div>
+            {onPrevious || onNext ? (
+              <div className="flex items-center justify-between gap-4">
+                <p className="text-sm font-semibold text-zinc-300">{positionLabel}</p>
+                <div className="flex gap-2">
+                  {onPrevious ? (
+                    <button
+                      type="button"
+                      onClick={onPrevious}
+                      className="flex h-11 min-w-11 items-center justify-center border border-white/30 px-4 text-lg transition hover:bg-white hover:text-zinc-950"
+                      aria-label="前の画像"
+                    >
+                      ←
+                    </button>
+                  ) : null}
+                  {onNext ? (
+                    <button
+                      type="button"
+                      onClick={onNext}
+                      className="flex h-11 min-w-11 items-center justify-center border border-white/30 px-4 text-lg transition hover:bg-white hover:text-zinc-950"
+                      aria-label="次の画像"
+                    >
+                      →
+                    </button>
+                  ) : null}
+                </div>
+              </div>
+            ) : null}
           </div>
         </div>
       ) : null}

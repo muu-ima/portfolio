@@ -26,6 +26,18 @@ export default function MigrationImageSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
   const active = migrationSlides[activeIndex];
 
+  const showPrevious = () => {
+    setActiveIndex((current) =>
+      current === 0 ? migrationSlides.length - 1 : current - 1,
+    );
+  };
+
+  const showNext = () => {
+    setActiveIndex((current) =>
+      current === migrationSlides.length - 1 ? 0 : current + 1,
+    );
+  };
+
   return (
     <figure className="overflow-hidden rounded-md border border-zinc-200 bg-[rgb(240,240,240)] p-2 shadow-sm shadow-zinc-950/10">
       <LightboxImage
@@ -37,6 +49,9 @@ export default function MigrationImageSlider() {
         title={active.title}
         description={active.description}
         unoptimized
+        onPrevious={showPrevious}
+        onNext={showNext}
+        positionLabel={`${activeIndex + 1} / ${migrationSlides.length}`}
         buttonClassName="aspect-[16/10] w-full rounded-sm bg-white"
         imageClassName="h-full w-full object-contain transition duration-300 group-hover:scale-[1.01]"
       />

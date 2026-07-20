@@ -57,6 +57,9 @@ export default function ScreenshotSlider({ screenshots }: ScreenshotSliderProps)
               description={active.description}
               priority={activeIndex === 0}
               unoptimized
+              onPrevious={goToPrevious}
+              onNext={goToNext}
+              positionLabel={`${activeIndex + 1} / ${screenshots.length}`}
               buttonClassName="aspect-[1920/946] w-full border border-white/20 bg-white shadow-sm"
               imageClassName="h-full w-full object-contain transition duration-300 group-hover:scale-[1.01]"
             />
