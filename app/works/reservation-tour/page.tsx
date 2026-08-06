@@ -4,34 +4,41 @@ import Link from "next/link";
 import LightboxImage from "../../components/LightboxImage";
 import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
+import ReservationFlowImageSlider from "./ReservationFlowImageSlider";
 
 const features = [
   {
+    scope: "予約入口",
     title: "予約受付とカレンダー",
     description:
       "最短空き枠の提示、月別カレンダー、AM / PM の時間帯選択をひとつの予約導線としてまとめています。",
   },
   {
+    scope: "公開制御",
     title: "予約枠の公開制御",
     description:
       "26日ルールに沿って翌月分の予約枠を公開。日付や受付可否だけでなく、運用上の解禁タイミングも制御しています。",
   },
   {
+    scope: "確認",
     title: "メール確認フロー",
     description:
       "仮予約を作成し、署名付きURLの確認メールを送信。一定時間内に確認されない予約は自動キャンセルする想定です。",
   },
   {
+    scope: "通知",
     title: "スタッフ通知",
     description:
       "予約内容から必要な情報だけを抽出し、スタッフ向け通知メールとして送る業務連絡の流れを実装しています。",
   },
   {
+    scope: "運用",
     title: "管理画面",
     description:
       "予約一覧、ステータス更新、削除、日別の受付ON / OFFを扱う管理画面を用意。運用側が予約状況を確認できます。",
   },
   {
+    scope: "外部連携",
     title: "WordPress副本同期",
     description:
       "Laravel側で予約を処理し、WordPress REST APIへ副本として同期。既存CMS運用を残せる構成にしています。",
@@ -39,13 +46,34 @@ const features = [
 ];
 
 const flow = [
-  "Next.js で予約方法を選択",
-  "カレンダーまたは最短空き枠から予約フォームへ進む",
-  "26日ルールと受付可否を見て、予約できる日付だけを公開",
-  "Laravel API が入力値、reCAPTCHA、重複枠を検証",
-  "確認メールとスタッフ通知を送信",
-  "管理画面で予約一覧、状態変更、受付可否を確認",
-  "確認済み予約を booked として扱い、WordPress へ副本同期",
+  {
+    title: "予約方法を選択",
+    description: "Next.js の画面で、最短空き枠かカレンダーから予約の入口を選びます。",
+  },
+  {
+    title: "予約フォームへ進む",
+    description: "選んだ日付と時間帯を引き継ぎ、見学者情報の入力へ進みます。",
+  },
+  {
+    title: "予約できる日だけ公開",
+    description: "26日ルールと受付可否を見て、公開対象の予約枠だけを表示します。",
+  },
+  {
+    title: "入力と重複枠を検証",
+    description: "Laravel API が入力値、reCAPTCHA、同じ枠の重複予約を確認します。",
+  },
+  {
+    title: "確認メールと通知を送信",
+    description: "見学者へ確認メールを送り、スタッフには必要な予約情報を通知します。",
+  },
+  {
+    title: "管理画面で運用",
+    description: "予約一覧、状態変更、削除、日別の受付可否を管理画面から扱います。",
+  },
+  {
+    title: "WordPressへ副本同期",
+    description: "確認済み予約を booked として扱い、WordPress REST API へ同期します。",
+  },
 ];
 
 const stack = [
@@ -142,28 +170,38 @@ export default function ReservationTourPage() {
       </section>
 
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="border-b border-[#c8c0b6] pb-8">
-            <p className="section-kicker">
-              What It Does
-            </p>
-            <h2 className="section-title mt-3 max-w-5xl text-3xl font-semibold sm:text-5xl">
-              予約業務の流れを、
-              <br />
-              ひとつのシステムにまとめています。
-            </h2>
-            <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
+        <div className="mx-auto max-w-[1180px]">
+          <div className="grid gap-8 border-b border-[#c8c0b6] pb-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <p className="section-kicker">
+                What It Does
+              </p>
+              <h2 className="section-title mt-3 text-3xl font-semibold sm:text-4xl">
+                予約業務の流れを、
+                <br />
+                ひとつのシステムにまとめています。
+              </h2>
+            </div>
+            <p className="max-w-2xl text-base leading-8 text-zinc-600">
               単なるフォームではなく、予約状態、確認メール、通知、外部CMS同期まで含めて、業務で使う流れとして設計しています。
             </p>
           </div>
-          <div className="mt-8 grid gap-3 lg:grid-cols-2">
-            {features.map((feature) => (
+          <div className="mt-8 grid gap-3 md:grid-cols-2">
+            {features.map((feature, index) => (
               <article
                 key={feature.title}
-                className="surface-card p-4 sm:p-5"
+                className="surface-card grid gap-4 p-5 sm:grid-cols-[3.25rem_1fr] sm:p-6"
               >
-                <h3 className="text-xl font-semibold tracking-normal">{feature.title}</h3>
-                <p className="mt-3 text-base leading-7 text-zinc-600">{feature.description}</p>
+                <div>
+                  <span className="flex h-11 w-11 items-center justify-center rounded-[var(--portfolio-radius)] bg-[#083b46] text-sm font-semibold text-white">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[#0e6871]">{feature.scope}</p>
+                  <h3 className="mt-2 text-xl font-semibold tracking-normal">{feature.title}</h3>
+                  <p className="mt-3 text-base leading-8 text-zinc-600">{feature.description}</p>
+                </div>
               </article>
             ))}
           </div>
@@ -171,22 +209,42 @@ export default function ReservationTourPage() {
       </section>
 
       <section className="border-y border-[#c8c0b6] bg-[#2a2a2a] px-5 py-14 text-[#dbd5cd] sm:px-8">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="max-w-4xl border-b border-white/10 pb-6">
-            <p className="section-kicker-dark">
-              System Flow
+        <div className="mx-auto max-w-[1180px]">
+          <div className="grid gap-8 border-b border-white/10 pb-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <p className="section-kicker-dark">
+                System Flow
+              </p>
+              <h2 className="section-title mt-3 text-3xl font-semibold sm:text-4xl">
+                受付から副本同期までつなげています。
+              </h2>
+            </div>
+            <p className="max-w-2xl text-base leading-8 text-zinc-300">
+              予約者向けUI、Laravel API、管理画面、WordPress同期の役割を分けながら、ひとつの予約状態を進めていく構成です。
             </p>
-            <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
-              受付から副本同期までつなげています。
-            </h2>
           </div>
-          <div className="mt-8 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
-            {flow.map((item, index) => (
-              <div key={item} className="rounded-[var(--portfolio-radius)] border border-white/15 bg-white/5 p-4 sm:p-5">
-                <p className="text-xs font-semibold text-cyan-200">0{index + 1}</p>
-                <p className="mt-3 text-base leading-7 text-zinc-100">{item}</p>
-              </div>
-            ))}
+          <div className="mt-9 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
+            <ReservationFlowImageSlider />
+            <ol className="space-y-3">
+              {flow.map((item, index) => (
+                <li
+                  key={item.title}
+                  className="grid gap-3 rounded-[var(--portfolio-radius)] border border-white/15 bg-white/5 p-4 sm:grid-cols-[2.75rem_1fr]"
+                >
+                  <span className="flex h-9 w-9 items-center justify-center rounded-[var(--portfolio-radius)] bg-[#b6d9dc] text-sm font-semibold text-[#083b46]">
+                    {index + 1}
+                  </span>
+                  <div>
+                    <h3 className="text-lg font-semibold tracking-normal text-zinc-100">
+                      {item.title}
+                    </h3>
+                    <p className="mt-2 text-sm leading-6 text-zinc-300">
+                      {item.description}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
         </div>
       </section>
