@@ -4,36 +4,71 @@ import Link from "next/link";
 import LightboxImage from "../../components/LightboxImage";
 import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
-import ReservationFlowImageSlider from "./ReservationFlowImageSlider";
 
-const flow = [
+const flowGroups = [
   {
-    title: "予約方法を選択",
-    description: "Next.js の画面で、最短空き枠かカレンダーから予約の入口を選びます。",
+    label: "予約する",
+    description: "見学者が日程を選び、フォーム入力へ進む入口です。",
+    image: {
+      src: "/screenshots/reservation-tour/reservation-top.png",
+      alt: "reservation-tour の予約入口画面",
+      title: "予約入口",
+      height: 946,
+    },
+    items: [
+      {
+        title: "予約方法を選択",
+        description: "Next.js の画面で、最短空き枠かカレンダーから予約の入口を選びます。",
+      },
+      {
+        title: "予約フォームへ進む",
+        description: "選んだ日付と時間帯を引き継ぎ、見学者情報の入力へ進みます。",
+      },
+      {
+        title: "予約できる日だけ公開",
+        description: "26日ルールと受付可否を見て、公開対象の予約枠だけを表示します。",
+      },
+    ],
   },
   {
-    title: "予約フォームへ進む",
-    description: "選んだ日付と時間帯を引き継ぎ、見学者情報の入力へ進みます。",
+    label: "確定する",
+    description: "入力内容を検証し、メール確認とスタッフ通知につなげます。",
+    image: {
+      src: "/screenshots/reservation-tour/calender.png",
+      alt: "reservation-tour のカレンダー画面",
+      title: "カレンダー",
+      height: 949,
+    },
+    items: [
+      {
+        title: "入力と重複枠を検証",
+        description: "Laravel API が入力値、reCAPTCHA、同じ枠の重複予約を確認します。",
+      },
+      {
+        title: "確認メールと通知を送信",
+        description: "見学者へ確認メールを送り、スタッフには必要な予約情報を通知します。",
+      },
+    ],
   },
   {
-    title: "予約できる日だけ公開",
-    description: "26日ルールと受付可否を見て、公開対象の予約枠だけを表示します。",
-  },
-  {
-    title: "入力と重複枠を検証",
-    description: "Laravel API が入力値、reCAPTCHA、同じ枠の重複予約を確認します。",
-  },
-  {
-    title: "確認メールと通知を送信",
-    description: "見学者へ確認メールを送り、スタッフには必要な予約情報を通知します。",
-  },
-  {
-    title: "管理画面で運用",
-    description: "予約一覧、状態変更、削除、日別の受付可否を管理画面から扱います。",
-  },
-  {
-    title: "WordPressへ副本同期",
-    description: "確認済み予約を booked として扱い、WordPress REST API へ同期します。",
+    label: "運用する",
+    description: "管理画面で状態を見ながら、外部CMSへ副本を残します。",
+    image: {
+      src: "/screenshots/reservation-tour/admin.png",
+      alt: "reservation-tour の管理画面",
+      title: "管理画面",
+      height: 949,
+    },
+    items: [
+      {
+        title: "管理画面で運用",
+        description: "予約一覧、状態変更、削除、日別の受付可否を管理画面から扱います。",
+      },
+      {
+        title: "WordPressへ副本同期",
+        description: "確認済み予約を booked として扱い、WordPress REST API へ同期します。",
+      },
+    ],
   },
 ];
 
@@ -132,7 +167,7 @@ export default function ReservationTourPage() {
 
       <section className="border-y border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 text-[#2a2a2a] sm:px-8">
         <div className="mx-auto max-w-[1180px]">
-          <div className="grid gap-8 border-b border-[#c8c0b6] pb-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+          <div className="border-b border-[#c8c0b6] pb-8">
             <div>
               <p className="section-kicker">
                 System Flow
@@ -141,32 +176,68 @@ export default function ReservationTourPage() {
                 受付から副本同期までつなげています。
               </h2>
             </div>
-            <p className="max-w-2xl text-base leading-8 text-zinc-600">
+            <p className="mt-5 max-w-5xl text-base leading-8 text-zinc-600">
               予約者向けUI、Laravel API、管理画面、WordPress同期の役割を分けながら、ひとつの予約状態を進めていく構成です。
             </p>
           </div>
-          <div className="mt-9 grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-start">
-            <ReservationFlowImageSlider />
-            <ol className="space-y-3">
-              {flow.map((item, index) => (
-                <li
-                  key={item.title}
-                  className="surface-card grid gap-3 p-4 sm:grid-cols-[2.75rem_1fr]"
+          <div className="mt-9 space-y-6">
+            {flowGroups.map((group, groupIndex) => {
+              const offset = flowGroups
+                .slice(0, groupIndex)
+                .reduce((total, current) => total + current.items.length, 0);
+
+              return (
+                <article
+                  key={group.label}
+                  className="grid gap-6 border-t border-[#c8c0b6] pt-6 lg:grid-cols-[0.92fr_1.08fr] lg:items-start"
                 >
-                  <span className="flex h-9 w-9 items-center justify-center rounded-[var(--portfolio-radius)] bg-[#b6d9dc] text-sm font-semibold text-[#083b46]">
-                    {index + 1}
-                  </span>
+                  <figure className="media-frame p-2">
+                    <LightboxImage
+                      src={group.image.src}
+                      alt={group.image.alt}
+                      width={1920}
+                      height={group.image.height}
+                      sizes="(min-width: 1024px) 520px, 100vw"
+                      title={group.image.title}
+                      description={group.description}
+                      unoptimized
+                      buttonClassName="aspect-[16/10] w-full rounded-sm bg-white"
+                      imageClassName="portfolio-image h-full w-full object-contain transition duration-300 group-hover:scale-[1.01]"
+                    />
+                  </figure>
                   <div>
-                    <h3 className="text-lg font-semibold tracking-normal text-zinc-950">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-zinc-600">
-                      {item.description}
-                    </p>
+                    <div className="border-b border-[#c8c0b6] pb-4">
+                      <p className="section-kicker">
+                        {group.label}
+                      </p>
+                      <p className="mt-2 text-sm leading-6 text-zinc-600">
+                        {group.description}
+                      </p>
+                    </div>
+                    <ol className="mt-4 space-y-3">
+                      {group.items.map((item, itemIndex) => (
+                        <li
+                          key={item.title}
+                          className="surface-card flex gap-4 p-4"
+                        >
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[var(--portfolio-radius)] bg-[#b6d9dc] text-sm font-semibold text-[#083b46]">
+                            {offset + itemIndex + 1}
+                          </span>
+                          <div className="min-w-0">
+                            <h3 className="text-lg font-semibold tracking-normal text-zinc-950">
+                              {item.title}
+                            </h3>
+                            <p className="mt-2 text-sm leading-6 text-zinc-600">
+                              {item.description}
+                            </p>
+                          </div>
+                        </li>
+                      ))}
+                    </ol>
                   </div>
-                </li>
-              ))}
-            </ol>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
