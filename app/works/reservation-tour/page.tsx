@@ -82,6 +82,7 @@ const stack = [
   "Docker",
   "Vercel",
   "Render",
+  "Responsive UI",
 ];
 
 export const metadata: Metadata = {
@@ -239,6 +240,41 @@ export default function ReservationTourPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
+        <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[0.78fr_1.22fr] lg:items-start">
+          <div className="border-b border-zinc-200 pb-6 lg:border-b-0 lg:pb-0">
+            <p className="section-kicker">
+              Mobile Layout
+            </p>
+            <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
+              モバイルでも、
+              <br />
+              予約日を追いやすくしています。
+            </h2>
+            <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
+              デスクトップの月間カレンダーはそのまま縮めず、モバイルでは前半・後半を切り替えながら日付を縦に追える表示にしています。
+            </p>
+          </div>
+          <figure className="media-frame p-3">
+            <LightboxImage
+              src="/screenshots/reservation-tour/mobile.png"
+              alt="reservation-tour のモバイル予約カレンダー画面"
+              width={1920}
+              height={943}
+              sizes="(max-width: 1024px) 100vw, 800px"
+              title="モバイル予約リスト"
+              description="狭い画面では月間グリッドをそのまま縮めず、日付を縦に追える形へ切り替えています。"
+              imageClassName="portfolio-image h-auto w-full object-cover"
+            />
+            <figcaption className="mt-4">
+              <p className="image-caption">
+                モバイル幅では `mobile.png` のように、予約できる日を縦に追える表示へ切り替えています。
+              </p>
+            </figcaption>
+          </figure>
         </div>
       </section>
 
