@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import SideKanaNav from "./components/SideKanaNav";
 import SiteFooter from "./components/SiteFooter";
 
-type WorkIconName = "tools" | "card" | "nfc" | "ledger";
+type WorkIconName = "tools" | "card" | "nfc" | "ledger" | "reservation";
 
 const workIcons: Record<WorkIconName, ReactNode> = {
   tools: (
@@ -78,6 +78,27 @@ const workIcons: Record<WorkIconName, ReactNode> = {
       />
     </svg>
   ),
+  reservation: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7">
+      <rect
+        x="4"
+        y="5"
+        width="16"
+        height="15"
+        rx="2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <path
+        d="M8 3v4M16 3v4M4 10h16M8 14h3M13 14h3M8 17h3"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="2"
+      />
+    </svg>
+  ),
 };
 
 const works = [
@@ -120,6 +141,16 @@ const works = [
     accent: "bg-[#0e6871]",
     icon: "ledger" as WorkIconName,
     href: "/works/kobutsu-ledger-system",
+  },
+  {
+    title: "reservation-tour",
+    category: "Reservation System",
+    description:
+      "見学予約、確認メール、スタッフ通知、WordPress副本同期まで扱う予約管理システムです。",
+    tags: ["Next.js 16", "Laravel", "WordPress"],
+    accent: "bg-[#0e6871]",
+    icon: "reservation" as WorkIconName,
+    href: "/works/reservation-tour",
   },
 ];
 
@@ -182,7 +213,7 @@ export default function Home() {
                 <span className="mt-2 block text-base font-semibold sm:text-lg">Selected Works</span>
               </span>
               <span className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-200 text-xs font-semibold sm:h-12 sm:w-12 sm:text-sm">
-                04
+                05
               </span>
             </a>
           </div>

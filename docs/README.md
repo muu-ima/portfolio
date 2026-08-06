@@ -8,6 +8,7 @@
 - [CardCraft](./cardcraft.md)
 - [nfc-redirect](./nfc-redirect.md)
 - [kobutsu-ledger-system](./kobutsu-ledger-system.md)
+- [reservation-tour](./reservation-tour.md)
 
 ## Positioning
 
@@ -17,6 +18,7 @@
 - CardCraft: 名刺デザイン編集と書き出し
 - nfc-redirect: 配布後も更新できる NFC / QR リンク管理
 - kobutsu-ledger-system: 古物台帳とEC販売をつなぐ業務システム
+- reservation-tour: 見学予約、メール確認、WordPress副本同期を扱う予約管理システム
 
 ## Good Points Summary
 
@@ -24,3 +26,4 @@
 - CardCraft は、編集、確認、保存、書き出しをブラウザ上でまとめたエディタとして成立している
 - nfc-redirect は、配布後も更新できる NFC / QR 運用の裏側をきちんと設計できている
 - kobutsu-ledger-system は、現場のシート運用を読み解き、業務システムへ移す設計力が出ている
+- reservation-tour は、予約受付から通知、確認、外部CMS同期までを一つの業務フローとして実装できている
