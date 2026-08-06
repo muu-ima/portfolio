@@ -47,7 +47,7 @@ export default function ReservationFlowImageSlider() {
   };
 
   return (
-    <figure className="media-frame media-frame-dark p-2">
+    <figure className="media-frame p-2">
       <LightboxImage
         src={active.src}
         alt={active.alt}
@@ -67,14 +67,14 @@ export default function ReservationFlowImageSlider() {
       <figcaption className="mt-4 min-h-24 px-1 pb-1">
         <div className="flex flex-col gap-3">
           <div>
-            <p className="section-kicker-dark">
+            <p className="section-kicker">
               {active.label}
             </p>
-            <h3 className="mt-1 text-xl font-semibold tracking-normal text-zinc-100">
+            <h3 className="mt-1 text-xl font-semibold tracking-normal text-zinc-950">
               {active.title}
             </h3>
           </div>
-          <p className="text-sm leading-6 text-zinc-300">
+          <p className="text-sm leading-6 text-zinc-600">
             {active.description}
           </p>
         </div>
@@ -92,8 +92,8 @@ export default function ReservationFlowImageSlider() {
               aria-pressed={selected}
               className={`border px-3 py-2 text-sm font-semibold transition ${
                 selected
-                  ? "border-cyan-200 bg-[#b6d9dc] text-[#083b46]"
-                  : "border-white/20 bg-white/5 text-zinc-200 hover:border-white/40 hover:bg-white/10"
+                  ? "border-[#0e6871] bg-[#b6d9dc] text-[#083b46]"
+                  : "border-zinc-300 bg-white text-zinc-700 hover:border-zinc-500"
               }`}
             >
               {slide.label}

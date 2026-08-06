@@ -6,45 +6,6 @@ import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
 import ReservationFlowImageSlider from "./ReservationFlowImageSlider";
 
-const features = [
-  {
-    scope: "予約入口",
-    title: "予約受付とカレンダー",
-    description:
-      "最短空き枠の提示、月別カレンダー、AM / PM の時間帯選択をひとつの予約導線としてまとめています。",
-  },
-  {
-    scope: "公開制御",
-    title: "予約枠の公開制御",
-    description:
-      "26日ルールに沿って翌月分の予約枠を公開。日付や受付可否だけでなく、運用上の解禁タイミングも制御しています。",
-  },
-  {
-    scope: "確認",
-    title: "メール確認フロー",
-    description:
-      "仮予約を作成し、署名付きURLの確認メールを送信。一定時間内に確認されない予約は自動キャンセルする想定です。",
-  },
-  {
-    scope: "通知",
-    title: "スタッフ通知",
-    description:
-      "予約内容から必要な情報だけを抽出し、スタッフ向け通知メールとして送る業務連絡の流れを実装しています。",
-  },
-  {
-    scope: "運用",
-    title: "管理画面",
-    description:
-      "予約一覧、ステータス更新、削除、日別の受付ON / OFFを扱う管理画面を用意。運用側が予約状況を確認できます。",
-  },
-  {
-    scope: "外部連携",
-    title: "WordPress副本同期",
-    description:
-      "Laravel側で予約を処理し、WordPress REST APIへ副本として同期。既存CMS運用を残せる構成にしています。",
-  },
-];
-
 const flow = [
   {
     title: "予約方法を選択",
@@ -169,57 +130,18 @@ export default function ReservationTourPage() {
         </div>
       </section>
 
-      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
+      <section className="border-y border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 text-[#2a2a2a] sm:px-8">
         <div className="mx-auto max-w-[1180px]">
           <div className="grid gap-8 border-b border-[#c8c0b6] pb-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
               <p className="section-kicker">
-                What It Does
-              </p>
-              <h2 className="section-title mt-3 text-3xl font-semibold sm:text-4xl">
-                予約業務の流れを、
-                <br />
-                ひとつのシステムにまとめています。
-              </h2>
-            </div>
-            <p className="max-w-2xl text-base leading-8 text-zinc-600">
-              単なるフォームではなく、予約状態、確認メール、通知、外部CMS同期まで含めて、業務で使う流れとして設計しています。
-            </p>
-          </div>
-          <div className="mt-8 grid gap-3 md:grid-cols-2">
-            {features.map((feature, index) => (
-              <article
-                key={feature.title}
-                className="surface-card grid gap-4 p-5 sm:grid-cols-[3.25rem_1fr] sm:p-6"
-              >
-                <div>
-                  <span className="flex h-11 w-11 items-center justify-center rounded-[var(--portfolio-radius)] bg-[#083b46] text-sm font-semibold text-white">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <div>
-                  <p className="text-xs font-semibold text-[#0e6871]">{feature.scope}</p>
-                  <h3 className="mt-2 text-xl font-semibold tracking-normal">{feature.title}</h3>
-                  <p className="mt-3 text-base leading-8 text-zinc-600">{feature.description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-[#c8c0b6] bg-[#2a2a2a] px-5 py-14 text-[#dbd5cd] sm:px-8">
-        <div className="mx-auto max-w-[1180px]">
-          <div className="grid gap-8 border-b border-white/10 pb-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-            <div>
-              <p className="section-kicker-dark">
                 System Flow
               </p>
               <h2 className="section-title mt-3 text-3xl font-semibold sm:text-4xl">
                 受付から副本同期までつなげています。
               </h2>
             </div>
-            <p className="max-w-2xl text-base leading-8 text-zinc-300">
+            <p className="max-w-2xl text-base leading-8 text-zinc-600">
               予約者向けUI、Laravel API、管理画面、WordPress同期の役割を分けながら、ひとつの予約状態を進めていく構成です。
             </p>
           </div>
@@ -229,16 +151,16 @@ export default function ReservationTourPage() {
               {flow.map((item, index) => (
                 <li
                   key={item.title}
-                  className="grid gap-3 rounded-[var(--portfolio-radius)] border border-white/15 bg-white/5 p-4 sm:grid-cols-[2.75rem_1fr]"
+                  className="surface-card grid gap-3 p-4 sm:grid-cols-[2.75rem_1fr]"
                 >
                   <span className="flex h-9 w-9 items-center justify-center rounded-[var(--portfolio-radius)] bg-[#b6d9dc] text-sm font-semibold text-[#083b46]">
                     {index + 1}
                   </span>
                   <div>
-                    <h3 className="text-lg font-semibold tracking-normal text-zinc-100">
+                    <h3 className="text-lg font-semibold tracking-normal text-zinc-950">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm leading-6 text-zinc-300">
+                    <p className="mt-2 text-sm leading-6 text-zinc-600">
                       {item.description}
                     </p>
                   </div>
