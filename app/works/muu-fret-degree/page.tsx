@@ -57,15 +57,6 @@ const stack = [
 
 const appUrl = "https://nuu-fret-degree.vercel.app/";
 
-const strings = ["G", "D", "A", "E"];
-const fretMarkers = ["1", "3", "5", "b7", "9", "11"];
-const toolPanels = [
-  ["Practice", "指板 / 度数 / コード再生"],
-  ["Metronome", "BPM / Count-in / Swing"],
-  ["Progression", "ループ再生 / 伴奏パターン"],
-  ["Scales", "度数 / 指番号 / PDF"],
-];
-
 export const metadata: Metadata = {
   title: "muu-fret-degree | Portfolio",
   description:
@@ -135,55 +126,20 @@ export default function MuuFretDegreePage() {
               </div>
             </div>
 
-            <div className="surface-card p-5">
-              <div className="flex items-start justify-between gap-4 border-b border-[#c8c0b6] pb-4">
-                <div>
-                  <p className="text-sm font-semibold text-zinc-500">Fretboard View</p>
-                  <p className="mt-2 text-2xl font-semibold">度数と練習機能をまとめる</p>
-                </div>
-                <span className="rounded-[var(--portfolio-radius)] bg-[#0e6871]/10 px-3 py-1 text-xs font-semibold text-[#0e6871]">
-                  in progress
-                </span>
-              </div>
-
-              <div className="mt-5 overflow-hidden rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-[#1f2422] p-4 text-[#f6f1e9]">
-                <div className="mb-4 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.14em] text-[#b6d9dc]">
-                  <span>Root: E</span>
-                  <span>Chord: m7</span>
-                </div>
-                <div className="grid gap-2">
-                  {strings.map((stringName, stringIndex) => (
-                    <div key={`${stringName}-${stringIndex}`} className="grid grid-cols-[1.8rem_repeat(6,minmax(2.2rem,1fr))] items-center gap-2">
-                      <span className="text-xs font-semibold text-[#d8c9aa]">{stringName}</span>
-                      {fretMarkers.map((marker, fretIndex) => {
-                        const isActive = (stringIndex + fretIndex) % 3 === 0;
-
-                        return (
-                          <span
-                            key={`${stringName}-${marker}-${fretIndex}`}
-                            className={`flex h-9 min-w-0 items-center justify-center border-l border-[#8f7d5f] text-xs font-semibold ${
-                              isActive
-                                ? "rounded-full bg-[#b6d9dc] text-[#083b46]"
-                                : "text-[#e3dacb]/55"
-                            }`}
-                          >
-                            {isActive ? marker : ""}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="mt-4 grid grid-cols-2 gap-3">
-                {toolPanels.map(([label, value]) => (
-                  <div key={label} className="rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-white/25 px-3 py-3">
-                    <p className="text-xs font-semibold text-[#0e6871]">{label}</p>
-                    <p className="mt-1 text-sm font-medium text-zinc-700">{value}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <figure className="media-frame p-3 backdrop-blur">
+              <Image
+                src="/screenshots/fret-degree/fret-degree.png"
+                alt="muu-fret-degree のベース指板練習画面"
+                width={1920}
+                height={879}
+                priority
+                sizes="(min-width: 1024px) 680px, 100vw"
+                className="portfolio-image h-auto w-full object-contain"
+              />
+              <figcaption className="image-caption mt-4">
+                ベース指板上にコード構成音を度数で表示し、練習パネルを切り替えながら確認する画面です。
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
@@ -195,13 +151,11 @@ export default function MuuFretDegreePage() {
               What It Does
             </p>
             <h2 className="section-title mt-3 max-w-5xl text-3xl font-semibold sm:text-5xl">
-              指板、リズム、コード進行、譜面を、
-              <br />
-              ひとつの練習場所にまとめています。
+              指板、リズム、譜面をひとつの練習場所に。
             </h2>
             <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
               業務アプリとは違い、日々の練習で感じた小さな不便をそのまま形にした個人制作です。
-              音楽理論を読むだけで終わらせず、指板、音、コード譜、譜面として触れるようにしています。
+              音楽理論を読むだけで終わらせず、指板、音、コード進行、譜面として触れるようにしています。
             </p>
           </div>
 
