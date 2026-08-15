@@ -6,43 +6,70 @@ import SiteFooter from "../../components/SiteFooter";
 
 const features = [
   {
-    title: "度数で指板を見る",
+    title: "ベース指板を度数で見る",
     description:
-      "ルートから見た 3rd、5th、7th などの位置を、音名よりも度数の関係として確認できるようにしています。",
+      "ルートとコードタイプを選ぶと、4弦ベースの指板上に 1、3、5、b7 などのコード構成音を表示します。",
   },
   {
-    title: "練習中にすぐ確認する",
+    title: "音を鳴らして確認する",
     description:
-      "曲作りやフレーズ練習中に、指板上の見え方をさっと見直すための自分用メモツールとして作りました。",
+      "指板上のノート、アルペジオ、コード再生を Web Audio API で鳴らし、目で見た位置と耳で聞く音をつなげます。",
   },
   {
-    title: "音楽理論をUIに落とす",
+    title: "メトロノームと進行再生",
     description:
-      "頭の中だけで考えがちな音程の関係を、フレットボード上の配置として手元で確認できる形にしています。",
+      "BPM、Tap Tempo、拍子、Pulse、Count-in、Swing を設定し、コード進行ループと合わせて練習できます。",
   },
   {
-    title: "まだ育てている途中",
+    title: "コード進行エディター",
     description:
-      "完成サービスではなく、使いながら必要な表示や操作を足していくパーソナルツールとして扱っています。",
+      "小節、拍、Hit / Rest / Tie、16分ステップ、音価、Undo / Redo を扱う専用エディターを作っています。",
+  },
+  {
+    title: "スケール譜面と指番号",
+    description:
+      "12キーのスケール、Key Modes、度数と指番号の切り替え、PDF印刷用の譜面コンテンツを用意しています。",
+  },
+  {
+    title: "反復練習コンテンツ",
+    description:
+      "E Major Triplets など、メトロノーム位置や身体の拍感を確認するための練習譜面も入れています。",
   },
 ];
 
 const buildNotes = [
-  "度数、弦、フレットを視覚的に追えるシンプルな画面を優先",
-  "自分の練習中に迷ったポイントを、そのまま機能追加の起点にする",
-  "音名よりもインターバルの理解を助ける見せ方を探る",
-  "完成度よりも、実際に使い続けながら改善できる余白を残す",
+  "練習中に迷ったポイントを、そのまま機能追加の起点にする",
+  "度数、音名、指番号、譜面、再生音をひとつの練習導線につなげる",
+  "コード進行の編集ロジックは React UI から分け、テストしやすい純粋関数側へ寄せる",
+  "完成サービスではなく、日々使いながら必要な表示と操作を足していく",
 ];
 
-const stack = ["Next.js", "React", "TypeScript", "Music Theory", "Responsive UI"];
+const stack = [
+  "Next.js 16",
+  "React 19",
+  "TypeScript",
+  "Web Audio API",
+  "VexFlow",
+  "Music Theory Data",
+  "localStorage",
+  "Vitest",
+];
 
-const strings = ["E", "B", "G", "D", "A", "E"];
-const fretMarkers = ["R", "m3", "5", "b7", "9", "11"];
+const appUrl = "https://nuu-fret-degree.vercel.app/";
+
+const strings = ["G", "D", "A", "E"];
+const fretMarkers = ["1", "3", "5", "b7", "9", "11"];
+const toolPanels = [
+  ["Practice", "指板 / 度数 / コード再生"],
+  ["Metronome", "BPM / Count-in / Swing"],
+  ["Progression", "ループ再生 / 伴奏パターン"],
+  ["Scales", "度数 / 指番号 / PDF"],
+];
 
 export const metadata: Metadata = {
   title: "muu-fret-degree | Portfolio",
   description:
-    "ギター指板上で度数や音程の見え方を確認するための自分用フレットボード学習ツール muu-fret-degree の紹介ページです。",
+    "ベース指板のコード度数確認、メトロノーム、コード進行エディター、スケール譜面をまとめた自分用練習ツール muu-fret-degree の紹介ページです。",
 };
 
 export default function MuuFretDegreePage() {
@@ -78,11 +105,29 @@ export default function MuuFretDegreePage() {
                 muu-fret-degree
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-8 text-zinc-700">
-                ギター指板上で、ルートから見た度数や音程の位置を確認するための自分用フレットボード学習ツールです。
-                完成されたサービスというより、練習や作曲中に自分が迷うところをアプリ化している途中のプロジェクトです。
+                ベース指板上のコード構成音を度数で確認し、メトロノーム、コード進行ループ、進行エディター、スケール譜面まで使える自分用の練習ツールです。
+                完成されたサービスというより、練習中に自分が迷うところを少しずつアプリ化しているプロジェクトです。
               </p>
-              <div className="mt-9 flex flex-wrap gap-2">
-                {["Personal Tool", "In Progress", "Music Theory"].map((label) => (
+              <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={appUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="primary-action"
+                >
+                  アプリを開く
+                </a>
+                <a
+                  href="https://github.com/muu-ima/nuu-fret-degree"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="secondary-action"
+                >
+                  GitHubを見る
+                </a>
+              </div>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {["Personal Tool", "In Progress", "Bass Practice"].map((label) => (
                   <span key={label} className="meta-tag">
                     {label}
                   </span>
@@ -94,17 +139,17 @@ export default function MuuFretDegreePage() {
               <div className="flex items-start justify-between gap-4 border-b border-[#c8c0b6] pb-4">
                 <div>
                   <p className="text-sm font-semibold text-zinc-500">Fretboard View</p>
-                  <p className="mt-2 text-2xl font-semibold">度数の位置を眺める</p>
+                  <p className="mt-2 text-2xl font-semibold">度数と練習機能をまとめる</p>
                 </div>
                 <span className="rounded-[var(--portfolio-radius)] bg-[#0e6871]/10 px-3 py-1 text-xs font-semibold text-[#0e6871]">
-                  draft
+                  in progress
                 </span>
               </div>
 
               <div className="mt-5 overflow-hidden rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-[#1f2422] p-4 text-[#f6f1e9]">
                 <div className="mb-4 flex items-center justify-between text-xs font-semibold uppercase tracking-[0.14em] text-[#b6d9dc]">
-                  <span>Root: C</span>
-                  <span>Mode: Degree</span>
+                  <span>Root: E</span>
+                  <span>Chord: m7</span>
                 </div>
                 <div className="grid gap-2">
                   {strings.map((stringName, stringIndex) => (
@@ -130,6 +175,14 @@ export default function MuuFretDegreePage() {
                   ))}
                 </div>
               </div>
+              <div className="mt-4 grid grid-cols-2 gap-3">
+                {toolPanels.map(([label, value]) => (
+                  <div key={label} className="rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-white/25 px-3 py-3">
+                    <p className="text-xs font-semibold text-[#0e6871]">{label}</p>
+                    <p className="mt-1 text-sm font-medium text-zinc-700">{value}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -142,16 +195,17 @@ export default function MuuFretDegreePage() {
               What It Does
             </p>
             <h2 className="section-title mt-3 max-w-5xl text-3xl font-semibold sm:text-5xl">
-              自分の練習のために、
+              指板、リズム、コード進行、譜面を、
               <br />
-              指板と度数を結びつけています。
+              ひとつの練習場所にまとめています。
             </h2>
             <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
               業務アプリとは違い、日々の練習で感じた小さな不便をそのまま形にした個人制作です。
+              音楽理論を読むだけで終わらせず、指板、音、コード譜、譜面として触れるようにしています。
             </p>
           </div>
 
-          <div className="mt-8 grid gap-3 lg:grid-cols-2">
+          <div className="mt-8 grid gap-3 lg:grid-cols-3">
             {features.map((feature) => (
               <article key={feature.title} className="surface-card p-4 sm:p-5">
                 <h3 className="text-xl font-semibold tracking-normal">{feature.title}</h3>
@@ -171,11 +225,11 @@ export default function MuuFretDegreePage() {
               Build Notes
             </p>
             <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
-              完成度よりも、使いながら育てることを優先しています。
+              自分用だからこそ、細かい練習の違和感まで拾っています。
             </h2>
             <p className="mt-6 text-base leading-7 text-zinc-200">
               ポートフォリオでは、商用・業務向けではない自分用ツールとして位置づけています。
-              小さなプロトタイプから自分の理解を支える画面へ育てていくタイプの制作です。
+              ただ、メトロノーム、進行編集、譜面表示、音声再生まで入っているので、音楽理論とUIをつなぐ実験として見せられる内容になっています。
             </p>
           </div>
 

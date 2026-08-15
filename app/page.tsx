@@ -184,8 +184,8 @@ const works = [
     title: "muu-fret-degree",
     category: "Personal Tool",
     description:
-      "ギター指板上で度数や音程の見え方を確認するための、自分用フレットボード学習ツールです。",
-    tags: ["Next.js", "Music Theory", "Personal Tool"],
+      "ベース指板の度数確認、メトロノーム、コード進行エディター、スケール譜面をまとめた自分用練習ツールです。",
+    tags: ["Next.js", "Web Audio", "VexFlow"],
     accent: "bg-[#0e6871]",
     icon: "music" as WorkIconName,
     href: "/works/muu-fret-degree",
