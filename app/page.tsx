@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import SideKanaNav from "./components/SideKanaNav";
 import SiteFooter from "./components/SiteFooter";
 
-type WorkIconName = "tools" | "card" | "nfc" | "ledger" | "reservation";
+type WorkIconName = "tools" | "card" | "nfc" | "ledger" | "reservation" | "music";
 
 const workIcons: Record<WorkIconName, ReactNode> = {
   tools: (
@@ -99,6 +99,34 @@ const workIcons: Record<WorkIconName, ReactNode> = {
       />
     </svg>
   ),
+  music: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7">
+      <path
+        d="M8 18V7l10-2v11"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+      <circle
+        cx="6"
+        cy="18"
+        r="2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+      <circle
+        cx="16"
+        cy="16"
+        r="2"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      />
+    </svg>
+  ),
 };
 
 const works = [
@@ -151,6 +179,16 @@ const works = [
     accent: "bg-[#0e6871]",
     icon: "reservation" as WorkIconName,
     href: "/works/reservation-tour",
+  },
+  {
+    title: "muu-fret-degree",
+    category: "Personal Tool",
+    description:
+      "ギター指板上で度数や音程の見え方を確認するための、自分用フレットボード学習ツールです。",
+    tags: ["Next.js", "Music Theory", "Personal Tool"],
+    accent: "bg-[#0e6871]",
+    icon: "music" as WorkIconName,
+    href: "/works/muu-fret-degree",
   },
 ];
 
@@ -213,7 +251,7 @@ export default function Home() {
                 <span className="mt-2 block text-base font-semibold sm:text-lg">Selected Works</span>
               </span>
               <span className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-200 text-xs font-semibold sm:h-12 sm:w-12 sm:text-sm">
-                05
+                06
               </span>
             </a>
           </div>
