@@ -11,6 +11,7 @@ const navItems = [
   { label: "nfc-redirect", href: "/works/nfc-redirect" },
   { label: "ledger-system", href: "/works/kobutsu-ledger-system" },
   { label: "reservation-tour", href: "/works/reservation-tour" },
+  { label: "fret-degree", href: "/works/muu-fret-degree" },
 ];
 
 export default function SideKanaNav() {
