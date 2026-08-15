@@ -11,6 +11,7 @@ const navItems = [
   { label: "nfc-redirect", href: "/works/nfc-redirect" },
   { label: "ledger-system", href: "/works/kobutsu-ledger-system" },
   { label: "reservation-tour", href: "/works/reservation-tour" },
+  { label: "fret-degree", href: "/works/muu-fret-degree" },
 ];
 
 export default function SideKanaNav() {
@@ -60,13 +61,13 @@ export default function SideKanaNav() {
       <div
         id="portfolio-navigation"
         aria-hidden={!isOpen}
-        className={`fixed inset-0 z-40 bg-[#dbd5cd]/95 transition duration-300 ${
+        className={`fixed inset-0 z-40 overflow-y-auto bg-[#dbd5cd]/95 transition duration-300 ${
           isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
         <nav
           aria-label="作品ナビゲーション"
-          className="mx-auto grid min-h-screen max-w-7xl gap-12 px-10 py-20 lg:grid-cols-[0.8fr_1.2fr] lg:items-center"
+          className="mx-auto grid min-h-dvh max-w-7xl gap-8 px-6 py-10 sm:px-10 sm:py-20 lg:grid-cols-[0.8fr_1.2fr] lg:items-center"
         >
           <div className="max-w-sm self-end lg:self-center">
             <p className="section-kicker">
@@ -84,7 +85,7 @@ export default function SideKanaNav() {
             </div>
           </div>
 
-          <div className="grid gap-5 text-right lg:justify-self-end">
+          <div className="grid gap-3 text-right sm:gap-5 lg:justify-self-end">
             {navItems.map((item) => {
               const isActive = item.href === "/#works" ? pathname === "/" : pathname === item.href;
 
@@ -95,7 +96,7 @@ export default function SideKanaNav() {
                   onClick={() => setIsOpen(false)}
                   tabIndex={isOpen ? 0 : -1}
                   aria-current={isActive ? "page" : undefined}
-                  className={`group inline-flex items-center justify-end gap-4 text-4xl font-semibold tracking-[0.04em] transition sm:text-6xl ${
+                  className={`group inline-flex items-center justify-end gap-4 text-3xl font-semibold tracking-[0.04em] transition sm:text-6xl ${
                     isActive ? "text-[#0e6871]" : "text-zinc-700 hover:text-[#0e6871]"
                   }`}
                 >
