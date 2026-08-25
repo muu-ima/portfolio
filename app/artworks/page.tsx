@@ -39,14 +39,14 @@ export default function ArtworksPage() {
             <span className="text-zinc-600">Artworks</span>
           </nav>
 
-          <div className="max-w-3xl pb-20">
+          <div className="pb-20">
             <p className="section-kicker mb-5 inline-flex border-b border-[#0e6871]/30 pb-1">
               Artworks
             </p>
-            <h1 className="section-title text-4xl font-semibold sm:text-7xl">
+            <h1 className="section-title text-4xl font-semibold sm:whitespace-nowrap sm:text-6xl lg:text-7xl">
               絵画教室で描いた習作です。
             </h1>
-            <p className="mt-7 text-lg leading-8 text-zinc-700">
+            <p className="mt-7 max-w-3xl text-lg leading-8 text-zinc-700">
               模写やスケッチ、水彩を通して、形の取り方、構図、濃淡、余白の置き方を練習しています。
               Web制作とは別の入口から、ものを見る力を育てるために続けているものです。
             </p>
