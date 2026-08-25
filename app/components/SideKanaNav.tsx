@@ -12,6 +12,7 @@ const navItems = [
   { label: "ledger-system", href: "/works/kobutsu-ledger-system" },
   { label: "reservation-tour", href: "/works/reservation-tour" },
   { label: "fret-degree", href: "/works/muu-fret-degree" },
+  { label: "Artworks", href: "/artworks" },
 ];
 
 export default function SideKanaNav() {
