@@ -192,6 +192,41 @@ const works = [
   },
 ];
 
+const studyArtworks = [
+  {
+    title: "AKIRA study",
+    medium: "Pencil / Watercolor",
+    src: "/artworks/studies/akira.jpg",
+    alt: "AKIRAを題材にした鉛筆と水彩の模写作品",
+    layout: "md:row-span-2",
+    imageClassName: "object-cover object-center",
+  },
+  {
+    title: "Picture book study",
+    medium: "Pencil",
+    src: "/artworks/studies/ehon.jpg",
+    alt: "絵本の場面を題材にした鉛筆の模写スケッチ",
+    layout: "",
+    imageClassName: "object-cover object-center",
+  },
+  {
+    title: "Horse study",
+    medium: "Colored Pencil / Watercolor",
+    src: "/artworks/studies/uma.jpg",
+    alt: "馬と騎手を題材にした色鉛筆と水彩の習作",
+    layout: "",
+    imageClassName: "object-cover object-center",
+  },
+  {
+    title: "Arare study",
+    medium: "Pencil",
+    src: "/artworks/studies/arare.jpg",
+    alt: "アラレちゃんと大きな鳥を題材にした鉛筆スケッチ",
+    layout: "md:col-span-2",
+    imageClassName: "object-cover object-[50%_38%]",
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#dbd5cd] text-[#2a2a2a]">
@@ -344,6 +379,54 @@ export default function Home() {
                 </Link>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section id="artworks" className="bg-[#eee8df] px-5 py-16 sm:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 border-b border-[#c8c0b6] pb-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-end">
+            <div>
+              <p className="section-kicker">
+                Artworks
+              </p>
+              <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
+                手で描いた習作です
+              </h2>
+            </div>
+            <p className="max-w-3xl text-base leading-7 text-zinc-600 lg:justify-self-end">
+              観察、構図、線の密度を確かめながら描いた模写やスケッチです。
+              アプリ制作とは別の、形を見て組み立てる練習として載せています。
+            </p>
+          </div>
+
+          <div className="mt-10 grid auto-rows-[18rem] gap-5 md:grid-cols-3 md:auto-rows-[20rem]">
+            {studyArtworks.map((artwork) => (
+              <article
+                key={artwork.src}
+                className={`group relative overflow-hidden rounded-md border border-[#c8c0b6] bg-[#f8f6f2] ${artwork.layout}`}
+              >
+                <Image
+                  src={artwork.src}
+                  alt={artwork.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className={`${artwork.imageClassName} transition duration-500 group-hover:scale-[1.03]`}
+                />
+                <div
+                  className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-zinc-950/78 via-zinc-950/30 to-transparent p-5 text-white"
+                  aria-hidden="true"
+                />
+                <div className="absolute inset-x-0 bottom-0 p-5 text-white">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-cyan-100">
+                    {artwork.medium}
+                  </p>
+                  <h3 className="mt-2 text-xl font-semibold">
+                    {artwork.title}
+                  </h3>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
