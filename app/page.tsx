@@ -360,10 +360,15 @@ export default function Home() {
                 手で描いた習作です
               </h2>
             </div>
-            <p className="max-w-3xl text-base leading-7 text-zinc-600 lg:justify-self-end">
-              観察、構図、線の密度を確かめながら描いた模写やスケッチです。
-              アプリ制作とは別の、形を見て組み立てる練習として載せています。
-            </p>
+            <div className="max-w-3xl lg:justify-self-end">
+              <p className="text-base leading-7 text-zinc-600">
+                絵画教室で、観察、構図、線の密度を確かめながら描いた模写やスケッチです。
+                アプリ制作とは別の、形を見て組み立てる練習として載せています。
+              </p>
+              <Link href="/artworks" className="secondary-action mt-6">
+                ギャラリーを見る
+              </Link>
+            </div>
           </div>
 
           <ArtworksGallery />

@@ -28,6 +28,22 @@ const socialLinks = [
     ),
   },
   {
+    label: "Artworks",
+    href: "/artworks",
+    icon: (
+      <svg viewBox="0 0 24 24" aria-hidden="true" className="h-6 w-6">
+        <path
+          d="M5 19h14M7 17l4-10 3 7 2-4 2 7M8 12h2.5M13 12h2"
+          fill="none"
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+      </svg>
+    ),
+  },
+  {
     label: "Home",
     href: "/",
     icon: (
