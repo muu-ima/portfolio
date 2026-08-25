@@ -6,13 +6,13 @@ import { useEffect, useState } from "react";
 
 const navItems = [
   { label: "Works", href: "/#works" },
-  { label: "Artworks", href: "/artworks" },
   { label: "tools-hub", href: "/works/tools-hub" },
   { label: "cardcraft", href: "/works/cardcraft" },
   { label: "nfc-redirect", href: "/works/nfc-redirect" },
   { label: "ledger-system", href: "/works/kobutsu-ledger-system" },
   { label: "reservation-tour", href: "/works/reservation-tour" },
   { label: "fret-degree", href: "/works/muu-fret-degree" },
+  { label: "Artworks", href: "/artworks" },
 ];
 
 export default function SideKanaNav() {
