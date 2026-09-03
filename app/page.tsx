@@ -5,7 +5,7 @@ import ArtworksGallery from "./components/ArtworksGallery";
 import SideKanaNav from "./components/SideKanaNav";
 import SiteFooter from "./components/SiteFooter";
 
-type WorkIconName = "tools" | "card" | "nfc" | "ledger" | "reservation" | "music";
+type WorkIconName = "tools" | "card" | "nfc" | "ledger" | "reservation" | "music" | "duty";
 
 const workIcons: Record<WorkIconName, ReactNode> = {
   tools: (
@@ -128,6 +128,24 @@ const workIcons: Record<WorkIconName, ReactNode> = {
       />
     </svg>
   ),
+  duty: (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className="h-7 w-7">
+      <path
+        d="M5 5h14v14H5zM5 10h14M10 5v14M14 5v14"
+        fill="none"
+        stroke="currentColor"
+        strokeLinejoin="round"
+        strokeWidth="2"
+      />
+      <path
+        d="M7.5 15h1.5M11.5 13h1.5M15.5 16h1.5"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="2"
+      />
+    </svg>
+  ),
 };
 
 const works = [
@@ -191,6 +209,16 @@ const works = [
     icon: "music" as WorkIconName,
     href: "/works/muu-fret-degree",
   },
+  {
+    title: "us-duty-profit-sheet",
+    category: "Spreadsheet Logic",
+    description:
+      "eBay US販売向けに、HTSコード、原産国、関税、手数料、送料をまとめて利益判断する関税計算シートです。",
+    tags: ["Google Sheets", "Duty Calc", "eBay US"],
+    accent: "bg-[#0e6871]",
+    icon: "duty" as WorkIconName,
+    href: "/works/us-duty-profit-sheet",
+  },
 ];
 
 export default function Home() {
@@ -252,7 +280,7 @@ export default function Home() {
                 <span className="mt-2 block text-base font-semibold sm:text-lg">Selected Works</span>
               </span>
               <span className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-200 text-xs font-semibold sm:h-12 sm:w-12 sm:text-sm">
-                06
+                07
               </span>
             </a>
           </div>
