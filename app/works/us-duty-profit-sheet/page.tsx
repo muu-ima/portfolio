@@ -8,67 +8,6 @@ import SiteFooter from "../../components/SiteFooter";
 const sheetUrl =
   "https://docs.google.com/spreadsheets/d/1kKjHDPP8ugVEubMa-hVXxXM5-hB8Z2YAd74AfTtjxdM/edit?gid=988467076#gid=988467076";
 
-const features = [
-  {
-    title: "関税込みの利益計算",
-    description:
-      "売値、送料、仕入、為替、関税、MPF、Disbursement、販売手数料をまとめて、最終利益と利益率まで確認できます。",
-  },
-  {
-    title: "HTSコード別の税率管理",
-    description:
-      "品目ごとのHTSコード、基礎関税、301条、232条、その他追加税率を表として持ち、入力シートの計算に使います。",
-  },
-  {
-    title: "原産国ルールの反映",
-    description:
-      "原産国税率や免除フラグを分けて管理し、中国製品など追加関税が絡むケースも判断できるようにしています。",
-  },
-  {
-    title: "VeRO補正の比較",
-    description:
-      "通常の利益だけでなく、VeRO補正後の販売額、経費、利益、利益率も並べて、出品条件を比較できます。",
-  },
-];
-
-const sheetStructure = [
-  {
-    title: "入力シート",
-    description:
-      "売値、仕入れ、送料、為替、原産国、HTSコード、カテゴリを入力し、最終利益と関税内訳を確認します。",
-  },
-  {
-    title: "ロジック",
-    description:
-      "eBay手数料、関税、MPF、Disbursement、Payoneer、VeRO補正までの計算を集約しています。",
-  },
-  {
-    title: "HTSコード",
-    description:
-      "品目ごとのHTSコード、基礎関税、301条、232条、合算税率を管理する参照マスタです。",
-  },
-  {
-    title: "原産国",
-    description:
-      "国別の税率条件を持ち、入力された原産国に応じて関税設定へ反映します。",
-  },
-  {
-    title: "関税設定",
-    description:
-      "HTSコードと原産国から、基礎関税、追加関税、免除条件を合成します。",
-  },
-  {
-    title: "カテゴリ手数料",
-    description:
-      "eBayカテゴリごとのfee percentを管理し、販売手数料計算へ渡します。",
-  },
-  {
-    title: "PolicyBands",
-    description:
-      "安全側仮関税USDを申告・見積もり用の帯に当てはめます。",
-  },
-];
-
 const flowSteps = [
   "入力シートで売値、仕入れ、送料、為替、原産国、HTSコード、カテゴリを指定",
   "HTSコードと原産国のマスタから、税率条件と追加関税を参照",
@@ -216,69 +155,12 @@ export default function UsDutyProfitSheetPage() {
             <p className="section-kicker">
               Overview
             </p>
-            <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
-              US販売の見落としやすいコストをまとめています。
+            <h2 className="section-title mt-3 max-w-5xl text-3xl font-semibold sm:text-5xl">
+              US販売のコストを、複数タブの連動で利益までつなげます。
             </h2>
             <p className="mt-6 max-w-4xl text-base leading-7 text-zinc-600">
               商品価格だけでなく、関税、MPF、Disbursement、カテゴリ手数料、決済手数料、両替手数料まで含めて、販売後に残る利益を見られるようにしています。
-            </p>
-          </div>
-          <div className="mt-8 grid gap-3 lg:grid-cols-2">
-            {features.map((feature) => (
-              <article key={feature.title} className="surface-card p-4 sm:p-5">
-                <h3 className="text-xl font-semibold tracking-normal">{feature.title}</h3>
-                <p className="mt-3 text-base leading-7 text-zinc-600">{feature.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-[#c8c0b6] bg-[#2a2a2a] px-5 py-14 text-[#dbd5cd] sm:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-4xl border-b border-white/10 pb-6">
-            <p className="section-kicker-dark">
-              Sheet Structure
-            </p>
-            <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
-              入力、計算、参照マスタを分けています。
-            </h2>
-            <p className="mt-6 text-base leading-7 text-zinc-200">
-              手入力する場所と、HTSコードや税率のように参照する場所を分けることで、計算の前提を追いやすくしています。
-            </p>
-          </div>
-
-          <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {sheetStructure.map((sheet, index) => (
-              <div key={sheet.title} className="rounded-[var(--portfolio-radius)] border border-white/15 bg-white/5 p-4 sm:p-5">
-                <p className="text-sm font-semibold text-cyan-200">
-                  0{index + 1}
-                </p>
-                <p className="mt-3 text-xl font-semibold tracking-normal text-zinc-50">
-                  {sheet.title}
-                </p>
-                <p className="mt-3 text-sm leading-6 text-zinc-300">
-                  {sheet.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
-        <div className="mx-auto max-w-[1440px]">
-          <div className="grid gap-8 border-b border-[#c8c0b6] pb-8 lg:grid-cols-[0.74fr_1.26fr] lg:items-end">
-            <div>
-              <p className="section-kicker">
-                Data Flow
-              </p>
-              <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
-                複数タブを連動させて、ひとつの利益結果に集約します。
-              </h2>
-            </div>
-            <p className="max-w-3xl text-base leading-7 text-zinc-600 lg:justify-self-end">
-              入力シートだけを見るとシンプルですが、裏側ではHTSコード、原産国、関税設定、PolicyBands、カテゴリ手数料が参照され、ロジックタブで販売後の利益まで計算しています。
+              入力シートの裏側では、HTSコード、原産国、関税設定、PolicyBands、カテゴリ手数料が連動します。
             </p>
           </div>
 
