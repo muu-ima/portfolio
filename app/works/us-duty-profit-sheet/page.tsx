@@ -6,7 +6,7 @@ import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
 
 const sheetUrl =
-  "https://docs.google.com/spreadsheets/d/1kKjHDPP8ugVEubMa-hVXxXM5-hB8Z2YAd74AfTtjxdM/edit?gid=988467076#gid=988467076";
+  "https://docs.google.com/spreadsheets/d/1ghEfLjb73SaHbTntEcKZM5MQrwvFpUDZ5RPIdxTzQoI/edit?gid=988467076#gid=988467076";
 
 const flowSteps = [
   "入力シートで売値、仕入れ、送料、為替、原産国、HTSコード、カテゴリを指定",
