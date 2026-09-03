@@ -142,4 +142,6 @@ HTSコードの選択によって、関税設定タブへ基礎関税や追加�
 
 ## Assets
 
-- `public/duty-profit-dheet-main.png`
+- `public/duty-profit-sheet/duty-profit-sheet-main.png`
+- `public/duty-profit-sheet/logic.png`
+- `public/duty-profit-sheet/hts-code.png`

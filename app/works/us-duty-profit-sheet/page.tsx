@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import LightboxImage from "../../components/LightboxImage";
 import SideKanaNav from "../../components/SideKanaNav";
 import SiteFooter from "../../components/SiteFooter";
 
@@ -31,13 +32,101 @@ const features = [
 ];
 
 const sheetStructure = [
-  "入力シート",
-  "ロジック",
-  "HTSコード",
-  "原産国",
-  "関税設定",
-  "カテゴリ手数料",
-  "PolicyBands",
+  {
+    title: "入力シート",
+    description:
+      "売値、仕入れ、送料、為替、原産国、HTSコード、カテゴリを入力し、最終利益と関税内訳を確認します。",
+  },
+  {
+    title: "ロジック",
+    description:
+      "eBay手数料、関税、MPF、Disbursement、Payoneer、VeRO補正までの計算を集約しています。",
+  },
+  {
+    title: "HTSコード",
+    description:
+      "品目ごとのHTSコード、基礎関税、301条、232条、合算税率を管理する参照マスタです。",
+  },
+  {
+    title: "原産国",
+    description:
+      "国別の税率条件を持ち、入力された原産国に応じて関税設定へ反映します。",
+  },
+  {
+    title: "関税設定",
+    description:
+      "HTSコードと原産国から、基礎関税、追加関税、免除条件を合成します。",
+  },
+  {
+    title: "カテゴリ手数料",
+    description:
+      "eBayカテゴリごとのfee percentを管理し、販売手数料計算へ渡します。",
+  },
+  {
+    title: "PolicyBands",
+    description:
+      "安全側仮関税USDを申告・見積もり用の帯に当てはめます。",
+  },
+];
+
+const flowSteps = [
+  "入力シートで売値、仕入れ、送料、為替、原産国、HTSコード、カテゴリを指定",
+  "HTSコードと原産国のマスタから、税率条件と追加関税を参照",
+  "関税設定で原産国税率、基礎関税、301条、232条を合成",
+  "PolicyBandsで安全側仮関税USDから採用する帯を決定",
+  "ロジックで販売手数料、決済手数料、関税、MPF、Disbursementを計算",
+  "入力シートへ最終利益、利益率、関税内訳、VeRO補正後の比較値を戻す",
+];
+
+const detailSections = [
+  {
+    title: "入力シート",
+    kicker: "Input Sheet",
+    heading: "販売前に触る画面で、利益と関税内訳をまとめて確認します。",
+    description:
+      "販売前に触る画面です。入力パラメータ、結果サマリー、関税内訳、VeRO比較を同じ場所で確認できます。",
+    src: "/duty-profit-sheet/duty-profit-sheet-main.png",
+    alt: "関税計算シートの入力シート画面",
+    width: 1920,
+    height: 883,
+    points: [
+      "USDJPY、仕入れ、売値、送料、原産国、HTSコード、カテゴリを入力",
+      "最終利益、利益率、関税内訳、VeRO補正後の比較値を同じ画面に集約",
+      "日常運用ではこのタブを入口にし、裏側の税率マスタやロジックは直接触らずに使える",
+    ],
+  },
+  {
+    title: "ロジック",
+    kicker: "Calculation Logic",
+    heading: "販売手数料、関税、VeRO補正までを段階的に計算します。",
+    description:
+      "eBay US販売ロジック、関税計算、VeRO補正計算を並べ、最終利益までの根拠を追えるようにしています。",
+    src: "/duty-profit-sheet/logic.png",
+    alt: "関税計算シートのロジック画面",
+    width: 1920,
+    height: 885,
+    points: [
+      "売上、州税、カテゴリ手数料、決済手数料、Final Value Feeを分解して計算",
+      "関税、MPF、Disbursementを別々に出し、関税込みの最終利益へ合算",
+      "通常販売額とVeRO補正後の販売額を並べ、条件違いの利益差を比較",
+    ],
+  },
+  {
+    title: "HTSコード",
+    kicker: "HTS Master",
+    heading: "品目ごとの税率をマスタ化して、計算前提を追えるようにしています。",
+    description:
+      "品目ごとのHTSコード、基礎関税、301条、232条、合算税率を持つマスタです。",
+    src: "/duty-profit-sheet/hts-code.png",
+    alt: "関税計算シートのHTSコードマスタ画面",
+    width: 1920,
+    height: 883,
+    points: [
+      "HSコード、HTSコード、品目、基礎関税、301条、232条、合算税率を管理",
+      "商品カテゴリが変わったときも、税率の根拠をマスタ側で確認できる",
+      "入力シートで選ばれたHTSコードをもとに、関税設定タブへ税率条件を渡す",
+    ],
+  },
 ];
 
 const stack = [
@@ -105,7 +194,7 @@ export default function UsDutyProfitSheetPage() {
 
             <div className="media-frame p-3 backdrop-blur">
               <Image
-                src="/duty-profit-dheet-main.png"
+                src="/duty-profit-sheet/duty-profit-sheet-main.png"
                 alt="関税計算シートの入力シート画面"
                 width={1920}
                 height={883}
@@ -161,18 +250,108 @@ export default function UsDutyProfitSheetPage() {
 
           <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {sheetStructure.map((sheet, index) => (
-              <div key={sheet} className="rounded-[var(--portfolio-radius)] border border-white/15 bg-white/5 p-4 sm:p-5">
+              <div key={sheet.title} className="rounded-[var(--portfolio-radius)] border border-white/15 bg-white/5 p-4 sm:p-5">
                 <p className="text-sm font-semibold text-cyan-200">
                   0{index + 1}
                 </p>
                 <p className="mt-3 text-xl font-semibold tracking-normal text-zinc-50">
-                  {sheet}
+                  {sheet.title}
+                </p>
+                <p className="mt-3 text-sm leading-6 text-zinc-300">
+                  {sheet.description}
                 </p>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-14 sm:px-8">
+        <div className="mx-auto max-w-[1440px]">
+          <div className="grid gap-8 border-b border-[#c8c0b6] pb-8 lg:grid-cols-[0.74fr_1.26fr] lg:items-end">
+            <div>
+              <p className="section-kicker">
+                Data Flow
+              </p>
+              <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
+                複数タブを連動させて、ひとつの利益結果に集約します。
+              </h2>
+            </div>
+            <p className="max-w-3xl text-base leading-7 text-zinc-600 lg:justify-self-end">
+              入力シートだけを見るとシンプルですが、裏側ではHTSコード、原産国、関税設定、PolicyBands、カテゴリ手数料が参照され、ロジックタブで販売後の利益まで計算しています。
+            </p>
+          </div>
+
+          <div className="mt-8 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+            {flowSteps.map((step, index) => (
+              <article key={step} className="surface-card p-4 sm:p-5">
+                <span className="flex h-9 w-9 items-center justify-center rounded-[var(--portfolio-radius)] bg-[#0e6871] text-sm font-semibold text-white">
+                  {index + 1}
+                </span>
+                <p className="mt-4 text-base leading-7 text-zinc-700">
+                  {step}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {detailSections.map((section, index) => {
+        const isReversed = index % 2 === 1;
+
+        return (
+          <section
+            key={section.title}
+            className={`border-b border-[#c8c0b6] px-5 py-14 sm:px-8 ${
+              isReversed ? "bg-[#eee8df]" : "bg-[#dbd5cd]"
+            }`}
+          >
+            <div className="mx-auto grid max-w-[1440px] gap-8 lg:grid-cols-[0.74fr_1.26fr] lg:items-start">
+              <div className={isReversed ? "lg:order-2" : ""}>
+                <p className="section-kicker">
+                  {section.kicker}
+                </p>
+                <h2 className="section-title mt-3 text-3xl font-semibold sm:text-5xl">
+                  {section.heading}
+                </h2>
+                <p className="mt-6 text-base leading-7 text-zinc-600">
+                  {section.description}
+                </p>
+                <div className="mt-7 grid gap-3">
+                  {section.points.map((point) => (
+                    <div
+                      key={point}
+                      className="rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-white/28 p-4"
+                    >
+                      <p className="text-sm leading-6 text-zinc-700">
+                        {point}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <figure className="media-frame p-3">
+                <LightboxImage
+                  src={section.src}
+                  alt={section.alt}
+                  width={section.width}
+                  height={section.height}
+                  loading={index === 0 ? "eager" : "lazy"}
+                  sizes="(max-width: 1024px) 100vw, 860px"
+                  title={section.title}
+                  description={section.description}
+                  imageClassName="portfolio-image h-auto w-full object-contain"
+                />
+                <figcaption className="image-caption mt-4">
+                  {section.description}
+                </figcaption>
+              </figure>
+            </div>
+          </section>
+        );
+      })}
 
       <section className="border-b border-[#c8c0b6] bg-[#dbd5cd] px-5 py-12 sm:px-8">
         <div className="mx-auto max-w-7xl">
