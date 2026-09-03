@@ -129,6 +129,9 @@ export default function UsDutyProfitSheetPage() {
                   シートを開く
                 </a>
               </div>
+              <p className="mt-4 max-w-xl rounded-[var(--portfolio-radius)] border border-[#c8c0b6] bg-white/35 px-4 py-3 text-sm leading-6 text-zinc-600">
+                公開シートは閲覧専用です。入力パラメータを試す場合は、Google Sheets上でコピーを作成してください。
+              </p>
             </div>
 
             <div className="media-frame p-3 backdrop-blur">
