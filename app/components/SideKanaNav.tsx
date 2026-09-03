@@ -12,6 +12,7 @@ const navItems = [
   { label: "ledger-system", href: "/works/kobutsu-ledger-system" },
   { label: "reservation-tour", href: "/works/reservation-tour" },
   { label: "fret-degree", href: "/works/muu-fret-degree" },
+  { label: "duty-profit-sheet", href: "/works/us-duty-profit-sheet" },
   { label: "Artworks", href: "/artworks" },
 ];
 
